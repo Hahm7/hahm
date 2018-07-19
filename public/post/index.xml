@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Hamdi Ahmed</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Dec 2016 21:49:57 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jul 2018 13:46:29 +0100</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sales</title>
+      <link>/2018/07/19/sales/</link>
+      <pubDate>Thu, 19 Jul 2018 13:46:29 +0100</pubDate>
+      
+      <guid>/2018/07/19/sales/</guid>
+      <description>The first part of the project is to come up with hypotheses about the data. This will help me to think about what I should expect to see from the data given the problem statement.
+The data scientists at BigMart have collected 2013 sales data for 1559 products across 10 stores in different cities. Also, certain attributes of each product and store have been defined. The aim is to build a predictive model and find out the sales of each product at a particular store.</description>
+    </item>
     
     <item>
       <title>A Plain Markdown Post</title>
