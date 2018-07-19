@@ -1,7 +1,7 @@
 ---
 title: "Sales"
 author: "Hamdi Ahmed"
-date: "19/07/2018"
+date: 2018-07-19T21:13:14-05:00
 output: html_document
 ---
 The first part of the project is to come up with hypotheses about the data. This will help me to think about what I should expect to see from the data given the problem statement. 
