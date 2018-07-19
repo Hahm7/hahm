@@ -41,16 +41,5 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>/1/01/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/1/01/01/</guid>
-      <description>+++title = “2018 07 19 Sales”date = 2018-07-19T13:46:29+01:00draft = truetags = []categories = []+++
-The first part of the project is to come up with hypotheses about the data. This will help me to think about what I should expect to see from the data given the problem statement.
-The data scientists at BigMart have collected 2013 sales data for 1559 products across 10 stores in different cities.</description>
-    </item>
-    
   </channel>
 </rss>
