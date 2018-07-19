@@ -52,6 +52,16 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     
     <item>
       <title>Sales</title>
+      <link>/1/01/01/sales/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/01/sales/</guid>
+      <description>The first part of the project is to come up with hypotheses about the data. This will help me to think about what I should expect to see from the data given the problem statement.
+The data scientists at BigMart have collected 2013 sales data for 1559 products across 10 stores in different cities. Also, certain attributes of each product and store have been defined. The aim is to build a predictive model and find out the sales of each product at a particular store.</description>
+    </item>
+    
+    <item>
+      <title>Sales</title>
       <link>/sales/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
