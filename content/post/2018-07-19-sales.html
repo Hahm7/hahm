@@ -173,4 +173,80 @@ joined &lt;- rbind.fill(train, test)</code></pre>
 ## $source
 ## [1] 2</code></pre>
 <p>This tells us that there are 1559 products and 10 outlets/stores (which was also mentioned in problem statement). Another thing that should catch attention is that Item_Type has 16 unique values. Let’s explore further using the frequency of different categories in each nominal variable. I’ll exclude the ID and source variables for obvious reasons.</p>
+<pre class="r"><code>joined %&gt;%
+  group_by(Item_Fat_Content) %&gt;% 
+  summarise(count = n()) %&gt;% 
+  arrange(desc(count))</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   Item_Fat_Content count
+##   &lt;chr&gt;            &lt;int&gt;
+## 1 Low Fat           8485
+## 2 Regular           4824
+## 3 LF                 522
+## 4 reg                195
+## 5 low fat            178</code></pre>
+<pre class="r"><code>joined %&gt;%
+  group_by(Item_Type) %&gt;% 
+  summarise(count = n()) %&gt;% 
+  arrange(desc(count))</code></pre>
+<pre><code>## # A tibble: 16 x 2
+##    Item_Type             count
+##    &lt;chr&gt;                 &lt;int&gt;
+##  1 Fruits and Vegetables  2013
+##  2 Snack Foods            1989
+##  3 Household              1548
+##  4 Frozen Foods           1426
+##  5 Dairy                  1136
+##  6 Baking Goods           1086
+##  7 Canned                 1084
+##  8 Health and Hygiene      858
+##  9 Meat                    736
+## 10 Soft Drinks             726
+## 11 Breads                  416
+## 12 Hard Drinks             362
+## 13 Others                  280
+## 14 Starchy Foods           269
+## 15 Breakfast               186
+## 16 Seafood                  89</code></pre>
+<pre class="r"><code>joined %&gt;%
+  group_by(Outlet_Location_Type) %&gt;% 
+  summarise(count = n()) %&gt;% 
+  arrange(desc(count))</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   Outlet_Location_Type count
+##   &lt;chr&gt;                &lt;int&gt;
+## 1 Tier 3                5583
+## 2 Tier 2                4641
+## 3 Tier 1                3980</code></pre>
+<pre class="r"><code>joined %&gt;%
+  filter(Outlet_Size != &quot;&quot;) %&gt;% 
+  group_by(Outlet_Size) %&gt;% 
+  summarise(count = n()) %&gt;% 
+  arrange(desc(count))</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   Outlet_Size count
+##   &lt;chr&gt;       &lt;int&gt;
+## 1 Medium       4655
+## 2 Small        3980
+## 3 High         1553</code></pre>
+<pre class="r"><code>joined %&gt;%
+  group_by(Outlet_Type) %&gt;% 
+  summarise(count = n()) %&gt;% 
+  arrange(desc(count))</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   Outlet_Type       count
+##   &lt;chr&gt;             &lt;int&gt;
+## 1 Supermarket Type1  9294
+## 2 Grocery Store      1805
+## 3 Supermarket Type3  1559
+## 4 Supermarket Type2  1546</code></pre>
+<p>The output gives us following observations:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Item_Fat_Content:</strong> Some of ‘Low Fat’ values mis-coded as ‘low fat’ and ‘LF’. Also, some of ‘Regular’ are mentioned as ‘regular’.</p></li>
+<li><p><strong>Item_Type:</strong> Not all categories have substantial numbers. It looks like combining them can give better results.</p></li>
+<li><p><strong>Outlet_Type:</strong> Supermarket Type2 and Type3 can be combined. But we should check if that’s a good idea before doing it.</p></li>
+</ol>
+</div>
+<div id="data-cleaning" class="section level3">
+<h3><strong>Data Cleaning</strong></h3>
 </div>

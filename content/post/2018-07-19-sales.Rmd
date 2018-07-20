@@ -103,4 +103,53 @@ map(joined, ~sum(!duplicated(.)))
 
 This tells us that there are 1559 products and 10 outlets/stores (which was also mentioned in problem statement). Another thing that should catch attention is that Item_Type has 16 unique values. Let's explore further using the frequency of different categories in each nominal variable. I'll exclude the ID and source variables for obvious reasons.
 
+```{r}
 
+joined %>%
+  group_by(Item_Fat_Content) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+```
+
+```{r}
+
+joined %>%
+  group_by(Item_Type) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+```
+
+```{r}
+
+joined %>%
+  group_by(Outlet_Location_Type) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+```
+
+```{r}
+
+joined %>%
+  filter(Outlet_Size != "") %>% 
+  group_by(Outlet_Size) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+```
+
+```{r}
+
+joined %>%
+  group_by(Outlet_Type) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+```
+
+The output gives us following observations:
+
+1. **Item_Fat_Content:** Some of ‘Low Fat’ values mis-coded as ‘low fat’ and ‘LF’. Also, some of ‘Regular’ are mentioned as ‘regular’.
+
+2. **Item_Type:** Not all categories have substantial numbers. It looks like combining them can give better results.
+
+3. **Outlet_Type:** Supermarket Type2 and Type3 can be combined. But we should check if that’s a good idea before doing it.
+
+### **Data Cleaning**
