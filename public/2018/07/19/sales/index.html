@@ -73,11 +73,11 @@
 <p>The data scientists at BigMart have collected 2013 sales data for 1559 products across 10 stores in different cities. Also, certain attributes of each product and store have been defined. The aim is to build a predictive model and find out the sales of each product at a particular store.</p>
 <p>Using this model, BigMart will try to understand the properties of products and stores which play a key role in increasing sales.</p>
 </blockquote>
-<div id="the-hypotheses" class="section level3">
-<h3><strong>The Hypotheses</strong></h3>
+<div id="the-hypotheses" class="section level2">
+<h2><strong>The Hypotheses</strong></h2>
 <p>I came up with the following hypothesis while thinking about the problem. These are just my thoughts and you can come-up with many more of these. Since we’re talking about stores and products, lets make different sets for each.</p>
-<div id="store-level-hypotheses" class="section level4">
-<h4><strong>Store Level Hypotheses:</strong></h4>
+<div id="store-level-hypotheses" class="section level3">
+<h3><strong>Store Level Hypotheses:</strong></h3>
 <ol style="list-style-type: decimal">
 <li><strong>City type:</strong> Stores located in urban or Tier 1 cities should have higher sales because of the higher income levels of people there.</li>
 <li><strong>Population Density:</strong> Stores located in densely populated areas should have higher sales because of more demand.</li>
@@ -89,8 +89,9 @@
 <li><strong>Ambiance:</strong> Stores which are well-maintained and managed by polite and humble people are expected to have higher footfall and thus higher sales.</li>
 <li><strong>Tax</strong> Stores in jurisdictions with low taxes should have more sales since a lower tax burden should leave more money left over for investmenting in processes which increase sales.</li>
 </ol>
-<div id="product-level-hypotheses" class="section level5">
-<h5><strong>Product Level Hypotheses:</strong></h5>
+</div>
+<div id="product-level-hypotheses" class="section level3">
+<h3><strong>Product Level Hypotheses:</strong></h3>
 <ol style="list-style-type: decimal">
 <li><strong>Brand:</strong> Branded products should have higher sales because of higher trust in the customer.</li>
 <li><strong>Packaging:</strong> Products with good packaging can attract customers and sell more.</li>
@@ -102,9 +103,8 @@
 </ol>
 </div>
 </div>
-</div>
-<div id="the-data" class="section level3">
-<h3><strong>The data</strong></h3>
+<div id="the-data" class="section level2">
+<h2><strong>The data</strong></h2>
 <pre class="r"><code>test &lt;- read.csv(&quot;Test.csv&quot;, stringsAsFactors = FALSE)
 train &lt;- read.csv(&quot;Train.csv&quot;, stringsAsFactors = FALSE)</code></pre>
 <p>Its generally a good idea to combine both train and test data sets into one, perform feature engineering and then divide them later again. This saves the trouble of performing the same steps twice on test and train. Lets combine them into a dataframe ‘joined’ with a ‘source’ column specifying where each observation belongs.</p>
@@ -308,8 +308,8 @@ joined &lt;- rbind.fill(train, test)</code></pre>
 <li><p><strong>Outlet_Type:</strong> Supermarket Type2 and Type3 can be combined. But we should check if that’s a good idea before doing it.</p></li>
 </ol>
 </div>
-<div id="data-cleaning" class="section level3">
-<h3><strong>Data Cleaning</strong></h3>
+<div id="data-cleaning" class="section level2">
+<h2><strong>Data Cleaning</strong></h2>
 </div>
 
 

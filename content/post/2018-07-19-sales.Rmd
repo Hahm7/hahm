@@ -11,11 +11,11 @@ The first part of the project is to come up with hypotheses about the data. This
 >
 > Using this model, BigMart will try to understand the properties of products and stores which play a key role in increasing sales.
 
-### **The Hypotheses**
+## **The Hypotheses**
 
 I came up with the following hypothesis while thinking about the problem. These are just my thoughts and you can come-up with many more of these. Since we're talking about stores and products, lets make different sets for each.
 
-#### **Store Level Hypotheses:**
+### **Store Level Hypotheses:**
 
 1. **City type:** Stores located in urban or Tier 1 cities should have higher sales because of the higher income levels of people there.
 2. **Population Density:** Stores located in densely populated areas should have higher sales because of more demand.
@@ -27,7 +27,7 @@ I came up with the following hypothesis while thinking about the problem. These 
 8. **Ambiance:** Stores which are well-maintained and managed by polite and humble people are expected to have higher footfall and thus higher sales.
 9. **Tax** Stores in jurisdictions with low taxes should have more sales since a lower tax burden should leave more money left over for investmenting in processes which increase sales. 
 
-##### **Product Level Hypotheses:**
+### **Product Level Hypotheses:**
 
 1. **Brand:** Branded products should have higher sales because of higher trust in the customer.
 2. **Packaging:** Products with good packaging can attract customers and sell more.
@@ -39,7 +39,7 @@ I came up with the following hypothesis while thinking about the problem. These 
 
 
 
-### **The data**
+## **The data**
 
 ``` {r}
 
@@ -152,4 +152,4 @@ The output gives us following observations:
 
 3. **Outlet_Type:** Supermarket Type2 and Type3 can be combined. But we should check if that’s a good idea before doing it.
 
-### **Data Cleaning**
+## **Data Cleaning**
