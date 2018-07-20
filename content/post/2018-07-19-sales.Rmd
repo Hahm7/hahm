@@ -15,7 +15,7 @@ The first part of the project is to come up with hypotheses about the data. This
 
 I came up with the following hypothesis while thinking about the problem. These are just my thoughts and you can come-up with many more of these. Since we're talking about stores and products, lets make different sets for each.
 
-##### **Store Level Hypotheses:**
+#### **Store Level Hypotheses:**
 
 1. **City type:** Stores located in urban or Tier 1 cities should have higher sales because of the higher income levels of people there.
 2. **Population Density:** Stores located in densely populated areas should have higher sales because of more demand.
