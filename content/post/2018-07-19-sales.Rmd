@@ -56,6 +56,7 @@ library(dplyr)
 library(tidyverse)
 library(pastecs)
 library(psych)
+library(sqldf)
 ```
 
 ``` {r}
@@ -153,3 +154,43 @@ The output gives us following observations:
 3. **Outlet_Type:** Supermarket Type2 and Type3 can be combined. But we should check if that’s a good idea before doing it.
 
 ## **Data Cleaning**
+
+This step typically involves imputing missing values and treating outliers. Though outlier removal is very important in regression techniques, advanced tree based algorithms are impervious to outliers. So I’ll leave it to you to try it out. We’ll focus on the imputation step here, which is a very important step.
+
+### **Imputing Missing Values**
+
+We found two variables with missing values – Item_Weight and Outlet_Size. Lets impute the former by the average weight of the particular item. This can be done as:
+
+```{r}
+
+avg_item_weight <- mean(joined$Item_Weight, na.rm = TRUE)
+
+joined[which(is.na(joined$Item_Weight)),"Item_Weight"] <- avg_item_weight
+
+```
+
+Lets impute Outlet_Size with the mode of the Outlet_Size for the particular type of outlet.
+
+```{r}
+
+joined %>% 
+  group_by(Outlet_Type, Outlet_Size) %>% 
+  summarise(n = n())
+
+
+
+
+grocery_mode <- Mode1(sqldf('select Outlet_Size from joined where Outlet_Type == "Grocery Store"'))
+
+```
+
+
+Mode1 <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+
+
+
+
