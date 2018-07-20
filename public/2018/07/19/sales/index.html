@@ -63,7 +63,7 @@
 
         
 
-        <li>7 min read</li>
+        <li>8 min read</li>
     </ul>
 </aside>
     
@@ -108,6 +108,10 @@
 <pre class="r"><code>test &lt;- read.csv(&quot;Test.csv&quot;, stringsAsFactors = FALSE)
 train &lt;- read.csv(&quot;Train.csv&quot;, stringsAsFactors = FALSE)</code></pre>
 <p>Its generally a good idea to combine both train and test data sets into one, perform feature engineering and then divide them later again. This saves the trouble of performing the same steps twice on test and train. Lets combine them into a dataframe ‘joined’ with a ‘source’ column specifying where each observation belongs.</p>
+<pre><code>## Warning: package &#39;sqldf&#39; was built under R version 3.5.1</code></pre>
+<pre><code>## Warning: package &#39;gsubfn&#39; was built under R version 3.5.1</code></pre>
+<pre><code>## Warning: package &#39;proto&#39; was built under R version 3.5.1</code></pre>
+<pre><code>## Warning: package &#39;RSQLite&#39; was built under R version 3.5.1</code></pre>
 <pre class="r"><code>train$source &lt;- &quot;train&quot;
 test$source &lt;- &quot;test&quot;
 
@@ -310,6 +314,31 @@ joined &lt;- rbind.fill(train, test)</code></pre>
 </div>
 <div id="data-cleaning" class="section level2">
 <h2><strong>Data Cleaning</strong></h2>
+<p>This step typically involves imputing missing values and treating outliers. Though outlier removal is very important in regression techniques, advanced tree based algorithms are impervious to outliers. So I’ll leave it to you to try it out. We’ll focus on the imputation step here, which is a very important step.</p>
+<div id="imputing-missing-values" class="section level3">
+<h3><strong>Imputing Missing Values</strong></h3>
+<p>We found two variables with missing values – Item_Weight and Outlet_Size. Lets impute the former by the average weight of the particular item. This can be done as:</p>
+<pre class="r"><code>avg_item_weight &lt;- mean(joined$Item_Weight, na.rm = TRUE)
+
+joined[which(is.na(joined$Item_Weight)),&quot;Item_Weight&quot;] &lt;- avg_item_weight</code></pre>
+<p>Lets impute Outlet_Size with the mode of the Outlet_Size for the particular type of outlet.</p>
+<pre class="r"><code>joined %&gt;% 
+  group_by(Outlet_Type, Outlet_Size) %&gt;% 
+  summarise(n = n())</code></pre>
+<pre><code>## # A tibble: 8 x 3
+## # Groups:   Outlet_Type [?]
+##   Outlet_Type       Outlet_Size     n
+##   &lt;chr&gt;             &lt;chr&gt;       &lt;int&gt;
+## 1 Grocery Store     &quot;&quot;            925
+## 2 Grocery Store     Small         880
+## 3 Supermarket Type1 &quot;&quot;           3091
+## 4 Supermarket Type1 High         1553
+## 5 Supermarket Type1 Medium       1550
+## 6 Supermarket Type1 Small        3100
+## 7 Supermarket Type2 Medium       1546
+## 8 Supermarket Type3 Medium       1559</code></pre>
+<pre class="r"><code>grocery_mode &lt;- Mode1(sqldf(&#39;select Outlet_Size from joined where Outlet_Type == &quot;Grocery Store&quot;&#39;))</code></pre>
+</div>
 </div>
 
 

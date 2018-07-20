@@ -171,6 +171,14 @@ joined[which(is.na(joined$Item_Weight)),"Item_Weight"] <- avg_item_weight
 
 Lets impute Outlet_Size with the mode of the Outlet_Size for the particular type of outlet.
 
+``` {r message = FALSE, echo = FALSE}
+Mode1 <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+```
+
 ```{r}
 
 joined %>% 
@@ -185,10 +193,6 @@ grocery_mode <- Mode1(sqldf('select Outlet_Size from joined where Outlet_Type ==
 ```
 
 
-Mode1 <- function(x) {
-  ux <- unique(x)
-  ux[which.max(tabulate(match(x, ux)))]
-}
 
 
 
