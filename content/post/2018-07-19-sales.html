@@ -44,14 +44,18 @@ categories: []
 </div>
 <div id="the-data" class="section level2">
 <h2><strong>The data</strong></h2>
-<pre class="r"><code>test &lt;- read.csv(&quot;Test.csv&quot;, stringsAsFactors = FALSE)
+<pre class="r"><code># Loading the data
+
+test &lt;- read.csv(&quot;Test.csv&quot;, stringsAsFactors = FALSE)
 train &lt;- read.csv(&quot;Train.csv&quot;, stringsAsFactors = FALSE)</code></pre>
 <p>Its generally a good idea to combine both train and test data sets into one, perform feature engineering and then divide them later again. This saves the trouble of performing the same steps twice on test and train. Lets combine them into a dataframe ‘joined’ with a ‘source’ column specifying where each observation belongs.</p>
 <pre><code>## Warning: package &#39;sqldf&#39; was built under R version 3.5.1</code></pre>
 <pre><code>## Warning: package &#39;gsubfn&#39; was built under R version 3.5.1</code></pre>
 <pre><code>## Warning: package &#39;proto&#39; was built under R version 3.5.1</code></pre>
 <pre><code>## Warning: package &#39;RSQLite&#39; was built under R version 3.5.1</code></pre>
-<pre class="r"><code>train$source &lt;- &quot;train&quot;
+<pre class="r"><code>#Creating source variable for the train and test data sets
+
+train$source &lt;- &quot;train&quot;
 test$source &lt;- &quot;test&quot;
 
 joined &lt;- rbind.fill(train, test)</code></pre>
@@ -261,21 +265,51 @@ joined &lt;- rbind.fill(train, test)</code></pre>
 
 joined[which(is.na(joined$Item_Weight)),&quot;Item_Weight&quot;] &lt;- avg_item_weight</code></pre>
 <p>Lets impute Outlet_Size with the mode of the Outlet_Size for the particular type of outlet.</p>
-<pre class="r"><code>joined %&gt;% 
-  group_by(Outlet_Type, Outlet_Size) %&gt;% 
-  summarise(n = n())</code></pre>
-<pre><code>## # A tibble: 8 x 3
-## # Groups:   Outlet_Type [?]
-##   Outlet_Type       Outlet_Size     n
-##   &lt;chr&gt;             &lt;chr&gt;       &lt;int&gt;
-## 1 Grocery Store     &quot;&quot;            925
-## 2 Grocery Store     Small         880
-## 3 Supermarket Type1 &quot;&quot;           3091
-## 4 Supermarket Type1 High         1553
-## 5 Supermarket Type1 Medium       1550
-## 6 Supermarket Type1 Small        3100
-## 7 Supermarket Type2 Medium       1546
-## 8 Supermarket Type3 Medium       1559</code></pre>
-<pre class="r"><code>grocery_mode &lt;- Mode1(sqldf(&#39;select Outlet_Size from joined where Outlet_Type == &quot;Grocery Store&quot;&#39;))</code></pre>
+<pre class="r"><code>joined[which(joined$Outlet_Size == &quot;&quot; &amp; joined$Outlet_Type == &quot;Grocery Store&quot;), &quot;Outlet_Size&quot; ] &lt;- &quot;Small&quot;
+
+joined[which(joined$Outlet_Size == &quot;&quot; &amp; joined$Outlet_Type == &quot;Supermarket Type1&quot;), &quot;Outlet_Size&quot; ] &lt;- Mode1(joined$Outlet_Size[joined$Outlet_Type == &quot;Supermarket Type1&quot;])
+
+# Mode for each outlet type after imputing
+
+joined %&gt;% 
+  group_by(Outlet_Type) %&gt;% 
+  summarise(n = Mode1(Outlet_Size))</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   Outlet_Type       n     
+##   &lt;chr&gt;             &lt;chr&gt; 
+## 1 Grocery Store     Small 
+## 2 Supermarket Type1 Small 
+## 3 Supermarket Type2 Medium
+## 4 Supermarket Type3 Medium</code></pre>
+</div>
+<div id="feature-engineering" class="section level3">
+<h3><strong>Feature Engineering</strong></h3>
+<p>We explored some nuances in the data in the data exploration section. Lets move on to resolving them and making our data ready for analysis. We will also create some new variables using the existing ones in this section.</p>
+<div id="step-1-consider-combining-outlet_type" class="section level4">
+<h4><strong>Step 1: Consider combining Outlet_Type</strong></h4>
+<p>During exploration, we decided to consider combining the Supermarket Type2 and Type3 variables. But is that a good idea? A quick way to check if that could be is to analyze the mean sales by type of store. If they have similar sales, then keeping them separate won’t help much.</p>
+<pre class="r"><code># Mean sales for each outlet type
+
+joined %&gt;% 
+  group_by(Outlet_Type) %&gt;% 
+  summarise(mean_sales = mean(Item_Outlet_Sales, na.rm = TRUE))</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   Outlet_Type       mean_sales
+##   &lt;chr&gt;                  &lt;dbl&gt;
+## 1 Grocery Store           340.
+## 2 Supermarket Type1      2316.
+## 3 Supermarket Type2      1995.
+## 4 Supermarket Type3      3694.</code></pre>
+<p>This shows significant difference between them and we’ll leave them as it is.</p>
+</div>
+</div>
+<div id="step-2-modify-item_visibility" class="section level3">
+<h3><strong>Step 2: Modify Item_Visibility</strong></h3>
+<p>We noticed that the minimum value here is 0, which makes no practical sense. Let’s consider it as missing information and impute it with the mean visibility of that particular product.</p>
+<pre class="r"><code># Average visibility per product
+
+avg_item_visib &lt;- joined %&gt;% 
+                    group_by(Item_Identifier) %&gt;% 
+                    summarise(avg_visib = mean(Item_Visibility, na.rm = TRUE))</code></pre>
 </div>
 </div>

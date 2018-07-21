@@ -42,6 +42,7 @@ I came up with the following hypothesis while thinking about the problem. These 
 ## **The data**
 
 ``` {r}
+# Loading the data
 
 test <- read.csv("Test.csv", stringsAsFactors = FALSE)
 train <- read.csv("Train.csv", stringsAsFactors = FALSE)
@@ -60,6 +61,8 @@ library(sqldf)
 ```
 
 ``` {r}
+
+#Creating source variable for the train and test data sets
 
 train$source <- "train"
 test$source <- "test"
@@ -180,19 +183,47 @@ Mode1 <- function(x) {
 ```
 
 ```{r}
+joined[which(joined$Outlet_Size == "" & joined$Outlet_Type == "Grocery Store"), "Outlet_Size" ] <- "Small"
+
+joined[which(joined$Outlet_Size == "" & joined$Outlet_Type == "Supermarket Type1"), "Outlet_Size" ] <- Mode1(joined$Outlet_Size[joined$Outlet_Type == "Supermarket Type1"])
+
+# Mode for each outlet type after imputing
 
 joined %>% 
-  group_by(Outlet_Type, Outlet_Size) %>% 
-  summarise(n = n())
-
-
-
-
-grocery_mode <- Mode1(sqldf('select Outlet_Size from joined where Outlet_Type == "Grocery Store"'))
-
+  group_by(Outlet_Type) %>% 
+  summarise(n = Mode1(Outlet_Size))
 ```
 
+### **Feature Engineering**
 
+We explored some nuances in the data in the data exploration section. Lets move on to resolving them and making our data ready for analysis. We will also create some new variables using the existing ones in this section.
+
+#### **Step 1: Consider combining Outlet_Type**
+
+During exploration, we decided to consider combining the Supermarket Type2 and Type3 variables. But is that a good idea? A quick way to check if that could be is to analyze the mean sales by type of store. If they have similar sales, then keeping them separate won’t help much.
+
+```{r}
+# Mean sales for each outlet type
+
+joined %>% 
+  group_by(Outlet_Type) %>% 
+  summarise(mean_sales = mean(Item_Outlet_Sales, na.rm = TRUE))
+```
+This shows significant difference between them and we’ll leave them as it is.
+
+### **Step 2: Modify Item_Visibility**
+
+We noticed that the minimum value here is 0, which makes no practical sense. Let's consider it as missing information and impute it with the mean visibility of that particular product.
+
+```{r}
+# Average visibility per product
+
+avg_item_visib <- joined %>% 
+                    group_by(Item_Identifier) %>% 
+                    summarise(avg_visib = mean(Item_Visibility, na.rm = TRUE))
+
+
+```
 
 
 
