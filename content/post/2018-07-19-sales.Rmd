@@ -211,18 +211,13 @@ joined %>%
 ```
 This shows significant difference between them and we’ll leave them as it is.
 
-### **Step 2: Modify Item_Visibility**
+#### **Step 2: Modify Item_Visibility**
 
 We noticed that the minimum value here is 0, which makes no practical sense. Let's consider it as missing information and impute it with the mean visibility of that particular product.
 
 ```{r}
-# Average visibility per product
 
-avg_item_visib <- joined %>% 
-                    group_by(Item_Identifier) %>% 
-                    summarise(avg_visib = mean(Item_Visibility, na.rm = TRUE))
-
-# Create indicator variable showing which have missing values
+# Creating an indicator variable showing which have missing values
 
 Ind <- function(t) {
   x <- dim(length(t))
@@ -259,10 +254,14 @@ In step 1 we hypothesized that products with higher visibility are likely to sel
 joined$Item_Visib_Mean_Ratio <- joined$Item_Visibility/joined$Visibility_Avg
 
 joined %>% 
-  summarise(mean = mean(Item_Visib_Mean_Ratio, na.rm = TRUE),
+  summarise(count = sum(!is.na(Item_Visib_Mean_Ratio)),
+            mean = mean(Item_Visib_Mean_Ratio, na.rm = TRUE),
             std = sd(Item_Visib_Mean_Ratio, na.rm = TRUE),
             min = min(Item_Visib_Mean_Ratio, na.rm = TRUE),
-            max = max(Item_Visib_Mean_Ratio),)
+            `25%`=quantile(Item_Visib_Mean_Ratio, probs=0.25),
+            `50%`=quantile(Item_Visib_Mean_Ratio, probs=0.5),
+            `75%`=quantile(Item_Visib_Mean_Ratio, probs=0.75),
+            max = max(Item_Visib_Mean_Ratio))
 ```
 
 

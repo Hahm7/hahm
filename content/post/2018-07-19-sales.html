@@ -302,17 +302,10 @@ joined %&gt;%
 ## 4 Supermarket Type3      3694.</code></pre>
 <p>This shows significant difference between them and we’ll leave them as it is.</p>
 </div>
-</div>
-<div id="step-2-modify-item_visibility" class="section level3">
-<h3><strong>Step 2: Modify Item_Visibility</strong></h3>
+<div id="step-2-modify-item_visibility" class="section level4">
+<h4><strong>Step 2: Modify Item_Visibility</strong></h4>
 <p>We noticed that the minimum value here is 0, which makes no practical sense. Let’s consider it as missing information and impute it with the mean visibility of that particular product.</p>
-<pre class="r"><code># Average visibility per product
-
-avg_item_visib &lt;- joined %&gt;% 
-                    group_by(Item_Identifier) %&gt;% 
-                    summarise(avg_visib = mean(Item_Visibility, na.rm = TRUE))
-
-# Create indicator variable showing which have missing values
+<pre class="r"><code># Creating an indicator variable showing which have missing values
 
 Ind &lt;- function(t) {
   x &lt;- dim(length(t))
@@ -343,11 +336,16 @@ for ( i in 1:nrow(joined)) {
 joined$Item_Visib_Mean_Ratio &lt;- joined$Item_Visibility/joined$Visibility_Avg
 
 joined %&gt;% 
-  summarise(mean = mean(Item_Visib_Mean_Ratio, na.rm = TRUE),
+  summarise(count = sum(!is.na(Item_Visib_Mean_Ratio)),
+            mean = mean(Item_Visib_Mean_Ratio, na.rm = TRUE),
             std = sd(Item_Visib_Mean_Ratio, na.rm = TRUE),
             min = min(Item_Visib_Mean_Ratio, na.rm = TRUE),
-            max = max(Item_Visib_Mean_Ratio),)</code></pre>
-<pre><code>##       mean       std       min      max
-## 1 1.061884 0.2359068 0.8445628 3.010094</code></pre>
+            `25%`=quantile(Item_Visib_Mean_Ratio, probs=0.25),
+            `50%`=quantile(Item_Visib_Mean_Ratio, probs=0.5),
+            `75%`=quantile(Item_Visib_Mean_Ratio, probs=0.75),
+            max = max(Item_Visib_Mean_Ratio))</code></pre>
+<pre><code>##   count     mean       std       min       25%       50%      75%      max
+## 1 14204 1.061884 0.2359068 0.8445628 0.9251308 0.9990698 1.042007 3.010094</code></pre>
+</div>
 </div>
 </div>
