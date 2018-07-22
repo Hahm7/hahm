@@ -63,7 +63,7 @@
 
         
 
-        <li>9 min read</li>
+        <li>10 min read</li>
     </ul>
 </aside>
     
@@ -371,7 +371,45 @@ joined %&gt;%
 
 avg_item_visib &lt;- joined %&gt;% 
                     group_by(Item_Identifier) %&gt;% 
-                    summarise(avg_visib = mean(Item_Visibility, na.rm = TRUE))</code></pre>
+                    summarise(avg_visib = mean(Item_Visibility, na.rm = TRUE))
+
+# Create indicator variable showing which have missing values
+
+Ind &lt;- function(t) {
+  x &lt;- dim(length(t))
+  x[which(t == 0.000000000)] &lt;- 0
+  x[which(t != 0.000000000)] &lt;- 1
+  return(x)
+}
+
+# Adding to the dataset
+
+joined$I &lt;- Ind(joined$Item_Visibility)
+
+# Adding variable for mean item visibility per group
+
+joined$Visibility_Avg &lt;- ave(joined$Item_Visibility, joined$Item_Identifier)
+
+# Replacing those with 0 values with their respective group mean
+
+for ( i in 1:nrow(joined)) {
+  if (joined$I[i] == 0)
+  {
+    joined$Item_Visibility[i] = joined$Visibility_Avg[i]
+    
+  }
+}</code></pre>
+<p>In step 1 we hypothesized that products with higher visibility are likely to sell more. But along with comparing products on absolute terms, we should look at the visibility of the product in that particular store as compared to the mean visibility of that product across all stores. This will give some idea about how much importance was given to that product in a store as compared to other stores. We can use the ‘Visibility_Avg’ variable made above to achieve this.</p>
+<pre class="r"><code># Adding Item Visibility mean ratio
+joined$Item_Visib_Mean_Ratio &lt;- joined$Item_Visibility/joined$Visibility_Avg
+
+joined %&gt;% 
+  summarise(mean = mean(Item_Visib_Mean_Ratio, na.rm = TRUE),
+            std = sd(Item_Visib_Mean_Ratio, na.rm = TRUE),
+            min = min(Item_Visib_Mean_Ratio, na.rm = TRUE),
+            max = max(Item_Visib_Mean_Ratio),)</code></pre>
+<pre><code>##       mean       std       min      max
+## 1 1.061884 0.2359068 0.8445628 3.010094</code></pre>
 </div>
 </div>
 
