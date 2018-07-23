@@ -264,7 +264,50 @@ joined %>%
             max = max(Item_Visib_Mean_Ratio))
 ```
 
+#### **Step 3: Create a broad category of Type of Item**
 
+Earlier we saw that the Item_Type variable has 16 categories which might prove to be very useful in analysis. So its a good idea to combine them. One way could be to manually assign a new category to each. But there’s a catch here. If you look at the Item_Identifier, i.e. the unique ID of each item, it starts with either FD, DR or NC. If you see the categories, these look like being Food, Drinks and Non-Consumables. So I’ve used the Item_Identifier variable to create a new column:
 
+```{r}
 
+extractCat <- function(cat) {
+  cat <- as.character(cat)
+  
+  if (length(grep("FD", cat)) > 0) {
+    return ("Food")
+  } else if (length(grep("DR", cat)) > 0) {
+    return ("Drinks")
+  } else if (length(grep("NC", cat)) > 0) {
+    return("Non-Consumables")
+  }
+}
 
+category <- NULL
+for (i in 1:nrow(joined)) {
+  category <- c(category, extractCat(joined[i,"Item_Identifier"]))
+}
+
+joined$Category <- as.factor(category)
+
+joined %>% 
+  group_by(Category) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+
+```
+
+Another idea could be to combine categories based on sales. The ones with high average sales could be combined together.
+
+```{r}
+sales <- NULL
+for (i in 1:nrow(joined)) {
+  sales <- c(sales,ifelse((joined$Item_Outlet_Sales[i]) < 2181.289, "Low Average Sales", "High Average Sales"))
+}
+
+joined$Sales <- as.factor(sales)
+
+joined %>% 
+  group_by(Sales) %>% 
+  summarise(count = n())
+
+```

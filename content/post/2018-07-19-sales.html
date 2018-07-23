@@ -347,5 +347,55 @@ joined %&gt;%
 <pre><code>##   count     mean       std       min       25%       50%      75%      max
 ## 1 14204 1.061884 0.2359068 0.8445628 0.9251308 0.9990698 1.042007 3.010094</code></pre>
 </div>
+<div id="step-3-create-a-broad-category-of-type-of-item" class="section level4">
+<h4><strong>Step 3: Create a broad category of Type of Item</strong></h4>
+<p>Earlier we saw that the Item_Type variable has 16 categories which might prove to be very useful in analysis. So its a good idea to combine them. One way could be to manually assign a new category to each. But there’s a catch here. If you look at the Item_Identifier, i.e. the unique ID of each item, it starts with either FD, DR or NC. If you see the categories, these look like being Food, Drinks and Non-Consumables. So I’ve used the Item_Identifier variable to create a new column:</p>
+<pre class="r"><code>extractCat &lt;- function(cat) {
+  cat &lt;- as.character(cat)
+  
+  if (length(grep(&quot;FD&quot;, cat)) &gt; 0) {
+    return (&quot;Food&quot;)
+  } else if (length(grep(&quot;DR&quot;, cat)) &gt; 0) {
+    return (&quot;Drinks&quot;)
+  } else if (length(grep(&quot;NC&quot;, cat)) &gt; 0) {
+    return(&quot;Non-Consumables&quot;)
+  }
+}
+
+category &lt;- NULL
+for (i in 1:nrow(joined)) {
+  category &lt;- c(category, extractCat(joined[i,&quot;Item_Identifier&quot;]))
+}
+
+joined$Category &lt;- as.factor(category)
+
+joined %&gt;% 
+  group_by(Category) %&gt;% 
+  summarise(count = n()) %&gt;% 
+  arrange(desc(count))</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   Category        count
+##   &lt;fct&gt;           &lt;int&gt;
+## 1 Food            10201
+## 2 Non-Consumables  2686
+## 3 Drinks           1317</code></pre>
+<p>Another idea could be to combine categories based on sales. The ones with high average sales could be combined together.</p>
+<pre class="r"><code>sales &lt;- NULL
+for (i in 1:nrow(joined)) {
+  sales &lt;- c(sales,ifelse((joined$Item_Outlet_Sales[i]) &lt; 2181.289, &quot;Low Average Sales&quot;, &quot;High Average Sales&quot;))
+}
+
+joined$Sales &lt;- as.factor(sales)
+
+joined %&gt;% 
+  group_by(Sales) %&gt;% 
+  summarise(count = n())</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   Sales              count
+##   &lt;fct&gt;              &lt;int&gt;
+## 1 High Average Sales  3523
+## 2 Low Average Sales   5000
+## 3 &lt;NA&gt;                5681</code></pre>
+</div>
 </div>
 </div>
