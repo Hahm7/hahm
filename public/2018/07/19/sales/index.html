@@ -63,7 +63,7 @@
 
         
 
-        <li>11 min read</li>
+        <li>13 min read</li>
     </ul>
 </aside>
     
@@ -450,13 +450,74 @@ joined$Sales &lt;- as.factor(sales)
 
 joined %&gt;% 
   group_by(Sales) %&gt;% 
-  summarise(count = n())</code></pre>
+  summarise(count = n()) %&gt;% 
+  arrange(desc(count))</code></pre>
 <pre><code>## # A tibble: 3 x 2
 ##   Sales              count
 ##   &lt;fct&gt;              &lt;int&gt;
-## 1 High Average Sales  3523
+## 1 &lt;NA&gt;                5681
 ## 2 Low Average Sales   5000
-## 3 &lt;NA&gt;                5681</code></pre>
+## 3 High Average Sales  3523</code></pre>
+</div>
+<div id="step-4-determine-the-years-of-operation-of-a-store" class="section level4">
+<h4><strong>Step 4: Determine the years of operation of a store</strong></h4>
+<p>We wanted to make a new column depicting the years of operation of a store. This can be done as:</p>
+<pre class="r"><code>joined$Outlet_Years &lt;- 2013 - joined$Outlet_Establishment_Year
+
+joined %&gt;% 
+  summarise(count = sum(!is.na(Outlet_Years)),
+            mean = mean(Outlet_Years, na.rm = TRUE),
+            std = sd(Outlet_Years, na.rm = TRUE),
+            min = min(Outlet_Years, na.rm = TRUE),
+            `25%`=quantile(Outlet_Years, probs=0.25),
+            `50%`=quantile(Outlet_Years, probs=0.5),
+            `75%`=quantile(Outlet_Years, probs=0.75),
+            max = max(Outlet_Years))</code></pre>
+<pre><code>##   count     mean      std min 25% 50% 75% max
+## 1 14204 15.16932 8.371664   4   9  14  26  28</code></pre>
+<p>This shows stores which are 4-28 years old.</p>
+</div>
+<div id="step-5-modify-categories-of-item_fat_content" class="section level4">
+<h4><strong>Step 5: Modify categories of Item_Fat_Content</strong></h4>
+<p>We found typos and difference in representation in categories of Item_Fat_Content variable. This can be corrected as:</p>
+<pre class="r"><code>joined %&gt;% 
+  group_by(Item_Fat_Content) %&gt;% 
+  summarise(count = n())</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   Item_Fat_Content count
+##   &lt;chr&gt;            &lt;int&gt;
+## 1 LF                 522
+## 2 low fat            178
+## 3 Low Fat           8485
+## 4 reg                195
+## 5 Regular           4824</code></pre>
+<pre class="r"><code>joined$Item_Fat_Content &lt;- gsub(&#39;LF&#39;, &#39;Low Fat&#39;, joined$Item_Fat_Content)
+joined$Item_Fat_Content &lt;- gsub(&#39;low fat&#39;, &#39;Low Fat&#39;, joined$Item_Fat_Content)
+joined$Item_Fat_Content &lt;- gsub(&#39;reg&#39;, &#39;Regular&#39;, joined$Item_Fat_Content)
+
+joined %&gt;% 
+  group_by(Item_Fat_Content) %&gt;% 
+  summarise(count = n())</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   Item_Fat_Content count
+##   &lt;chr&gt;            &lt;int&gt;
+## 1 Low Fat           9185
+## 2 Regular           5019</code></pre>
+<p>Now it makes more sense. But hang on, in step 3 we saw there were some non-consumables as well and a fat-content should not be specified for them. So we can also create a separate category for such kind of observations.</p>
+<pre class="r"><code>joined[which(joined$Category == &quot;Non-Consumables&quot;), &quot;Item_Fat_Content&quot;] &lt;- &quot;Non-Edible&quot;
+
+joined %&gt;% 
+  group_by(Item_Fat_Content) %&gt;% 
+  summarise(count = n())</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   Item_Fat_Content count
+##   &lt;chr&gt;            &lt;int&gt;
+## 1 Low Fat           6499
+## 2 Non-Edible        2686
+## 3 Regular           5019</code></pre>
+</div>
+<div id="step-6-numerical-and-one-hot-coding-of-categorical-variables" class="section level4">
+<h4><strong>Step 6: Numerical and One-Hot Coding of Categorical variables</strong></h4>
 </div>
 </div>
 </div>
