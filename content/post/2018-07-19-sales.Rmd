@@ -364,7 +364,3 @@ joined %>%
   summarise(count = n())
 
 ```
-
-#### **Step 6: Numerical and One-Hot Coding of Categorical variables**
-
-
