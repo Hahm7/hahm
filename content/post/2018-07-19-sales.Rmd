@@ -308,6 +308,63 @@ joined$Sales <- as.factor(sales)
 
 joined %>% 
   group_by(Sales) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+
+```
+#### **Step 4: Determine the years of operation of a store**
+
+We wanted to make a new column depicting the years of operation of a store. This can be done as:
+
+```{r}
+
+joined$Outlet_Years <- 2013 - joined$Outlet_Establishment_Year
+
+joined %>% 
+  summarise(count = sum(!is.na(Outlet_Years)),
+            mean = mean(Outlet_Years, na.rm = TRUE),
+            std = sd(Outlet_Years, na.rm = TRUE),
+            min = min(Outlet_Years, na.rm = TRUE),
+            `25%`=quantile(Outlet_Years, probs=0.25),
+            `50%`=quantile(Outlet_Years, probs=0.5),
+            `75%`=quantile(Outlet_Years, probs=0.75),
+            max = max(Outlet_Years))
+```
+
+This shows stores which are 4-28 years old.
+
+#### **Step 5: Modify categories of Item_Fat_Content**
+
+We found typos and difference in representation in categories of Item_Fat_Content variable. This can be corrected as:
+
+```{r}
+
+joined %>% 
+  group_by(Item_Fat_Content) %>% 
+  summarise(count = n())
+
+joined$Item_Fat_Content <- gsub('LF', 'Low Fat', joined$Item_Fat_Content)
+joined$Item_Fat_Content <- gsub('low fat', 'Low Fat', joined$Item_Fat_Content)
+joined$Item_Fat_Content <- gsub('reg', 'Regular', joined$Item_Fat_Content)
+
+joined %>% 
+  group_by(Item_Fat_Content) %>% 
   summarise(count = n())
 
 ```
+
+Now it makes more sense. But hang on, in step 3 we saw there were some non-consumables as well and a fat-content should not be specified for them. So we can also create a separate category for such kind of observations.
+
+```{r}
+
+joined[which(joined$Category == "Non-Consumables"), "Item_Fat_Content"] <- "Non-Edible"
+
+joined %>% 
+  group_by(Item_Fat_Content) %>% 
+  summarise(count = n())
+
+```
+
+#### **Step 6: Numerical and One-Hot Coding of Categorical variables**
+
+
