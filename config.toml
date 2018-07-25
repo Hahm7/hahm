@@ -27,7 +27,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     tagline = "A Hugo theme for creative and technical writing"
 
     [params.logo]
-    path = ""
-    alt = "Hamdi Ahmed"
+    alt = "Hi there"
+    class = "logo__cursor"
+    style = "width: 3px; height: 1.625rem;"
 
 
