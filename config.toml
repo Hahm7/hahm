@@ -26,8 +26,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     MathJaxVersion = "2.7.1"
     tagline = "A Hugo theme for creative and technical writing"
 
-    [params.logo]
-    alt = "> Hi there"
     
 
 
