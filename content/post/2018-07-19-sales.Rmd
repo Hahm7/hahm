@@ -52,7 +52,7 @@ train <- read.csv("Train.csv", stringsAsFactors = FALSE)
 
 Its generally a good idea to combine both train and test data sets into one, perform feature engineering and then divide them later again. This saves the trouble of performing the same steps twice on test and train. Lets combine them into a dataframe 'joined' with a 'source' column specifying where each observation belongs.
 
-``` {r message = FALSE, echo = FALSE}
+``` {r include = FALSE, message = FALSE, echo = FALSE}
 library(plyr)
 library(dplyr)
 library(tidyverse)

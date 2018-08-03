@@ -50,10 +50,6 @@ categories: []
 test &lt;- read.csv(&quot;Test.csv&quot;, stringsAsFactors = FALSE)
 train &lt;- read.csv(&quot;Train.csv&quot;, stringsAsFactors = FALSE)</code></pre>
 <p>Its generally a good idea to combine both train and test data sets into one, perform feature engineering and then divide them later again. This saves the trouble of performing the same steps twice on test and train. Lets combine them into a dataframe ‘joined’ with a ‘source’ column specifying where each observation belongs.</p>
-<pre><code>## Warning: package &#39;sqldf&#39; was built under R version 3.5.1</code></pre>
-<pre><code>## Warning: package &#39;gsubfn&#39; was built under R version 3.5.1</code></pre>
-<pre><code>## Warning: package &#39;proto&#39; was built under R version 3.5.1</code></pre>
-<pre><code>## Warning: package &#39;RSQLite&#39; was built under R version 3.5.1</code></pre>
 <pre class="r"><code>#Creating source variable for the train and test data sets
 
 train$source &lt;- &quot;train&quot;
