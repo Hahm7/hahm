@@ -1,9 +1,15 @@
 ---
-title: Buybacks & Investment
-author: Hamdi Ahmed
+title: "Buybacks & Investment"
+author: "Hamdi Ahmed"
 date: '2018-08-12'
 slug: buybacks-investment
 categories: []
 tags: []
 ---
+
+Tax cuts have led to a surge in buybacks and a fall in tax revenues from corporations.
+
+[ Graph showing rise in buybacks and fall in tax revenue from corporations]
+
+Corporate tax cuts are supposed to lead to higher business [investment](https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment) but instead there’s claims that companies are foregoing investment and using the extra cash to buyback their [shares](http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter). Indeed, growth in business investment since the tax cuts has been tepid.
 
