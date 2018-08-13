@@ -34,23 +34,16 @@ f <- plot %>%
 d <- ggplot(f, aes(observation_date, frame = frame)) +
   geom_line(aes(y = buybacks, colour = "buybacks"), size = 1) + 
   geom_line(aes(y = corporate_tax_income, colour = "corporate_tax_income"), size = 1) +
-  geom_vline(xintercept = as.numeric(plot$observation_date[20])) 
-
+  geom_vline(xintercept = as.numeric(plot$observation_date[20])) +
+  ggtitle("Percentage Change in buybacks and corporate tax income") +
+  labs(y = "Percentage change",
+       x = "Date")
+  
+  
 p <- ggplotly(d) %>%
-  layout(
-    title = "Percentage change in buybacks and corporate tax income",
-    yaxis = list(
-      title = "Percentage Change",
-      zeroline = F,
-      tickprefix = "$"
-    ),
-    xaxis = list(
-      title = "Date",
-      zeroline = F, 
-      showgrid = F
-    )
-  ) %>% 
-  animation_opts(
+  layout(legend = list(orientation = "v",
+                   y = 0, x = 100)) %>% 
+   animation_opts(
     frame = 100, 
     transition = 0, 
     redraw = FALSE
@@ -61,11 +54,13 @@ p <- ggplotly(d) %>%
     )
   )
 
+
+
 ```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}
-d
 
+p
 ```
 
 
