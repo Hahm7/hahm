@@ -9,7 +9,61 @@ tags: []
 
 Tax cuts have led to a surge in buybacks and a fall in tax revenues from corporations.
 
-[ Graph showing rise in buybacks and fall in tax revenue from corporations]
+``` {r include = FALSE, message = FALSE, echo = FALSE}
+
+library(plotly)
+library(tidyverse)
+library(readxl)
+
+plot <- read_xls("buyback.xls")
+
+accumulate_by <- function(dat, var) {
+  var <- lazyeval::f_eval(var, dat)
+  lvls <- plotly:::getLevels(var)
+  dats <- lapply(seq_along(lvls), function(x) {
+    cbind(dat[var %in% lvls[seq(1, x)], ], frame = lvls[[x]])
+  })
+  dplyr::bind_rows(dats)
+}
+
+f <- plot %>%
+  accumulate_by(~observation_date)
+
+d <- ggplot(f, aes(observation_date, frame = frame)) +
+  geom_line(aes(y = buybacks, colour = "buybacks"), size = 1) + 
+  geom_line(aes(y = corporate_tax_income, colour = "corporate_tax_income"), size = 1) +
+  geom_vline(xintercept = as.numeric(plot$observation_date[20])) 
+
+p <- ggplotly(d) %>%
+  layout(
+    title = "Percentage change in buybacks and corporate tax income",
+    yaxis = list(
+      title = "Percentage Change",
+      zeroline = F,
+      tickprefix = "$"
+    ),
+    xaxis = list(
+      title = "Date",
+      zeroline = F, 
+      showgrid = F
+    )
+  ) %>% 
+  animation_opts(
+    frame = 100, 
+    transition = 0, 
+    redraw = FALSE
+  ) %>%
+  animation_slider(
+    currentvalue = list(
+      prefix = "Date"
+    )
+  )
+
+```
+
+```{r echo = FALSE}
+p
+```
 
 Corporate tax cuts are supposed to lead to higher business [investment](https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment) but instead there’s claims that companies are foregoing investment and using the extra cash to buyback their [shares](http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter). Indeed, growth in business investment since the tax cuts has been tepid.
 
