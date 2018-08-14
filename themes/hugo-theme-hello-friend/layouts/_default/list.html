@@ -28,7 +28,7 @@
           {{ . | markdownify }}
         {{ else }}
           {{ if .Truncated }}
-            {{ .Summary | markdownify }}
+            {{ (default .Summary .Description) | markdownify }}
           {{ end }}
         {{ end }}
       </div>
