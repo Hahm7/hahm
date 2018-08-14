@@ -25,12 +25,11 @@
 
       <div class="post-content">
         {{ with .Description }}
-          {{ . | markdownify }}
+          {{ $.Scratch.Set "summary" (markdownify .) }}
         {{ else }}
-          {{ if .Truncated }}
-            {{ (default .Summary .Description) | markdownify }}
+         {{ $.Scratch.Set "summary" ((delimit (findRE "(<p>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
           {{ end }}
-        {{ end }}
+        {{ $.Scratch.Get "summary" }}
       </div>
       <div><a class="read-more button" href="{{.RelPermalink}}">Read more →</a></div>
     </div>
