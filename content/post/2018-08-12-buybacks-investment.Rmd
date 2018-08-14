@@ -17,8 +17,11 @@ library(dplyr)
 library(plotly)
 library(tidyverse)
 library(readxl)
+library(lubridate)
 
 plot <- read_xls("buyback.xls")
+
+plot$observation_date <- as.Date(plot$observation_date)
 
 accumulate_by <- function(dat, var) {
   var <- lazyeval::f_eval(var, dat)
@@ -32,27 +35,30 @@ accumulate_by <- function(dat, var) {
 f <- plot %>%
   accumulate_by(~observation_date)
 
+
 d <- ggplot(f, aes(observation_date, frame = frame)) +
   geom_line(aes(y = buybacks, colour = "buybacks"), size = 1) + 
   geom_line(aes(y = corporate_tax_income, colour = "corporate_tax_income"), size = 1) +
-  geom_vline(xintercept = as.numeric(plot$observation_date[20])) +
-  labs(y = "Percentage change",
-       x = "Date") +
-  theme( legend.title = element_blank())
+  geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
+  annotate("text", label = "Tax Cut Annouced", x = plot$observation_date[15], y = -45, color = "black") +
+  labs(y = "Percentage change", x = "Date") +
+  theme(legend.title = element_blank())
   
-  
+```
+
+``` {r include = FALSE, message = FALSE, echo = FALSE}
 p <- ggplotly(d) %>%
- add_annotations( text="Colour", xref="paper", yref="paper",
+  layout(legend=list(y=0.8, yanchor="top")) %>% 
+  add_annotations( text="Colour", xref="paper", yref="paper",
                   x=1.02, xanchor="left",
                   y=0.8, yanchor="bottom",    # Same y as legend below
                   legendtitle=TRUE, showarrow=FALSE ) %>%
-  layout( legend=list(y=0.8, yanchor="top" ) ) %>% 
    animation_opts(
     frame = 125,
     easing = "linear",
     transition = 0, 
     redraw = FALSE
-  ) %>%
+  ) %>% 
   animation_slider(
     currentvalue = list(
       prefix = "Date"
@@ -60,12 +66,12 @@ p <- ggplotly(d) %>%
   )
 
 
-
 ```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}
 
 p
+d
 ```
 
 
