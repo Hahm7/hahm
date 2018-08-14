@@ -68,7 +68,7 @@ p <- ggplotly(d, width = 800) %>%
 
 ```
 
-```{r}
+```{r echo = FALSE}
 
 p
 

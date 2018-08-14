@@ -18,7 +18,7 @@
       
       <guid>/2018/08/12/buybacks-investment/</guid>
       <description>Tax cuts have led to a surge in buybacks and a fall in tax revenues from corporations.
-p{&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[15706],&#34;y&#34;:[0.825988428004468],&#34;text&#34;:&#34;buybacks: 0.8259884
+{&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[15706],&#34;y&#34;:[0.825988428004468],&#34;text&#34;:&#34;buybacks: 0.8259884
 colour: buybacks
 observation_date: 2013-01-01
 frame: 2013-01-01&#34;,&#34;frame&#34;:&#34;2013-01-01&#34;,&#34;type&#34;:&#34;scatter&#34;,&#34;mode&#34;:&#34;lines&#34;,&#34;line&#34;:{&#34;width&#34;:3.77952755905512,&#34;color&#34;:&#34;rgba(248,118,109,1)&#34;,&#34;dash&#34;:&#34;solid&#34;},&#34;hoveron&#34;:&#34;points&#34;,&#34;name&#34;:&#34;buybacks&#34;,&#34;legendgroup&#34;:&#34;buybacks&#34;,&#34;showlegend&#34;:true,&#34;xaxis&#34;:&#34;x&#34;,&#34;yaxis&#34;:&#34;y&#34;,&#34;hoverinfo&#34;:&#34;text&#34;,&#34;visible&#34;:true},{&#34;x&#34;:[15706],&#34;y&#34;:[13.56618],&#34;text&#34;:&#34;corporate_tax_income: 13.56618
