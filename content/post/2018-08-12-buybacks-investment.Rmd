@@ -71,7 +71,6 @@ p <- ggplotly(d, width = 800) %>%
 ```{r echo = FALSE}
 
 p
-d
 ```
 
 
