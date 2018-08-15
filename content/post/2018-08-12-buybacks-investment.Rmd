@@ -80,7 +80,7 @@ Corporate tax cuts are supposed to lead to higher business [investment](https://
 
 
 <div style='text-align:center'>
-<iframe src="https://data.worldbank.org/share/widget?end=2016&amp;indicators=NE.GDI.FTOT.ZS&locations=US&start=2008&amp;embedded=true" width='450' height='300' align="center" frameBorder='0' scrolling="no" ></iframe>
+<iframe src="https://data.worldbank.org/share/widget?end=2016&amp;indicators=NE.GDI.FTOT.ZS&locations=US&start=2008&amp;embedded=true" width='650' height='400' align="center" frameBorder='0' scrolling="no" ></iframe>
 </div>
 
 
