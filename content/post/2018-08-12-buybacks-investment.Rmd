@@ -78,3 +78,9 @@ p
 
 Corporate tax cuts are supposed to lead to higher business [investment](https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment) but instead there’s claims that companies are foregoing investment and using the extra cash to buyback their [shares](http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter). Indeed, growth in business investment has recently been tepid.
 
+
+
+<iframe src="https://data.worldbank.org/share/widget?end=2016&amp;indicators=NE.GDI.FTOT.ZS&locations=US&start=2008&amp;embedded=true" width='450' height='300' frameBorder='0' scrolling="no" ></iframe>
+  
+
+
