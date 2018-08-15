@@ -37,10 +37,10 @@ f <- plot %>%
 
 
 d <- ggplot(f, aes(observation_date, frame = frame)) +
-  geom_line(aes(y = change_in_net_buybacks, colour = "net buybacks"), size = 1) + 
-  geom_line(aes(y = corporate_tax_income, colour = "corporate_tax_income"), size = 1) +
+  geom_line(aes(y = net_buyback, colour = "net buybacks as a percentage of gdp"), size = 1) + 
+  geom_line(aes(y = corporate_tax, colour = "corporate tax income as a percetage of gdp"), size = 1) +
   geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
-  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[17], y = -45, color = "black") +
+  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[15], y = 0, color = "black") +
   labs(y = "Percentage change", x = "Date") +
   theme(legend.title = element_blank())
   
@@ -71,7 +71,7 @@ p <- ggplotly(d, width = 800) %>%
 ```{r echo = FALSE}
 
 p
-
+d
 ```
 
 
