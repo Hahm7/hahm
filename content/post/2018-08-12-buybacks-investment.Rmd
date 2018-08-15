@@ -7,7 +7,7 @@ categories: []
 tags: []
 ---
 
-Tax cuts have led to a surge in buybacks and a fall in tax revenues from corporations.
+Since the Trump Tax cuts were approved, there's been a surge in buybacks and a fall in tax revenues from corporations.
 
 
 
@@ -37,10 +37,10 @@ f <- plot %>%
 
 
 d <- ggplot(f, aes(observation_date, frame = frame)) +
-  geom_line(aes(y = buybacks, colour = "buybacks"), size = 1) + 
+  geom_line(aes(y = change_in_net_buybacks, colour = "net buybacks"), size = 1) + 
   geom_line(aes(y = corporate_tax_income, colour = "corporate_tax_income"), size = 1) +
   geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
-  annotate("text", label = "Tax Cut Annouced", x = plot$observation_date[17], y = -45, color = "black") +
+  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[17], y = -45, color = "black") +
   labs(y = "Percentage change", x = "Date") +
   theme(legend.title = element_blank())
   
@@ -82,5 +82,7 @@ Corporate tax cuts are supposed to lead to higher business [investment](https://
 <div style='text-align:center'>
 <iframe src="https://data.worldbank.org/share/widget?end=2016&amp;indicators=NE.GDI.FTOT.ZS&locations=US&start=2008&amp;embedded=true" width='650' height='400' align="center" frameBorder='0' scrolling="no" ></iframe>
 </div>
+
+Corporations having more cash at hand and not increasing their investments doesn’t bode well for the economy's productive potential.This is understandable though since capital expenditure needs careful planning before it’s undertaken and so we may see this rise in the future. Capital expenditure plans are also affected by uncertainty and things like a possible trade war may be delaying plans[Provide links].  That being said though, buybacks haven’t just been rising due to the recent tax cut, they have been on the rise since they became legal in ( year of legality) and business investment has been trending down since it peaked in the 70s.
 
 
