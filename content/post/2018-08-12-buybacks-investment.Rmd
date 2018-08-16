@@ -72,7 +72,7 @@ p <- ggplotly(d, width = 800) %>%
 p
 ```
 
-Buybacks haven’t just been rising due to the recent tax cut, they have been on the rise since they became legal in ( year of legality) and business investment has been sluggish since it peaked in the early 90s.
+Buybacks haven’t just been rising due to the recent tax cut, they have been on the rise since they became legal in ( year of legality) and corporate capital investment has been trending downwards since then.
 
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
