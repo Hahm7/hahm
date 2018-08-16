@@ -98,7 +98,7 @@ m <- ggplot(invest, aes(x = year)) +
 m
 
 ```
-Corporate tax cuts are supposed to lead to higher business [investment](https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment) but instead there’s claims that companies are foregoing investment and using the extra cash to buyback their [shares](http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter). Corporations having more cash at hand and not increasing their rate of investment doesn’t bode well for the economy.This is understandable though since capital expenditure needs careful planning before it’s undertaken and so we may see this rise in the future. Capital expenditure plans are also affected by uncertainty and things like a possible trade war may be delaying plans[Provide links].  
+Corporations having more cash at hand and not increasing their rate of investment doesn’t bode well for the economy.This is understandable though since capital expenditure needs careful planning before it’s undertaken and so we may see this rise in the future. Capital expenditure plans are also affected by uncertainty and things like a possible trade war may be delaying plans[Provide links].  
 
 
 
