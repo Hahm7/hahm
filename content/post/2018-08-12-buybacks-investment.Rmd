@@ -54,7 +54,7 @@ p <- ggplotly(d, width = 800) %>%
                   y=0.8, yanchor="bottom",    # Same y as legend below
                   legendtitle=TRUE, showarrow=FALSE ) %>%
    animation_opts(
-    frame = 125,
+    frame = 100,
     easing = "linear",
     transition = 0, 
     redraw = FALSE
