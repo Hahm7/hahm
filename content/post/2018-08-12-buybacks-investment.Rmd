@@ -72,13 +72,14 @@ p <- ggplotly(d, width = 800) %>%
 p
 ```
 
-It's fine though since corporate tax cuts are supposed to [lead](https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment) to higher business [investment](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1091238) but there’s claims that companies are foregoing investment and using the extra cash to buyback their [shares](http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter). Indeed, buybacks haven’t just been rising due to the recent tax cut, they have been on the rise since they became legal in 1982 and corporate capital investment, although cyclical, has been trending downwards since then.
+It's fine though since corporate tax [cuts](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1091238) are supposed to [lead](https://twitter.com/realdonaldtrump/status/942123433873281024?lang=en) to [higher](https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment) business investment but there’s claims that companies are foregoing investment and using the extra cash to buyback their [shares](http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter). Indeed, buybacks haven’t just been rising due to the recent tax cut, they have been on the rise since they became legal in 1982 and corporate capital investment, although cyclical, has been trending downwards since then.
 
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 
 library(zoo)
 library(tidyr)
+
 
 invest <- read_xlsx("invest.xlsx")
 
