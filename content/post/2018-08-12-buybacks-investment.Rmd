@@ -99,7 +99,7 @@ m <- ggplot(invest, aes(x = year)) +
 m
 
 ```
-( Talk about the numbers in this graph, compare average investment/ buyback in later decades to average investment/buybacks in recent decades. Then talk more about general fall in the pace of investment in recent years, maybe talk about what type of industries this fall in recent investment is concentrated in)
+**( Talk about the numbers in this graph, compare average investment/ buyback in later decades to average investment/buybacks in recent decades. Then talk more about general fall in the pace of investment in recent years, maybe talk about what type of industries this fall in recent investment is concentrated in)**
 
 
 
