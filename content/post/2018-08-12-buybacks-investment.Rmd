@@ -109,7 +109,7 @@ If corporations having more cash at hand doesn't lead to an increase in their in
 
 It becomes an issue though if most companies are handing back cash to [shareholders](https://www.bloomberg.com/view/articles/2018-07-18/trump-s-tax-cut-hasn-t-done-anything-for-workers). Is this a sign of a lack of good investment projects available in the economy or would companies be investing more if they weren’t distracted by the ability to buyback shares?
 
-First, some definitions. Share buybacks or share repurchases is the act of returning cash to shareholders by buying stock held by them. With less shares available, the remaining investors get a bigger piece of corporate profits. However, corporations may issue new shares in the same time period as they buy back shares, so I use net share buybacks in my graphs to take this into account. Net share buybacks also show us the amount that is left over for investment. I use investment defined as gross fixed capital formation undertaken by the non-financial corporate sector. Gross [fixed capital](https://en.wikipedia.org/wiki/Fixed_capital) formation measures the net increase in fixed capital investment which is a component of the [expenditure method in calculating GDP](http://www.econport.org/content/handbook/NatIncAccount/CalculatingGDP/Expenditures.html). Both data sets are from the [Federal Reserve](https://www.federalreserve.gov/econres/notes/ifdp-notes/corporate-buybacks-and-capital-investment-an-international-perspective-20170411.htm).
+First, some definitions. Share buybacks or share repurchases is the act of returning cash to shareholders by buying common shares held by them. With less shares available, the remaining investors get a bigger piece of corporate profits. However, corporations may issue new shares in the same time period as they buy back shares, so I use net share buybacks in my graphs to take this into account. Net share buybacks also show us the amount that is left over for investment. I use investment defined as gross fixed capital formation undertaken by the non-financial corporate sector. Gross [fixed capital](https://en.wikipedia.org/wiki/Fixed_capital) formation measures the net increase in fixed capital investment which is a component of the [expenditure method in calculating GDP](http://www.econport.org/content/handbook/NatIncAccount/CalculatingGDP/Expenditures.html). Both data sets are from the [Federal Reserve](https://www.federalreserve.gov/econres/notes/ifdp-notes/corporate-buybacks-and-capital-investment-an-international-perspective-20170411.htm).
 
 ### **Do share buybacks deter investment?**
 
@@ -130,7 +130,7 @@ If buybacks doesn't deter investment through the lure of higher share prices the
 
 >Basically, earnings per share are earnings divided by the number of shares outstanding. So as a company's earnings decrease, management is able to lessen the blow on a per-share basis by reducing the share count through buybacks. As revenue and earnings deteriorate, the buybacks bolster the EPS.
 
-However, buybacks don't just affect the number of shares outstanding as cash is used to buyback those shares and cash used for buybacks may have better uses. Cliff Asness again:
+However, buybacks don't just affect the number of shares outstanding as cash is used to buyback those shares and that cash may have had better uses. Cliff Asness again:
 
 >The problem with this argument is that it ignores the fact
 that decreased cash means lower earnings, either due to less interest earned on the cash or the loss of
@@ -140,4 +140,4 @@ in the Chairman’s desk drawer) would we agree that share repurchases increase 
 
 ### **TLDR**
 
-All of this shows that the negative effect of buybacks on investment is weak at best. If rising buybacks aren't behind sluggish investment, what could be? I expore them in my next post. Thank you for reading.
+All of this shows that the negative effect of buybacks on investment is weak at best. Finance theory says if investment was profitable for a business, it should be done even if the cash available to fund the project was reduced by share repurchases. Afterall, issuing shares are not the only source of funds for a business. Those sugesting buybacks deters investment should show a breakdown of the theory in the data. So, if rising buybacks aren't behind sluggish investment, what could be? I expore them in my next post. Thank you for reading.
