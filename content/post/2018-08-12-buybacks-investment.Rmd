@@ -113,9 +113,7 @@ First, some definitions. Share buybacks or share repurchases is the act of retur
 
 ### **Do share buybacks deter investment?**
 
-The point made by those that say yes is that management are deliberately forgoing investment because they incentivised to buyback shares instead. 
-
-The point made by those that say yes is that corporate executives are incentivised to buyback shares above all else. This is [because](https://hbr.org/2014/09/profits-without-prosperity):
+ The point made by those that say yes is that corporate executives are incentivised to buyback shares above all else. This is [because](https://hbr.org/2014/09/profits-without-prosperity):
 
 >Stock-based instruments make up the majority of their pay, and in the short term buybacks drive up stock prices.
 
@@ -128,7 +126,18 @@ There is evidence that share [buybacks]( https://papers.ssrn.com/sol3/papers.cfm
 
 >First, repurchases might signal that management believes that shares are undervalued…Second, because interest payments are tax deductible, debt financed repurchases can be viewed as good news due to the resulting lower tax burden. Third, investors may feel as though it is better for management to return excess cash to shareholders, rather than chasing less economic “pet” projects. This kind of agency cost is often characterized as “empire building,” and avoiding it has long been viewed as one of the benefits of returning cash to shareholders.
 
+If buybacks doesn't deter investment through the lure of higher share prices then, then it may do so through the lure of higher earnings per [share](http://uk.businessinsider.com/contribution-buybacks-eps-growth-2015-11):
+
+>Basically, earnings per share are earnings divided by the number of shares outstanding. So as a company's earnings decrease, management is able to lessen the blow on a per-share basis by reducing the share count through buybacks. As revenue and earnings deteriorate, the buybacks bolster the EPS.
+
+However, buybacks don't just affect the number of shares outstanding as cash is used to buyback those shares and cash used for buybacks may have better uses. Cliff Asness again:
+
+>The problem with this argument is that it ignores the fact
+that decreased cash means lower earnings, either due to less interest earned on the cash or the loss of
+returns from other uses of the cash. Only if the cash that is used for share repurchases is truly idle (sitting
+in the Chairman’s desk drawer) would we agree that share repurchases increase EPS.
+
 
 ### **TLDR**
 
-All of this shows that the negative effect of buybacks on investment is weak at best and there are stronger forces at work. What could these be? I expore them in my next post. Thank you for reading.
+All of this shows that the negative effect of buybacks on investment is weak at best. If rising buybacks aren't behind sluggish investment, what could be? I expore them in my next post. Thank you for reading.
