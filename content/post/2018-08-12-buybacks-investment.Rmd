@@ -137,11 +137,11 @@ Indeed, this Mckinsey article corrobates this [point](https://www.mckinsey.com/b
 
 >The idea that share repurchases create value by increasing EPS also errs in its failure to consider other possible uses of the cash, such as paying dividends, repaying debt, increasing cash balances, or investing in new growth opportunities. 
 
-And the report also looked at the impact of investing vs repurchases on EPS and found that investing is more lucrative in the long run under favourable assumptions:
+In theory(link) an investment should be made if it has a positive net present value and less cash being available through share repurchases shouldn't stop the company from doing this since issuing shares is not the only method of raising funds. Even if share repurchases lead to a higher EPS, it should not be competing with a profitable investment project. The Mckinsey report also looked at the impact of investing vs repurchases on EPS and found that investing is more lucrative in the long run under favourable assumptions:
 
 >Investing at an attractive return on capital will always create more value than repurchasing shares, but it doesn’t always do so as quickly.
 
-So, it seems investing is more lucrative than undertaking share buybacks and corporate management should be ..... Indeed, if a profit opportunity(link to finance theory) can be created(link to finance theory) through investment(link to finance theory), the company should exploit it and less cash being available through share repurchases shouldn't stop the comany from doing this since issuing shares since not the only method of raising funds. What could discourage the corporate excevutres from undertaking investment is that benefits of investment are accrued in the long run and share repurchases seems to trump investment in the short run. 
+What could discourage corporate executives from undertaking investment is that benefits of investment are accrued in the long run and the report shows share repurchases are more lucrative than investment in the short run. 
 
 >In this simple example, we’ve assumed that the company earned an immediate 15 percent return on its investment. That’s often not realistic, since there will be a lag between when a company invests and when it realizes a return. For example, if the company didn’t earn a return until year three, its EPS for the first two years would be higher from share repurchases than it would be from investing. This explains the temptation to repurchase shares instead of investing. With a share repurchase, the effect on EPS is immediate, and with investing, it is delayed. 
 
@@ -152,9 +152,9 @@ repurchases should not increase EPS over time. However, a carefully timed share 
 of an earnings announcement, can reduce share count and thus mechanically increase earnings per share
 relative to what it would have been absent the repurchase. 
 
-Indeed, there's evidence that points to some variant of this happening( post evidence/post showing buybacks happening strategically ahead of annoucement which boosts eps in the short term):
+Indeed, there's evidence that suggests this is (happening)[https://hbr.org/2014/09/profits-without-prosperity]:
 
->
+> Consider the 10 largest repurchasers, which spent a combined $859 billion on buybacks, an amount equal to 68% of their combined net income, from 2003 through 2012. (See the exhibit “The Top 10 Stock Repurchasers.”) During the same decade, their CEOs received, on average, a total of $168 million each in compensation. On average, 34% of their compensation was in the form of stock options and 24% in stock awards. At these companies the next four highest-paid senior executives each received, on average, $77 million in compensation during the 10 years—27% of it in stock options and 29% in stock awards.
 
 This can be addressed easily though:
 
