@@ -68,7 +68,7 @@ p <- ggplotly(d, ) %>%
 
 ```
 
-```{r echo = FALSE}
+```{r echo = FALSE, fig.align='center'}
 p
 ```
 
