@@ -18,6 +18,7 @@ library(plotly)
 library(tidyverse)
 library(readxl)
 library(lubridate)
+library(shiny)
 
 plot <- read_xls("buyback.xls")
 
@@ -65,6 +66,8 @@ p <- ggplotly(d, ) %>%
     )
   )
 
+ppc <- htmltools::div(p, align="center" )
+htmltools::save_html( ppc, "test.html" )
 
 ```
 
@@ -135,18 +138,18 @@ A point this Mckinsey article [supports](https://www.mckinsey.com/business-funct
 
 >The idea that share repurchases create value by increasing EPS also errs in its failure to consider other possible uses of the cash, such as paying dividends, repaying debt, increasing cash balances, or investing in new growth opportunities. 
 
-In [theory](https://corporatefinanceinstitute.com/resources/knowledge/finance/hurdle-rate-definition/) an investment should be made if its return exceeds its hurdle rate and less cash being available through share repurchases shouldn't stop the investment going ahead since it is not the only source of [funds](https://www.oecd-ilibrary.org/economics/understanding-financial-accounts/the-financing-of-non-financial-corporations_9789264281288-8-en). Even if share repurchases lead to a higher EPS, it should not be competing with a profitable investment project. What could discourage corporate executives from undertaking investment is that benefits of investment are accrued in the long run and the Mckinsey report shows share repurchases are more lucrative than investment in the short run. 
+In [theory](https://corporatefinanceinstitute.com/resources/knowledge/finance/hurdle-rate-definition/) an investment should be made if its return exceeds its hurdle rate and less cash being available through share repurchases shouldn't stop the investment going ahead since cash is not the only source of [funds](https://www.oecd-ilibrary.org/economics/understanding-financial-accounts/the-financing-of-non-financial-corporations_9789264281288-8-en). What could discourage corporate executives from undertaking investment is that the benefits of investment are accrued in the long run and the Mckinsey report shows that share repurchases are more lucrative than investment in the short run. 
 
 >In this simple example, we’ve assumed that the company earned an immediate 15 percent return on its investment. That’s often not realistic, since there will be a lag between when a company invests and when it realizes a return. For example, if the company didn’t earn a return until year three, its EPS for the first two years would be higher from share repurchases than it would be from investing. This explains the temptation to repurchase shares instead of investing. With a share repurchase, the effect on EPS is immediate, and with investing, it is delayed. 
 
-The longer the time period, the riskier the venture becomes because it is harder to predict out into the distant future and investment which looked profitable at the time may turn out to be a loss maker. So, buybacks can be strategically undertaken in order to artificially raise EPS in the short term and corporate executives whose compensation is based on stock options will have an incentive to do this as Clifford Asness et al recognize:
+The longer the time period, the riskier the venture becomes because it is harder to predict out into the distant future and an investment which looked profitable at the time may turn out to be a loss maker. So, buybacks can be strategically undertaken in order to artificially raise EPS in the short term and corporate executives whose compensation is based on stock options will have an incentive to do this as Clifford Asness et al recognize:
 
 > As discussed in myth 4, share
 repurchases should not increase EPS over time. However, a carefully timed share repurchase, just ahead
 of an earnings announcement, can reduce share count and thus mechanically increase earnings per share
 relative to what it would have been absent the repurchase. 
 
-Indeed, there's evidence that suggests incentives could be skewed towards the short term [happening](https://hbr.org/2014/09/profits-without-prosperity):
+Indeed, there’s evidence that suggests incentives could be skewed in S&P500 [companies](https://hbr.org/2014/09/profits-without-prosperity):
 
 > Consider the 10 largest repurchasers, which spent a combined $859 billion on buybacks, an amount equal to 68% of their combined net income, from 2003 through 2012. During the same decade, their CEOs received, on average, a total of $168 million each in compensation. On average, 34% of their compensation was in the form of stock options and 24% in stock awards. At these companies the next four highest-paid senior executives each received, on average, $77 million in compensation during the 10 years—27% of it in stock options and 29% in stock awards.
 
