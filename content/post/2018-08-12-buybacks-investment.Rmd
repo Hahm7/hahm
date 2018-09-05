@@ -10,7 +10,17 @@ tags: []
 Since the Trump Tax cuts were approved, there's been an expected fall in tax revenues from corporations but there's also been a surge in buybacks.
 
 
+<style>
+/* resize the widget container */
+.plotly { 
+  width: 100% !important;
+}
 
+/* center the widget */
+div.svg-container {
+  margin: auto !important;
+}
+</style>
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 library(dplyr)
@@ -53,7 +63,7 @@ p <- ggplotly(d, ) %>%
   add_annotations( text="Colour", xref="paper", yref="paper",
                   x=1.02, xanchor="left",
                   y=0.8, yanchor="bottom",    # Same y as legend below
-                  legendtitle=TRUE, showarrow=FALSE ) %>%
+                  legendtitle=TRUE, showarrow=FALSE) %>%
    animation_opts(
     frame = 100,
     easing = "linear",
@@ -71,7 +81,7 @@ htmltools::save_html( ppc, "test.html" )
 
 ```
 
-```{r echo = FALSE, fig.align='center'}
+```{r echo = FALSE}
 p
 ```
 
