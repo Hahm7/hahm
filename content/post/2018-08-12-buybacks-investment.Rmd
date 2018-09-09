@@ -30,6 +30,26 @@ library(readxl)
 library(lubridate)
 library(shiny)
 
+mytheme <- theme(axis.line.y = element_line(colour = "black", size = 0.1),
+                 axis.line.x = element_line(colour = "black", size = 0.1),
+                 panel.grid.minor = element_blank(),
+                 panel.background = element_rect(fill = "grey95"),
+                 panel.border = element_rect(colour = "black", fill = NA),
+                 axis.title.x = element_text(size = 20, margin = margin(10,0,0,0)),
+                 axis.title.y = element_text(size = 20, margin = margin(10,6,0,0)),
+                 axis.text = element_text(size = 15, colour = "black"),
+                 axis.text.x = element_text(margin = margin(t=5)),
+                 plot.title = element_text(size = 32, hjust = 0.5),
+                 legend.key.size = unit(1, "cm"),
+                 legend.text = element_text(size = 20),
+                 legend.text.align = 0,
+                 legend.title = element_blank(),
+                 legend.background = element_blank(),
+                 legend.key = element_rect(fill = NA, colour = NA),
+                 strip.text = element_text(size = 14, face = "bold"),
+                 panel.spacing = unit(0, "lines"))
+
+
 plot <- read_xls("buyback.xls")
 
 plot$observation_date <- as.Date(plot$observation_date)
@@ -53,7 +73,8 @@ d <- ggplot(f, aes(observation_date, frame = frame)) +
   geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
   annotate("text", label = "Tax Cut Approved", x = plot$observation_date[15], y = 0, color = "black") +
   labs(y = "Percent of GDP", x = "Date") +
-  theme(legend.title = element_blank())
+  theme(legend.title = element_blank()) +
+  mytheme
   
 ```
 
