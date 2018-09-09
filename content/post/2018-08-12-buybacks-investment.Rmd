@@ -39,6 +39,7 @@ mytheme <- theme(axis.line.y = element_line(colour = "black", size = 0.1),
                  axis.title.y = element_text(size = 15, margin = margin(10,6,0,0)),
                  axis.text = element_text(size = 10, colour = "black"),
                  axis.text.x = element_text(margin = margin(t=5)),
+                 legend.key.size = unit(1.5, "cm"),
                  legend.title = element_blank(),
                  plot.title = element_text(size = 32, hjust = 0.5),
                  strip.text = element_text(size = 14, face = "bold"),
@@ -63,8 +64,8 @@ f <- plot %>%
 
 
 d <- ggplot(f, aes(observation_date, frame = frame)) +
-  geom_line(aes(y = net_buyback_gdp, colour = "net buybacks"), size = 1) + 
-  geom_line(aes(y = corporate_tax_gdp, colour = "corporate tax income"), size = 1) +
+  geom_line(aes(y = net_buyback_gdp, colour = "Net Buybacks"), size = 1) + 
+  geom_line(aes(y = corporate_tax_gdp, colour = "Corporate Tax Income"), size = 1) +
   geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
   annotate("text", label = "Tax Cut Approved", x = plot$observation_date[16], y = 0, color = "black", size = 4.7) +
   labs(y = "Percent of GDP", x = "Date") +
@@ -80,11 +81,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 p <- ggplotly(d, ) %>%
-  layout(legend=list(y=0.8, yanchor="top")) %>% 
-  add_annotations( text="Colour", xref="paper", yref="paper",
-                  x=1.02, xanchor="left",
-                  y=0.8, yanchor="bottom",    # Same y as legend below
-                  legendtitle=TRUE, showarrow=FALSE) %>%
+  layout(legend=list(y=1, yanchor="top", font = list(size = 16))) %>%
    animation_opts(
     frame = 100,
     easing = "linear",
