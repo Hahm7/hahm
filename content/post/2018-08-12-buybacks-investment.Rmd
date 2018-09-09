@@ -119,7 +119,7 @@ m
 ```
 
 
-If corporations having more cash at hand doesn't lead to an increase in their investments, that won't bode well for the economy. Is this a sign of a lack of good investment projects available in the economy or would companies be investing more if they weren’t distracted by the ability to buyback shares?
+If corporations having more cash at hand doesn't lead to an increase in their investments, that won't bode well for the economy. Are buybacks holding back investment?
 
 First, some definitions. Share buybacks or share repurchases is the act of returning cash to shareholders by buying common shares held by them. The shareholders that sell their shares will receive the cash and the shareholders that do not sell their shares get a bigger piece of corporate profits. However, corporations may issue new shares in the same time period as they buy back shares, so I use net share buybacks in my graphs to take this into account. Net share buybacks also show us the amount that is left over for investment. I use investment defined as gross fixed capital formation undertaken by the non-financial corporate sector. Gross [fixed capital](https://en.wikipedia.org/wiki/Fixed_capital) formation measures the net increase in fixed capital investment which is a component of the [expenditure method in calculating GDP](http://www.econport.org/content/handbook/NatIncAccount/CalculatingGDP/Expenditures.html). Both data sets are from the [Federal Reserve](https://www.federalreserve.gov/econres/notes/ifdp-notes/corporate-buybacks-and-capital-investment-an-international-perspective-20170411.htm).
 
