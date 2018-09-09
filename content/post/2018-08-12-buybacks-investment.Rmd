@@ -152,14 +152,14 @@ In [theory](https://corporatefinanceinstitute.com/resources/knowledge/finance/hu
 
 The longer the time period, the riskier the venture becomes because it is harder to predict out into the distant future and an investment which looked profitable at the time may turn out to be a loss maker. Capital expenditure needs to be planned before it’s undertaken and so we may see this rise in the future but things like a possible trade war doesn't [help](https://www.telegraph.co.uk/business/2018/06/20/us-businesses-putting-investment-trade-war-worries-fed-chief/).
 
-So, buybacks can be strategically undertaken in order to artificially raise EPS in the short term and corporate executives whose compensation is based on stock options will have an incentive to do this as Clifford Asness et al recognize:
+So in the short term, buybacks can artificially raise EPS and corporate executives whose compensation is based on stock options will have an incentive to do this as Clifford Asness et al recognize:
 
 > As discussed in myth 4, share
 repurchases should not increase EPS over time. However, a carefully timed share repurchase, just ahead
 of an earnings announcement, can reduce share count and thus mechanically increase earnings per share
 relative to what it would have been absent the repurchase. 
 
-Indeed, there’s evidence that suggests incentives could be skewed in S&P500 [companies](https://hbr.org/2014/09/profits-without-prosperity):
+Indeed, there’s evidence which suggests incentives could be skewed in S&P500 [companies](https://hbr.org/2014/09/profits-without-prosperity):
 
 > Consider the 10 largest repurchasers, which spent a combined $859 billion on buybacks, an amount equal to 68% of their combined net income, from 2003 through 2012. During the same decade, their CEOs received, on average, a total of $168 million each in compensation. On average, 34% of their compensation was in the form of stock options and 24% in stock awards. At these companies the next four highest-paid senior executives each received, on average, $77 million in compensation during the 10 years—27% of it in stock options and 29% in stock awards.
 
