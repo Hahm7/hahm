@@ -39,6 +39,7 @@ mytheme <- theme(axis.line.y = element_line(colour = "black", size = 0.1),
                  axis.title.y = element_text(size = 15, margin = margin(10,6,0,0)),
                  axis.text = element_text(size = 10, colour = "black"),
                  axis.text.x = element_text(margin = margin(t=5)),
+                 legend.title = element_blank(),
                  plot.title = element_text(size = 32, hjust = 0.5),
                  strip.text = element_text(size = 14, face = "bold"),
                  panel.spacing = unit(0, "lines"))
