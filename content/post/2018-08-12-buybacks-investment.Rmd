@@ -33,8 +33,10 @@ library(shiny)
 mytheme <- theme(axis.line.y = element_line(colour = "black", size = 0.1),
                  axis.line.x = element_line(colour = "black", size = 0.1),
                  panel.grid.minor = element_blank(),
-                 panel.background = element_rect(fill = "grey95"),
+                 panel.grid.major = element_blank(),
+                 panel.background = element_rect(fill = "transparent",colour = NA),
                  panel.border = element_rect(colour = "black", fill = NA),
+                 plot.background = element_rect(fill = "transparent",colour = NA),
                  axis.title.x = element_text(size = 15, margin = margin(-5,0,40,0)),
                  axis.title.y = element_text(size = 15, margin = margin(10,6,0,0)),
                  axis.text = element_text(size = 10, colour = "black"),
@@ -70,8 +72,7 @@ d <- ggplot(f, aes(observation_date, frame = frame)) +
   annotate("text", label = "Tax Cut Approved", x = plot$observation_date[16], y = 0, color = "black", size = 4.7) +
   labs(y = "Percent of GDP", x = "Date") +
   mytheme +
-  scale_color_manual(values=c("#009E73", "#D55E00"))
-  
+  scale_color_manual(values=c("#009E73", "#D55E00")) 
 ```
 
 
