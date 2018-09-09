@@ -65,7 +65,7 @@ d <- ggplot(f, aes(observation_date, frame = frame)) +
   geom_line(aes(y = net_buyback_gdp, colour = "net buybacks"), size = 1) + 
   geom_line(aes(y = corporate_tax_gdp, colour = "corporate tax income"), size = 1) +
   geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
-  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[15], y = 0, color = "black") +
+  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[17], y = 0, color = "black", size = 4.7) +
   labs(y = "Percent of GDP", x = "Date") +
   mytheme
   
