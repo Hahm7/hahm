@@ -39,7 +39,6 @@ mytheme <- theme(axis.line.y = element_line(colour = "black", size = 0.1),
                  axis.title.y = element_text(size = 12, margin = margin(15,6,0,0), face = "bold"),
                  axis.text = element_text(size = 10, colour = "black"),
                  axis.text.x = element_text(margin = margin(t=5)),
-                 legend.text = element_text(face="bold"),
                  legend.key.size = unit(1.5, "cm"),
                  legend.title = element_blank(),
                  plot.title = element_text(size = 32, hjust = 0.5),
@@ -80,7 +79,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 p <- ggplotly(d, ) %>%
-  layout(legend=list(y=1, yanchor="top", font = list(size = 12), face = "bold")) %>%
+  layout(legend=list(y=1, yanchor="top", font = list(size = 12, face = "bold"))) %>%
    animation_opts(
     frame = 100,
     easing = "linear",
