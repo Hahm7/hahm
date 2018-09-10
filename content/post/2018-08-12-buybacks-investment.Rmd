@@ -32,7 +32,6 @@ library(shiny)
 
 mytheme <- theme(axis.line.y = element_line(colour = "black", size = 0.1),
                  axis.line.x = element_line(colour = "black", size = 0.1),
-                 plot.background = element_rect(fill = "transparent"),
                  panel.grid.minor = element_blank(),
                  panel.background = element_rect(fill = "grey95"),
                  panel.border = element_rect(colour = "black", fill = NA),
