@@ -121,9 +121,7 @@ invest$year <- as.Date(as.yearqtr(invest$year))
 m <- ggplot(invest, aes(x = year)) +
   geom_line(aes(y = net_buybacks, colour = "Net buybacks")) + 
   geom_line(aes(y = investment, colour = "U.S Investment")) +
-  labs(y = "Percent of GDP", x = "Year", caption = "Source: https://www.federalreserve.gov/econres/notes/ifdp-notes/corporate-buybacks-and-capital-investment-an-international-perspective-accessible-20170411.htm#fig1") +
   mytheme +
-  theme(plot.caption=element_text(margin = margin(-25,0,0,0))) +
   scale_color_manual(values=c("#D55E00","#0072B2"))
 
 ```
