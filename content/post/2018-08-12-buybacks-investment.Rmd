@@ -35,10 +35,11 @@ mytheme <- theme(axis.line.y = element_line(colour = "black", size = 0.1),
                  panel.grid.minor = element_blank(),
                  panel.background = element_rect(fill = "grey95"),
                  panel.border = element_rect(colour = "black", fill = NA),
-                 axis.title.x = element_text(size = 12, margin = margin(5,0,40,0)),
-                 axis.title.y = element_text(size = 12, margin = margin(15,6,0,0)),
+                 axis.title.x = element_text(size = 12, margin = margin(5,0,40,0), face = "bold"),
+                 axis.title.y = element_text(size = 12, margin = margin(15,6,0,0), face = "bold"),
                  axis.text = element_text(size = 10, colour = "black"),
                  axis.text.x = element_text(margin = margin(t=5)),
+                 legend.text = element_text(face="bold"),
                  legend.key.size = unit(1.5, "cm"),
                  legend.title = element_blank(),
                  plot.title = element_text(size = 32, hjust = 0.5),
@@ -79,7 +80,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.align = "center")
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 p <- ggplotly(d, ) %>%
-  layout(legend=list(y=1, yanchor="top", font = list(size = 12))) %>%
+  layout(legend=list(y=1, yanchor="top", font = list(size = 12), face = "bold")) %>%
    animation_opts(
     frame = 100,
     easing = "linear",
@@ -122,7 +123,7 @@ m <- ggplot(invest, aes(x = year)) +
   geom_line(aes(y = investment, colour = "U.S Investment")) +
   labs(y = "Percent of GDP", x = "Year") +
   mytheme +
-  scale_color_manual(values=c("#009E73", "#D55E00")) 
+  scale_color_manual(values=c("#009E73", "#D55E00"))
 
 ```
 
