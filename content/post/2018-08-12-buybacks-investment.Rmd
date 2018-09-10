@@ -120,7 +120,9 @@ invest$year <- as.Date(as.yearqtr(invest$year))
 m <- ggplot(invest, aes(x = year)) +
   geom_line(aes(y = net_buybacks, colour = "Net buybacks")) + 
   geom_line(aes(y = investment, colour = "U.S Investment")) +
-  labs(y = "Percent of GDP", x = "Year") 
+  labs(y = "Percent of GDP", x = "Year") +
+  mytheme +
+  scale_color_manual(values=c("#009E73", "#D55E00")) 
 
 ```
 
