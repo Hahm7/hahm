@@ -122,7 +122,7 @@ m <- ggplot(invest, aes(x = year)) +
   geom_line(aes(y = investment, colour = "U.S Investment")) +
   labs(y = "Percent of GDP", x = "Year") +
   mytheme +
-  scale_color_manual(values=c("#009E73", "#D55E00"))
+  scale_color_manual(values=c("#D55E00","#0072B2"))
 
 ```
 
