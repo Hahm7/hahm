@@ -9,6 +9,12 @@ tags: []
 
 Since the Trump tax cuts were approved, there's been an expected fall in tax revenues from corporations but there's also been a surge in buybacks.
 
+```{r echo = FALSE, global.options, include = TRUE}
+knitr::opts_chunk$set(
+    echo = TRUE, fig.width=9, fig.height=6, fig.align = "center")
+    
+```
+
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 library(dplyr)
 library(plotly)
@@ -60,10 +66,6 @@ d <- ggplot(f, aes(observation_date, frame = frame)) +
 ```
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.width=9, fig.height=6, fig.align = "center")
-```
-
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 p <- ggplotly(d, ) %>%
   layout(legend=list(y=1, yanchor="top", font = list(size = 12, face = "bold"))) %>%
@@ -79,8 +81,7 @@ p <- ggplotly(d, ) %>%
     )
   )
 
-ppc <- htmltools::div(p, align="center" )
-htmltools::save_html( ppc, "test.html" )
+
 
 ```
 
@@ -91,6 +92,7 @@ p
 It's fine though since corporate tax [cuts](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1091238) are supposed to [lead](https://twitter.com/realdonaldtrump/status/942123433873281024?lang=en) to [higher](https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment) business investment, but there’s claims that companies are foregoing investment and using the extra cash to buyback their [shares](http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter). Indeed, buybacks have been on the rise since they became legal in 1982 and corporate capital investment, although cyclical, has been sluggish as this deloitte article [explains](https://www2.deloitte.com/insights/us/en/economy/behind-the-numbers/corporate-share-buybacks-business-investment.html):
 
 >Nonfinancial corporate business investment as a percentage of GDP averaged 8.9 percent between 1960 and 2016. After a steady increase through the roaring 1990s, business investment as a percentage of GDP peaked in 2000 at 10.7 percent before falling back to its long-term average (see figure 2). The increase in share buybacks ... while business investment has remained relatively unchanged (as shares of GDP) comes at a time when much of corporate America has accumulated large profits and cash reserves and has access to cheap debt.
+
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 
@@ -114,7 +116,7 @@ m <- ggplot(invest, aes(x = year)) +
 
 ```
 
-```{r echo = FALSE, fig.align = "center"}
+```{r echo = FALSE}
 
 m
 
