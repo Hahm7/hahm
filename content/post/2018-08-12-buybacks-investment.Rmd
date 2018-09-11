@@ -13,6 +13,7 @@ Since the Trump tax cuts were approved, there's been an expected fall in tax rev
 .plotly { 
   width: 100% !important;
 }
+</style>
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 library(dplyr)
