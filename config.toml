@@ -9,9 +9,6 @@ pygmentsCodefences = true
 pygmentsStyle = "native"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
-[taxonomies]
-    category = "categories"  
-    tag = "tags"
 
 [permalinks]
     post = "/:slug/"
@@ -21,16 +18,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     name = "About"
     url = "/about/"
     weight = -110
-    
-[[menu.main]]
-    name = "Tags"
-    url = "/tags"
-    weight = -120
-
-[[menu.main]]
-    name = "Categories"
-    url = "/categories"
-    weight = -130
 
 [params]
     description = ""
