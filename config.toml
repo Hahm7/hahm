@@ -1,31 +1,42 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Hamdi Ahmed"
+title = "Natrium Theme"
 theme = "hugo-natrium-theme"
-googleAnalytics = ""
-disqusShortname = ""
+preserveTaxonomyNames = true
+rssLimit = 10
+paginate = 10
+pygmentsCodefences = true
+pygmentsStyle = "native"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
+[taxonomies]
+    category = "categories"  
+    tag = "tags"
+
 [permalinks]
-    post = "/:year/:month/:day/:slug/"
+    post = "/:slug/"
+    page = "/:slug/"
 
 [[menu.main]]
     name = "About"
     url = "/about/"
+    weight = -110
     
+[[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    weight = -120
+
+[[menu.main]]
+    name = "Categories"
+    url = "/categories"
+    weight = -130
+
 [params]
-    description = "A website built through Hugo and blogdown."
+    description = ""
 
-    # options for highlight.js (version, additional languages, and theme)
-    highlightjsVersion = "9.11.0"
-    highlightjsCDN = "//cdn.bootcss.com"
-    highlightjsLang = ["r", "yaml"]
-    highlightjsTheme = "github"
-
-    MathJaxCDN = "//cdn.bootcss.com"
-    MathJaxVersion = "2.7.1"
-    tagline = "A Hugo theme for creative and technical writing"
-
-    
-
-
+    [params.logo]
+    url = "logo.png"
+    width = 50
+    height = 50
+    alt = "Logo"
