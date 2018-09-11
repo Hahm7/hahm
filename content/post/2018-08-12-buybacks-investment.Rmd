@@ -10,7 +10,7 @@ Since the Trump tax cuts were approved, there's been an expected fall in tax rev
 
 ```{r echo = FALSE, global.options, include = TRUE}
 knitr::opts_chunk$set(
-    echo = TRUE, fig.width=9, fig.height=6, fig.align = "center", out.width='100%')
+    echo = TRUE, fig.align = "center", out.width='100%')
     
 ```
 
