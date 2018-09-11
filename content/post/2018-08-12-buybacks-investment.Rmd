@@ -110,7 +110,7 @@ m <- ggplot(invest, aes(x = year)) +
 
 ```
 
-```{r echo = FALSE}
+```{r echo = FALSE, out.width='110%'}
 
 m
 
