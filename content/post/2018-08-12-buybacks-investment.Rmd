@@ -8,6 +8,11 @@ tags: []
 ---
 Since the Trump tax cuts were approved, there's been an expected fall in tax revenues from corporations but there's also been a surge in buybacks.
 
+<style>
+/* resize the widget container */
+.plotly { 
+  width: 100% !important;
+}
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 library(dplyr)
