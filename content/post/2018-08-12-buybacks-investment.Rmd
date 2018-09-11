@@ -6,6 +6,18 @@ slug: buybacks-investment
 categories: []
 tags: []
 ---
+<style>
+/* resize the widget container */
+.plotly { 
+  width: 100% !important;
+}
+
+/* center the widget */
+div.svg-container {
+  margin: auto !important;
+}
+</style>
+
 Since the Trump tax cuts were approved, there's been an expected fall in tax revenues from corporations but there's also been a surge in buybacks.
 
 
@@ -79,7 +91,7 @@ p <- ggplotly(d, ) %>%
 
 ```
 
-```{r echo = FALSE, out.width='100'}
+```{r echo = FALSE}
 p
 ```
 
@@ -110,7 +122,7 @@ m <- ggplot(invest, aes(x = year)) +
 
 ```
 
-```{r echo = FALSE, out.width='110%'}
+```{r echo = FALSE}
 
 m
 
