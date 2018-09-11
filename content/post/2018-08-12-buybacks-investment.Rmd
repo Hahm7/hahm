@@ -79,7 +79,7 @@ p <- ggplotly(d, ) %>%
 
 ```
 
-```{r echo = FALSE, out.width='75%'}
+```{r echo = FALSE, out.width='110%'}
 p
 ```
 
