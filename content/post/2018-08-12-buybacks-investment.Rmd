@@ -8,11 +8,6 @@ tags: []
 ---
 Since the Trump tax cuts were approved, there's been an expected fall in tax revenues from corporations but there's also been a surge in buybacks.
 
-```{r echo = FALSE, global.options, include = TRUE}
-knitr::opts_chunk$set(
-    echo = TRUE, fig.align = "center", out.width='100%')
-    
-```
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 library(dplyr)
@@ -84,7 +79,7 @@ p <- ggplotly(d, ) %>%
 
 ```
 
-```{r echo = FALSE}
+```{r echo = FALSE, out.width='100%'}
 p
 ```
 
