@@ -92,9 +92,9 @@ p <- ggplotly(d, ) %>%
 p
 ```
 
-It's fine though since corporate tax [cuts](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1091238) are supposed to [lead](https://twitter.com/realdonaldtrump/status/942123433873281024?lang=en) to [higher](https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment) business investment, but there’s claims that companies are foregoing investment and using the extra cash to buyback their [shares](http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter). Indeed, buybacks have been on the rise since they became legal in 1982 and corporate capital investment, although cyclical, has been sluggish as this deloitte article [explains](https://www2.deloitte.com/insights/us/en/economy/behind-the-numbers/corporate-share-buybacks-business-investment.html):
+It's fine though since corporate tax [cuts](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1091238) are supposed to [lead](https://twitter.com/realdonaldtrump/status/942123433873281024?lang=en) to [higher](https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment) business investment, but there’s claims that companies are foregoing investment and using the extra cash to buyback their [shares](http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter). Indeed, buybacks have been on the rise since they became legal in 1982 and corporate capital investment has been sluggish as this deloitte article [explains](https://www2.deloitte.com/insights/us/en/economy/behind-the-numbers/corporate-share-buybacks-business-investment.html):
 
->Nonfinancial corporate business investment as a percentage of GDP averaged 8.9 percent between 1960 and 2016. After a steady increase through the roaring 1990s, business investment as a percentage of GDP peaked in 2000 at 10.7 percent before falling back to its long-term average (see figure 2). The increase in share buybacks ... while business investment has remained relatively unchanged (as shares of GDP) comes at a time when much of corporate America has accumulated large profits and cash reserves and has access to cheap debt.
+>Nonfinancial corporate business investment as a percentage of GDP averaged 8.9 percent between 1960 and 2016. After a steady increase through the roaring 1990s, business investment as a percentage of GDP peaked in 2000 at 10.7 percent before falling back to its long-term average. The increase in share buybacks ... while business investment has remained relatively unchanged (as shares of GDP) comes at a time when much of corporate America has accumulated large profits and cash reserves and has access to cheap debt.
 
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
@@ -113,7 +113,7 @@ invest$year <- as.Date(as.yearqtr(invest$year))
 m <- ggplot(invest, aes(x = year)) +
   geom_line(aes(y = net_buybacks, colour = "Net buybacks")) + 
   geom_line(aes(y = investment, colour = "U.S Investment")) +
-  labs(y = "Percent of GDP", x = "Date") +
+  labs(y = "Percent of GDP", x = "Date", caption = "Source: Federal Reserve") +
   mytheme +
   scale_color_manual(values=c("#D55E00","#0072B2"))
 
@@ -126,13 +126,13 @@ m
 ```
 
 
-If corporations having more cash at hand doesn't lead to an increase in their investments, that won't bode well for the economy. Are buybacks holding back investment?
+If more cash for corporations doesn't lead to an increase in their investments, that won't bode well for the economy. Before I look at whether buybacks are holding back investment, a few things need to be defined.
 
-First, some definitions. A share buyback or a share repurchase is the act of returning cash to shareholders by buying common shares held by them. The shareholders that sell their shares will receive the cash and the shareholders that do not sell get a bigger piece of corporate profits. However, corporations may issue new shares in the same time period as they buy back shares, so I use net share buybacks in my graphs to take this into account. Net share buybacks also show us the amount that is left over for investment. 
+A share buyback or a share repurchase is the act of returning cash to shareholders by buying common shares held by them. The shareholders that sell their shares will receive the cash and the shareholders that do not sell get a bigger piece of corporate profits. However, corporations may issue new shares in the same time period as they buy back shares, so I use net share buybacks in my graphs to take this into account. Net share buybacks also show us the amount that is left over for investment. 
 
 I use investment defined as gross fixed capital formation undertaken by the non-financial corporate sector. Gross [fixed capital](https://en.wikipedia.org/wiki/Fixed_capital) formation measures the net increase in fixed capital investment which is a component of the [expenditure method in calculating GDP](http://www.econport.org/content/handbook/NatIncAccount/CalculatingGDP/Expenditures.html). Both data sets are from the [Federal Reserve](https://www.federalreserve.gov/econres/notes/ifdp-notes/corporate-buybacks-and-capital-investment-an-international-perspective-20170411.htm).
 
-### **Do share buybacks deter investment?**
+### **Are buybacks holding back investment?**
 
 The point made by those that say yes is that corporate executives are incentivised to buyback shares above all else as it is an easy method to drive up the share price. This is because buybacks reduce the number of shares in the market and that should increase the price of the remaining shares. There is evidence that [buybacks]( https://papers.ssrn.com/sol3/papers.cfm?abstract_id=250049) do [raise]( https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2664098) share prices. But this evidence has less to do with buybacks cutting the number of shares available and instead supports this [explanation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3082460) by Clifford Asness et al:
 
