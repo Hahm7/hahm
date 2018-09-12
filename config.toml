@@ -22,5 +22,4 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [params]
     description = "Hamdi Ahmed"
 
-    [params.logo]
-    logoText = "hello friend"
+   
