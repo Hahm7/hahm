@@ -1,10 +1,13 @@
 <nav class="nav">
-  <a href="{{ .Site.BaseURL }}" class="nav-logo">
-    <img src="{{ .Site.BaseURL }}images/{{ .Site.Params.logo.url }}" 
-         width="{{ .Site.Params.logo.width }}" 
-         height="{{ .Site.Params.logo.height }}" 
-         alt="{{ .Site.Params.logo.alt }}">
-  </a>
+  <a href="{{ .Site.BaseURL }}" style="text-decoration: none;">
+  <div class="logo">
+    {{ if .Site.Params.Logo.path }}
+      <img src="{{ .Site.Params.Logo.path }}" alt="{{ .Site.Params.Logo.alt }}" />
+    {{ else }}
+      <span class="logo__mark">></span>
+      <span class="logo__text">{{ with .Site.Params.Logo.logoText }}{{ . }}{{ else }}hello friend{{ end }}</span>
+      <span class="logo__cursor"></span>
+    {{ end }}
 
   <ul class="nav-links">
     {{ range .Site.Menus.main }}
