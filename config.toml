@@ -20,10 +20,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     weight = -110
 
 [params]
-    description = ""
+    description = "Hamdi Ahmed"
 
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
+ 
