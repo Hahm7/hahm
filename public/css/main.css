@@ -161,13 +161,13 @@ blockquote {
 .article-content a {
   text-decoration: none;
   color: inherit;
-  border-bottom: medium solid #bcdceb;
+  border-bottom: medium solid #0066CC;
   transition: border-color 600ms;
 }
 
 .article-content a:hover,
 .article-content a:active {
-  border-color: #4682B4;
+  border-color: #0072B2;
 }
 
 .article-content hr {
