@@ -134,13 +134,12 @@ I use investment defined as gross fixed capital formation undertaken by the non-
 
 ### **Are buybacks holding back investment?**
 
-<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3082460" target="_blank">explanation</a>
-
 The point made by those that say yes is that corporate executives are incentivised to buyback shares above all else as it is an easy method to drive up the share price. This is because buybacks reduce the number of shares in the market and that should increase the price of the remaining shares. There is evidence of <a href=" https://papers.ssrn.com/sol3/papers.cfm?abstract_id=250049" target="_blank">buybacks</a> raising share <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2664098" target="_blank">prices</a>. But this evidence has less to do with buybacks cutting the number of shares available and instead supports this <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3082460" target="_blank">explanation</a> by Clifford Asness et al:
 
 >First, repurchases might signal that management believes that shares are undervalued…Second, because interest payments are tax deductible, debt financed repurchases can be viewed as good news due to the resulting lower tax burden. Third, investors may feel as though it is better for management to return excess cash to shareholders, rather than chasing less economic “pet” projects. This kind of agency cost is often characterized as “empire building,” and avoiding it has long been viewed as one of the benefits of returning cash to shareholders.
 
-If buybacks don’t deter investment through the lure of higher share prices, then they may do so through the lure of higher earnings per [share](http://uk.businessinsider.com/contribution-buybacks-eps-growth-2015-11):
+
+If buybacks don’t deter investment through the lure of higher share prices, then they may do so through the lure of higher earnings per <a href="http://uk.businessinsider.com/contribution-buybacks-eps-growth-2015-11" target="_blank">share</a>:
 
 >Basically, earnings per share are earnings divided by the number of shares outstanding. So, as a company's earnings decrease, management is able to lessen the blow on a per-share basis by reducing the share count through buybacks. As revenue and earnings deteriorate, the buybacks bolster the EPS.
 
@@ -151,15 +150,15 @@ that decreased cash means lower earnings, either due to less interest earned on 
 returns from other uses of the cash. Only if the cash that is used for share repurchases is truly idle (sitting
 in the Chairman’s desk drawer) would we agree that share repurchases increase EPS.
 
-A point this Mckinsey article [supports](https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/how-share-repurchases-boost-earnings-without-improving-returns):
+A point this Mckinsey article <a href="https://www.mckinsey.com/business-functions/strategy-and-corporate-finance/our-insights/how-share-repurchases-boost-earnings-without-improving-returns" target="_blank">supports</a>:
 
 >The idea that share repurchases create value by increasing EPS also errs in its failure to consider other possible uses of the cash, such as paying dividends, repaying debt, increasing cash balances, or investing in new growth opportunities. 
 
-In [theory](https://corporatefinanceinstitute.com/resources/knowledge/finance/hurdle-rate-definition/), an investment should be made if its return exceeds its hurdle rate and less cash being available through share repurchases shouldn't stop the investment going ahead since cash is not the only source of funds for a [corporation](https://www.oecd-ilibrary.org/economics/understanding-financial-accounts/the-financing-of-non-financial-corporations_9789264281288-8-en). What could discourage investment is that the benefits come in the long run and the Mckinsey report shows that share repurchases are more lucrative than investment in the short run. 
+In <a href="https://corporatefinanceinstitute.com/resources/knowledge/finance/hurdle-rate-definition/" target="_blank">theory</a>, an investment should be made if its return exceeds its hurdle rate and less cash being available through share repurchases shouldn't stop the investment going ahead since cash is not the only source of funds for a <a href="https://www.oecd-ilibrary.org/economics/understanding-financial-accounts/the-financing-of-non-financial-corporations_9789264281288-8-en" target="_blank">corporation</a>. What could discourage investment is that the benefits come in the long run and the Mckinsey report shows that share repurchases are more lucrative than investment in the short run. 
 
 >In this simple example, we’ve assumed that the company earned an immediate 15 percent return on its investment. That’s often not realistic, since there will be a lag between when a company invests and when it realizes a return. For example, if the company didn’t earn a return until year three, its EPS for the first two years would be higher from share repurchases than it would be from investing. This explains the temptation to repurchase shares instead of investing. With a share repurchase, the effect on EPS is immediate, and with investing, it is delayed. 
 
-The longer the time period, the riskier the venture becomes because it is harder to predict out into the distant future and an investment which looked profitable at the time may turn out to be a loss maker. Capital expenditure needs to be planned before it’s undertaken and so we may see this rise in the future but things like a possible trade war doesn't [help](https://www.telegraph.co.uk/business/2018/06/20/us-businesses-putting-investment-trade-war-worries-fed-chief/).
+The longer the time period, the riskier the venture becomes because it is harder to predict out into the distant future and an investment which looked profitable at the time may turn out to be a loss maker. Capital expenditure needs to be planned before it’s undertaken and so we may see this rise in the future but things like a possible trade war doesn't <a href="https://www.telegraph.co.uk/business/2018/06/20/us-businesses-putting-investment-trade-war-worries-fed-chief/" target="_blank">help</a>.
 
 So in the short term, buybacks can artificially raise EPS and corporate executives whose compensation is based on stock options will have an incentive to do this as Clifford Asness et al recognize:
 
@@ -168,7 +167,7 @@ repurchases should not increase EPS over time. However, a carefully timed share 
 of an earnings announcement, can reduce share count and thus mechanically increase earnings per share
 relative to what it would have been absent the repurchase. 
 
-Indeed, there’s evidence which suggests incentives could be skewed in S&P500 [companies](https://hbr.org/2014/09/profits-without-prosperity):
+Indeed, there’s evidence which suggests incentives could be skewed in S&P500 <a href="https://hbr.org/2014/09/profits-without-prosperity" target="_blank">companies</a>:
 
 > Consider the 10 largest repurchasers, which spent a combined $859 billion on buybacks, an amount equal to 68% of their combined net income, from 2003 through 2012. During the same decade, their CEOs received, on average, a total of $168 million each in compensation. On average, 34% of their compensation was in the form of stock options and 24% in stock awards. At these companies the next four highest-paid senior executives each received, on average, $77 million in compensation during the 10 years—27% of it in stock options and 29% in stock awards.
 
@@ -178,7 +177,7 @@ This can be addressed easily though:
 simple solution would be modification of compensation contracts to adjust EPS growth for repurchase
 effects, akin to adjustments often made for dividend decisions in the context of employee share options. 
 
-There doesn’t seem to be strong evidence that shows higher share prices and EPS are the sole drivers of buyback decisions. If anything, the fed data shows the long-term correlation between net buybacks and investment is positive (0.21) and the correlation in the last 20 years (0.53) has been stronger. Correlation doesn't equal causation but if buybacks were funded by cutting investment, we would at least see a negative correlation between the two.  At worst, companies could be giving back money to shareholders because of a lack of profitable projects to invest in. This may be bad for individual companies and shareholders but this may not be a bad thing for the economy as a whole as  John Cochrane [explains](https://johnhcochrane.blogspot.com/2017/12/the-buyback-fallacy.html):
+There doesn’t seem to be strong evidence that shows higher share prices and EPS are the sole drivers of buyback decisions. If anything, the fed data shows the long-term correlation between net buybacks and investment is positive (0.21) and the correlation in the last 20 years (0.53) has been stronger. Correlation doesn't equal causation but if buybacks were funded by cutting investment, we would at least see a negative correlation between the two.  At worst, companies could be giving back money to shareholders because of a lack of profitable projects to invest in. This may be bad for individual companies and shareholders but this may not be a bad thing for the economy as a whole as  John Cochrane <a href="https://johnhcochrane.blogspot.com/2017/12/the-buyback-fallacy.html" target="_blank">explains</a>:
 
 >If company 1 doesn't have any good investment ideas, even after the tax cut, and company 2 does have some good investment ideas, made better after the tax cut, the economy needs to get money from company 1 to company 2. Company 1 could buy company 2; company 1 could invest in company 2 by buying its stock or buying its debt (all that "cash" you hear about); company 1 could return money to shareholders, and the shareholders could invest in company 2. They're all the same, to economics. Of all the ways to do this, actually, the last might well be the most efficient. Shareholders might have better ideas about good investments than managers of a company that doesn't have any good investment ideas.
 
