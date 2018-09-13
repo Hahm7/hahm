@@ -7,7 +7,6 @@ body {
 
 body {
   font-family: 'Merriweather', serif;
-  color: #221;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
@@ -139,7 +138,7 @@ blockquote {
   padding: 0 15px;
   font-size: 16px;
   line-height: 1.7;
-  color: #555;
+  color: #36363A;
 }
 
 .article-title {
