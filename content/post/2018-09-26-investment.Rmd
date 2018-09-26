@@ -100,6 +100,12 @@ volatile.plot<-function(i=1){
          subtitle="Seasonally adjusted nominal index (2000Q1=100, log scale)") 
 }
 
+
+
+```
+
+```{r echo = FALSE, message = FALSE, fig.align='center'}
+
 volatile.plot(M) 
 
 volatile_gif <- save_gif({for (i in seq(1,M)){  
@@ -116,8 +122,5 @@ volatile_gif <- save_gif({for (i in seq(1,M)){
 ```
 
 
-```{r echo = FALSE, fig.align='center'}
 
-utils::browseURL(volatile_gif)
 
-```
