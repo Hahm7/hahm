@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Natrium Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Investment</title>
+      <link>/investment/</link>
+      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/investment/</guid>
+      <description>/* resize the widget container */.plotly { width: 100% !important;}/* center the widget */div.svg-container {margin: auto !important;}Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us. What follows next is a gross oversimplification of space travel. If we assume humans could travel through space at a speed of 56,000 km/h, it would take 81,000 years to reach the planet.</description>
+    </item>
     
     <item>
       <title>Buybacks &amp; Investment</title>
