@@ -20,7 +20,7 @@ div.svg-container {
 </style>
 
 
-Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us. What follows next is a gross oversimplification of space travel. If we assume humans could travel through space at a speed of 56,000 km/h, it would take 81,000 years to reach the planet. We of course decide to colonise it but we can’t live for 81,000 years — the current world average life expectancy is 70.5 years. So, let’s assume our next best idea is to go there by using a generational ship. This ship would sustain humans for generations until the destination is reached. Those aboard the ship will live and die on it, giving birth to the next generation along the way until the final generation reaches the planet. 
+Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us. What follows next is a gross oversimplification of space travel. If we assume humans could travel through space at a speed of 56,000 km/h, it would take 81,000 years to reach the planet. We of course decide to colonise it but we can’t live for 81,000 years — the current world average life expectancy is 70.5 years. So, let’s assume our next best idea is to go there by using a generational ship, where this ship would sustain humans for generations until the destination is reached. Those aboard the ship will live and die on it, giving birth to the next generation along the way until the final generation reaches the planet. 
 
 Would we do it? 
 
@@ -32,9 +32,9 @@ This is the same problem with investment. It takes time for the benefits to show
 
 >Investment is central to the functioning of any economy. The process of committing time, resources, and money so that we can produce useful things in the future is, from an economic point of view, a defining part of what businesses, governments, and individuals do.
 
-That’s from Jonathan Haskel’s and Stian Westlake’s book Capitalism without Capital. Investment is what allows me to write this post on a laptop instead on pen and paper. It’s what allows me to research this topic on the internet instead of drudging away in the library, sifting through a mountain of books. It’s also what allows you to read this post in your home, place of work or on public transportation without carrying around pieces of paper. 
+That’s from Jonathan Haskel’s and Stian Westlake’s book *Capitalism without Capital*. Investment is what allows me to write this post on a laptop instead on pen and paper. It’s what allows me to research this topic on the internet instead of drudging away in the library, sifting through a mountain of books. It’s also what allows you to read this post in your home, place of work or on public transportation without carrying around pieces of paper. 
 
-Investment is a component of GDP — a measure of an economy’s output. It’s the most volatile component as the animation below shows as it quickly rises and falls based on how optimistic firms are about the future. 
+Investment is a component of GDP — a measure of an economy’s output. It’s the most volatile component as the animation below shows, it rises and falls based on how optimistic firms are about the future. 
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
   library(readxl)
@@ -47,7 +47,7 @@ Investment is a component of GDP — a measure of an economy’s output. It’s 
   library(tidyverse)
   library(data.table)
 
-mydir <- "C:/Users/Hamdi/Desktop/Website/Hahm"
+mydir <- "C:/Users/Hamdi/Desktop/Website/Hahm/static/images"
 
 volatile2 <-read_excel("volatility2.xlsx")
 
@@ -73,19 +73,19 @@ blist<-c("investment","consumption","gov_expen")
 
 volatile.dt2<-data.table(volatile.df)[year(date)>1970 & indicator %in% blist,]
 
-xlist<-unique(volatile.dt2[year(date)>1980]$date)
+xlist<-unique(volatile.dt2[year(date)>1979]$date)
 
 M<-length(xlist)
 
 
 volatile.plot<-function(i=1){
-  ggplot(data=volatile.dt2[year(date)>1980 & 
+  ggplot(data=volatile.dt2[year(date)>1979 & 
                     date<=xlist[i] &
                     indicator %in% blist],
          aes(x=date,y=percent,color=indicator,linetype=indicator,label=indicator))+
     scale_color_manual(values=c("#CC79A7", "#0072B2", "#D55E00"))+
     geom_line(size=1.1)+
-    scale_x_date(breaks=seq(xlist[1],xlist[M]+years(1),"1 year"),
+    scale_x_date(breaks=seq(xlist[1],xlist[M]+years(1),"5 year"),
                  date_labels="%Y",limits=c(xlist[1],xlist[M]+years(1)))+
     geom_text(data=volatile.dt2[date==xlist[i] &
                          indicator %in% blist],
@@ -100,15 +100,42 @@ volatile.plot<-function(i=1){
          subtitle="Seasonally adjusted nominal index (2000Q1=100, log scale)") 
 }
 
+```
+
+
+```{r, animation.hook='gifski'}
+
+volatile.plot(M) 
+
+```
+
+```{r}
+
+files = list.files(
+  'content/', '[.](Rmd)$', full.names = TRUE,
+  recursive = TRUE
+)
+
+```
+
+
+```{r}
+
+for( f in files ){
+  x <- readLines(f)
+  y <- gsub( '\\{\\{ site.url\\}\\}', "../../../..", x )
+  cat(y, file=f, sep="\n")}
 
 
 ```
 
-```{r echo = FALSE, message = FALSE, fig.align='center'}
 
-volatile.plot(M) 
 
-volatile_gif <- save_gif({for (i in seq(1,M)){  
+
+```{r}
+
+
+gif_file <- save_gif({for (i in seq(1,M)){  
   g<- volatile.plot(i)
   print(g)
   print(paste(i,"out of",M))
@@ -117,10 +144,10 @@ volatile_gif <- save_gif({for (i in seq(1,M)){
     print(g)
     print(paste(ii,"out of",20))
   }
-}, gif_file= paste0(mydir,"/volatile.gif"),width = 1200, height = 800, res = 144, delay=1/10)
+}, gif_file = paste0(mydir,"/volatile.gif"), width = 1200, height = 800, res = 144, delay=1/10)
+utils::browseURL(gif_file)
 
 ```
-
 
 
 
