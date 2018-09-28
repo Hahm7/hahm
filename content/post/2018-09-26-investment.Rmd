@@ -47,108 +47,16 @@ Investment is a component of GDP — a measure of an economy’s output. It’s 
   library(tidyverse)
   library(data.table)
 
-mydir <- "C:/Users/Hamdi/Desktop/Website/Hahm/static/images"
-
-volatile2 <-read_excel("volatility2.xlsx")
-
-colnames(volatile2)[1]<-"cycle"
-
-volatile2$year<-substr(volatile2$cycle,1,4)
-
-volatile2$month<-as.numeric(substr(volatile2$cycle,7,7))*3
-
-volatile2$date<-as.Date(ISOdate(volatile2$year,volatile2$month,1))
-
-volatile2 %>% select(-cycle,-year,-month) %>% 
-  gather(indicator,percent,-date) ->volatile.df
-
-mycaption<-"Mack, A., and E. Martinez-Garcia. 2011. 'A Cross-Country Quarterly Database of Real House Prices: A Methodological Note.' Globalization and Monetary Policy Institute Working Paper No. 99, Federal Reserve Bank of Dallas."
-
-mycaption<-str_wrap(mycaption,width=80) #wrap the caption
-
-mycap1<-"@lenkiefer Source: Dallas Federal Reserve International House Price Database  http://www.dallasfed.org/institute/houseprice/"  #caption part 2
-
-
-blist<-c("investment","consumption","gov_expen")
-
-volatile.dt2<-data.table(volatile.df)[year(date)>1970 & indicator %in% blist,]
-
-xlist<-unique(volatile.dt2[year(date)>1979]$date)
-
-M<-length(xlist)
-
-
-volatile.plot<-function(i=1){
-  ggplot(data=volatile.dt2[year(date)>1979 & 
-                    date<=xlist[i] &
-                    indicator %in% blist],
-         aes(x=date,y=percent,color=indicator,linetype=indicator,label=indicator))+
-    scale_color_manual(values=c("#CC79A7", "#0072B2", "#D55E00"))+
-    geom_line(size=1.1)+
-    scale_x_date(breaks=seq(xlist[1],xlist[M]+years(1),"5 year"),
-                 date_labels="%Y",limits=c(xlist[1],xlist[M]+years(1)))+
-    geom_text(data=volatile.dt2[date==xlist[i] &
-                         indicator %in% blist],
-              hjust=0,nudge_x=30,size=2.5)+ 
-    geom_hline(yintercept=0,linetype=2)+
-    scale_y_continuous(breaks=seq(-30,45,5),limits=c(-35,40))+
-    theme(legend.position="none",
-          plot.caption=element_text(hjust=0,size=7),
-          plot.subtitle=element_text(face="italic"))+
-    labs(x="",y="",title="Global house price trends through 2018Q1",
-         caption=paste0(mycap1,"\n",mycaption),
-         subtitle="Seasonally adjusted nominal index (2000Q1=100, log scale)") 
-}
-
 ```
 
-
-```{r, animation.hook='gifski'}
-
-volatile.plot(M) 
-
-```
-
-```{r}
-
-files = list.files(
-  'content/', '[.](Rmd)$', full.names = TRUE,
-  recursive = TRUE
-)
-
-```
-
-
-```{r}
-
-for( f in files ){
-  x <- readLines(f)
-  y <- gsub( '\\{\\{ site.url\\}\\}', "../../../..", x )
-  cat(y, file=f, sep="\n")}
-
-
-```
-
-
-
-
-```{r}
-
-
-gif_file <- save_gif({for (i in seq(1,M)){  
-  g<- volatile.plot(i)
-  print(g)
-  print(paste(i,"out of",M))
-}
-  for (ii in 1:20){
-    print(g)
-    print(paste(ii,"out of",20))
-  }
-}, gif_file = paste0(mydir,"/volatile.gif"), width = 1200, height = 800, res = 144, delay=1/10)
-utils::browseURL(gif_file)
-
-```
 
 ![](C:/Users/Hamdi/Desktop/Website/Hahm/static/images/volatile.gif) 
+
+![](C:/Users/Hamdi/Desktop/Website/Hahm/static/images/runa.jpg)
+
+
+
+
+
 
 
