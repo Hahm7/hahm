@@ -50,7 +50,7 @@ Investment is a component of GDP — a measure of an economy’s output. It’s 
 ```
 
 
-![](C:/Users/Hamdi/Desktop/website/hahm/themes/hugo-natrium-theme/static/images/volatile.gif) 
+![](/images/volatile.gif) 
 
 ![](C:/Users/Hamdi/Desktop/Website/Hahm/static/images/runa.jpg)
 
