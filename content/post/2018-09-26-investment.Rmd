@@ -34,7 +34,8 @@ This is the same problem with investment. It takes time for the benefits to show
 
 That’s from Jonathan Haskel’s and Stian Westlake’s book *Capitalism without Capital*. Investment is what allows me to write this post on a laptop instead on pen and paper. It’s what allows me to research this topic on the internet instead of drudging away in the library, sifting through a mountain of books. It’s also what allows you to read this post in your home, place of work or on public transportation without carrying around pieces of paper. 
 
-Investment is a component of GDP — a measure of an economy’s output. It’s the most volatile component as the animation below shows, it rises and falls based on how optimistic firms are about the future. 
+Investment helps raise an economy’s capital stock, which is another way of saying it increases the number of tools we can work with. These new tools and technologies make an impact on our productivity — how much we’re able to get done with the same amount of inputs. As a component of GDP, measuring investment helps us measure an economy’s output. It’s the most volatile component as the animation below shows, it rises and falls by larger amounts based on how optimistic firms are about the future. 
+
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
   library(readxl)
