@@ -28,14 +28,11 @@ Would we do it?
 
 This is the same problem with investment. It takes time for the benefits to show and in that time, it can be rendered useless by new technology. Could this sort of thinking be discouraging businesses from investments?
 
-### **Why is investment important?**
-
 >Investment is central to the functioning of any economy. The process of committing time, resources, and money so that we can produce useful things in the future is, from an economic point of view, a defining part of what businesses, governments, and individuals do.
 
-That’s from Jonathan Haskel’s and Stian Westlake’s book *Capitalism without Capital*. Investment is what allows me to write this post on a laptop instead on pen and paper. It’s what allows me to research this topic on the internet instead of drudging away in the library, sifting through a mountain of books. It’s also what allows you to read this post in your home, place of work or on public transportation without carrying around pieces of paper. 
+That’s from Jonathan Haskel’s and Stian Westlake’s book Capitalism without Capital. Investment is what allows me to write this post on a laptop instead on pen and paper. It’s what allows me to research this topic on the internet instead of drudging away in the library, sifting through a mountain of books. It’s also what allows you to read this post in your home, place of work or on public transportation without carrying around pieces of paper. Investment helps raise an economy’s capital stock, which is another way of saying it increases the number of tools we can work with. These new tools and technologies make an impact on our productivity — how much we’re able to get done with the same amount of inputs. This includes investment in education where knowing more allows you to do more or do things in a better way.
 
-Investment helps raise an economy’s capital stock, which is another way of saying it increases the number of tools we can work with. These new tools and technologies make an impact on our productivity — how much we’re able to get done with the same amount of inputs. As a component of GDP, measuring investment helps us measure an economy’s output. It’s the most volatile component as the animation below shows, it rises and falls by larger amounts based on how optimistic firms are about the future. 
-
+As a component of GDP, measuring investment helps us to measure an economy’s output. It’s the most volatile component as the animation below shows, it rises and falls by larger amounts based on how optimistic firms are about the future.
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
   library(readxl)
@@ -53,7 +50,7 @@ Investment helps raise an economy’s capital stock, which is another way of say
 
 ![](/images/volatile.gif) 
 
-
+Part of this is due to investment being optional. You need to buy food and pay for shelter regularly to sustain yourself but you don’t need to buy, for example, a new machinery for your business or a certain skill if you think it’s going to be worthless in the future. Even if you plan to invest, future outcomes are uncertain and with the gains of investments being realised in the long term, it’s not a surprise that investment activity is sensitive to this uncertainty.
 
 
 
