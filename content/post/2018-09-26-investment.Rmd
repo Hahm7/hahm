@@ -67,4 +67,8 @@ Both government and non-government expenditure on fixed capital formation as a p
 
 A natural place to start is to see if funding an investment is expensive. For governments, the yield for their 10-year bonds are used as a signal of the government’s cost of borrowing. As you can see, the long-term bond yield for the G7 nations has been trending down since the 90s, even reaching all-time lows in recent years.
 
+<iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=lunJ&width=670&height=475" scrolling="no" frameborder="0"style="overflow:hidden; width:670px; height:525px;" allowTransparency="true"></iframe>
+
+It’s the same thing for corporations as the long run real interest rates have been trending downwards and are at all-time lows. It should have been cheaper to finance investment for G7 businesses and governments in the last 20 years but we have not seen an uptick in investment.
+
 <iframe src="https://data.oecd.org/chart/5ksO" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/5ksO" target="_blank">OECD Chart: Long-term interest rates, Total, % per annum, Monthly, Aug 1990 – Jul 2018</a></iframe>
