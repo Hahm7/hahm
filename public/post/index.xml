@@ -26,7 +26,7 @@
       <pubDate>Sun, 12 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/buybacks-investment/</guid>
-      <description>/* resize the widget container */.plotly { width: 100% !important;}/* center the widget */div.svg-container {margin: auto !important;}Since the Trump tax cuts were approved, there’s been an expected fall in tax revenues from corporations but there’s also been a surge in buybacks.
+      <description>.plotly { width: 100% !important;}div.svg-container {margin: auto !important;}Since the Trump tax cuts were approved, there’s been an expected fall in tax revenues from corporations but there’s also been a surge in buybacks.
 It’s fine though since corporate tax cuts are supposed to lead to higher business investment, but there’s claims that companies are foregoing investment and using the extra cash to buyback their shares.</description>
     </item>
     
