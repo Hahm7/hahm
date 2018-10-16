@@ -27,11 +27,7 @@
       
       <guid>/buybacks-investment/</guid>
       <description>/* resize the widget container */.plotly { width: 100% !important;}/* center the widget */div.svg-container {margin: auto !important;}Since the Trump tax cuts were approved, there’s been an expected fall in tax revenues from corporations but there’s also been a surge in buybacks.
-{&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[15706],&#34;y&#34;:[1.42223397732601],&#34;text&#34;:&#34;net_buyback_gdp: 1.422234
-colour: Net Buybacks
-observation_date: 2013-01-01
-frame: 2013-01-01&#34;,&#34;frame&#34;:&#34;2013-01-01&#34;,&#34;type&#34;:&#34;scatter&#34;,&#34;mode&#34;:&#34;lines&#34;,&#34;line&#34;:{&#34;width&#34;:3.77952755905512,&#34;color&#34;:&#34;rgba(213,94,0,1)&#34;,&#34;dash&#34;:&#34;solid&#34;},&#34;hoveron&#34;:&#34;points&#34;,&#34;name&#34;:&#34;Net Buybacks&#34;,&#34;legendgroup&#34;:&#34;Net Buybacks&#34;,&#34;showlegend&#34;:true,&#34;xaxis&#34;:&#34;x&#34;,&#34;yaxis&#34;:&#34;y&#34;,&#34;hoverinfo&#34;:&#34;text&#34;,&#34;visible&#34;:true},{&#34;x&#34;:[15706],&#34;y&#34;:[1.78543262121449],&#34;text&#34;:&#34;corporate_tax_gdp: 1.7854326
-colour: Corporate Tax Income</description>
+It’s fine though since corporate tax cuts are supposed to lead to higher business investment, but there’s claims that companies are foregoing investment and using the extra cash to buyback their shares.</description>
     </item>
     
     <item>
