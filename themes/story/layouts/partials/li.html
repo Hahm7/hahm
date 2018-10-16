@@ -16,14 +16,7 @@
 					{{- cond (eq .Site.Params.titlecase true) (.Title | title | markdownify) (.Title | markdownify) -}}
 					</a></h1>
 					<div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-						{{ if eq .Section "slides" }}
-							{{ .Description | markdownify }}
-							<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="{{ .Permalink }}">View Slideshow <i class="fas fa-chevron-circle-right"></i></a></p>
-						{{ else if eq .Section "talks" }}
-							{{ .Summary }}
-							<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="{{ .Permalink }}">Talk Details <i class="fas fa-chevron-circle-right"></i></a></p>
-						{{ else }}
-							{{ .Summary }}
+						{{ .Summary }}
 							{{ with .Description }}
       {{ $.Scratch.Set "summary" (markdownify .) }}
     {{ else }}
@@ -31,7 +24,6 @@
     {{ end }}
     {{ $.Scratch.Get "summary" }}
 							<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="{{ .Permalink }}">Continue Reading <i class="fas fa-chevron-circle-right"></i></a></p>
-						{{ end }}
 					</div>
 				</div>
 			</div>
