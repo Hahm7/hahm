@@ -17,17 +17,19 @@
 					</a></h1>
 					<div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
 						{{ if eq .Section "slides" }}
+							{{ .Description | markdownify }}
+							<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="{{ .Permalink }}">View Slideshow <i class="fas fa-chevron-circle-right"></i></a></p>
+						{{ else if eq .Section "talks" }}
+							{{ .Summary }}
+							<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="{{ .Permalink }}">Talk Details <i class="fas fa-chevron-circle-right"></i></a></p>
+						{{ else }}
+							{{ .Summary }}
 							{{ with .Description }}
       {{ $.Scratch.Set "summary" (markdownify .) }}
     {{ else }}
       {{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
     {{ end }}
     {{ $.Scratch.Get "summary" }}
-						{{ else if eq .Section "talks" }}
-							{{ .Summary }}
-							<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="{{ .Permalink }}">Talk Details <i class="fas fa-chevron-circle-right"></i></a></p>
-						{{ else }}
-							{{ .Summary }}
 							<p class="pa0 sans-serif f7"><a class="ba br3 pa2 link" href="{{ .Permalink }}">Continue Reading <i class="fas fa-chevron-circle-right"></i></a></p>
 						{{ end }}
 					</div>
