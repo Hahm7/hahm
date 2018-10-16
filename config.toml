@@ -1,7 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "Natrium Theme"
-theme = "story"
+theme = "hugo-natrium-theme"
 preserveTaxonomyNames = true
 rssLimit = 10
 paginate = 10
