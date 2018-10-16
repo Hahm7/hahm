@@ -12,7 +12,6 @@ tags: []
   width: 100% !important;
 }
 
-
 div.svg-container {
   margin: auto !important;
 }
@@ -88,7 +87,7 @@ p <- ggplotly(d, ) %>%
 
 ```
 
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r, echo = FALSE}
 p
 ```
 
