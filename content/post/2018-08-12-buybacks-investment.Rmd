@@ -27,6 +27,7 @@ mytheme <- theme(axis.line.y = element_line(colour = "black", size = 0),
                  axis.title.y = element_text(margin = margin(15,15,0,0), face = "bold"),
                  legend.key.size = unit(1.5, "cm"),
                  legend.title = element_blank(),
+                 legend.position="bottom",
                  plot.title = element_text(size = 32, hjust = 0.5),
                  strip.text = element_text(size = 14, face = "bold"),
                  panel.spacing = unit(0, "lines"))
@@ -47,21 +48,33 @@ accumulate_by <- function(dat, var) {
 f <- plot %>%
   accumulate_by(~observation_date)
 
-
 d <- ggplot(f, aes(observation_date, frame = frame)) +
-  geom_line(aes(y = net_buyback_gdp, colour = "Net Buybacks"), size = 1) + 
-  geom_line(aes(y = corporate_tax_gdp, colour = "Corporate Tax Income"), size = 1) +
+  geom_line(aes(y = net_buyback_gdp, color = "net buybacks"), size = 1) + 
+  geom_line(aes(y = corporate_tax_gdp, color = "corporate tax revenue"), size = 1) +
   geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
-  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[16], y = 0, color = "black", size = 4.5) +
+  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[15], y = 0, color = "black", size = 4.5) +
   labs(y = "Percent of GDP", x = "Date") +
   mytheme +
-  scale_color_manual(values=c("#009E73", "#D55E00")) 
+  guides(size = guide_legend(title.position="top", title.hjust = 0.5))+
+  scale_color_manual(values=c("#009E73", "#D55E00"))
+
+
 ```
+
+
+```{r}
+
+d
+
+```
+
 
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 p <- ggplotly(d, ) %>%
-  layout(legend=list(y=1, yanchor="top", font = list(size = 12, face = "bold"))) %>%
+  layout(legend=list(y = 0, orientation = "h",  
+                     xanchor = "center",  
+                     x = 0.5)) %>%
    animation_opts(
     frame = 100,
     easing = "linear",
