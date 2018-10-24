@@ -72,7 +72,7 @@ d
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 p <- ggplotly(d, ) %>%
-  layout(legend=list(y = 0, orientation = "h",  
+  layout(legend=list(y = 1.2, orientation = "h",  
                      xanchor = "center",  
                      x = 0.5)) %>%
    animation_opts(
