@@ -11,7 +11,7 @@ tags: []
 <style>
 /* resize the widget container */
 .plotly { 
-  width: 100% !important;
+  width: auto !important;
 }
 
 /* center the widget */

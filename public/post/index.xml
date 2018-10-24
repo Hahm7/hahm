@@ -26,7 +26,7 @@
       <pubDate>Sun, 12 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/buybacks-investment/</guid>
-      <description>/* resize the widget container */.plotly { width: 100% !important;}/* center the widget */div.svg-container {margin: auto !important;}Since the Trump tax cuts were approved, there’s been an expected fall in tax revenues from corporations but there’s also been a surge in buybacks.
+      <description>/* resize the widget container */.plotly { width: auto !important;}/* center the widget */div.svg-container {margin: auto !important;}Since the Trump tax cuts were approved, there’s been an expected fall in tax revenues from corporations but there’s also been a surge in buybacks.
 {&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[15706],&#34;y&#34;:[1.42791695944698],&#34;text&#34;:&#34;net_buyback_gdp: 1.427917
 colour: net buybacks
 observation_date: 2013-01-01
