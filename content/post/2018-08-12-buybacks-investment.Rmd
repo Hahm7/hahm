@@ -6,16 +6,7 @@ slug: buybacks-investment
 categories: []
 tags: []
 ---
-<style>
 
-.plotly { 
-  width: 100% !important;
-}
-
-div.svg-container {
-  margin: auto !important;
-}
-</style>
 
 Since the Trump tax cuts were approved, there's been an expected fall in tax revenues from corporations but there's also been a surge in buybacks.
 
