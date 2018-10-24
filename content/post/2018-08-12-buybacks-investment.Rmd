@@ -62,17 +62,11 @@ d <- ggplot(f, aes(observation_date, frame = frame)) +
 ```
 
 
-```{r}
-
-d
-
-```
-
 
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 p <- ggplotly(d, ) %>%
-  layout(legend=list(y = 1.2, orientation = "h",  
+  layout(legend=list(y = -0.75, orientation = "h",  
                      xanchor = "center",  
                      x = 0.5)) %>%
    animation_opts(
