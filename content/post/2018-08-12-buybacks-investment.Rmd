@@ -64,7 +64,7 @@ d <- ggplot(f, aes(observation_date, frame = frame)) +
   geom_line(aes(y = net_buyback_gdp, color = "net buybacks"), size = 1) + 
   geom_line(aes(y = corporate_tax_gdp, color = "corporate tax revenue"), size = 1) +
   geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
-  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[15], y = 0, color = "black", size = 4.5) +
+  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[17], y = 0, color = "black", size = 4.5) +
   labs(y = "Percent of GDP", x = "Date") +
   mytheme +
   guides(size = guide_legend(title.position="top", title.hjust = 0.5))+
@@ -78,9 +78,10 @@ d <- ggplot(f, aes(observation_date, frame = frame)) +
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 p <- ggplotly(d, ) %>%
-  layout(legend=list(y = -0.5, orientation = "h",  
+  layout(legend=list(y = -0.6, orientation = "h",  
                      xanchor = "center",  
-                     x = 0.5)) %>%
+                     x = 0.5,
+                     size = 11)) %>%
    animation_opts(
     frame = 100,
     easing = "linear",
@@ -92,7 +93,7 @@ p <- ggplotly(d, ) %>%
       prefix = "Date"
     )
   )
-htmlwidgets::saveWidget(p, "manlike.html")
+
 
 
 ```
