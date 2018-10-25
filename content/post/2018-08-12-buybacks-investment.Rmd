@@ -130,11 +130,8 @@ m <- ggplot(invest, aes(x = year)) +
 
 ```
 
-```{r echo = FALSE, fig.align='center'}
 
-m
-
-```
+![](/images/plotname.png) 
 
 
 If more cash for corporations doesn't lead to an increase in their investments, that won't bode well for the economy. Before I look at whether buybacks are holding back investment, a few things need to be defined.
