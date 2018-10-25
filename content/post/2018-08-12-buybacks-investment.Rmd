@@ -130,7 +130,7 @@ m <- ggplot(invest, aes(x = year)) +
 
 ```
 
-``` {r}
+```{r, echo = FALSE, message = FALSE}
 
 m
 
