@@ -78,7 +78,7 @@ d <- ggplot(f, aes(observation_date, frame = frame)) +
 
 ``` {r include = FALSE, message = FALSE, echo = FALSE}
 p <- ggplotly(d, ) %>%
-  layout(legend=list(y = -0.75, orientation = "h",  
+  layout(legend=list(y = -0.5, orientation = "h",  
                      xanchor = "center",  
                      x = 0.5)) %>%
    animation_opts(
@@ -96,8 +96,6 @@ htmlwidgets::saveWidget(p, "manlike.html")
 
 
 ```
-
-<iframe src=/content/post/manlike.html width=100% height="400"</iframe>
 
 
 ```{r, echo = FALSE, message = FALSE}
