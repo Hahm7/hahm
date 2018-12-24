@@ -54,7 +54,7 @@ As a component of GDP, measuring investment helps us to measure an economy’s o
 
 ![](/images/volatile.gif) 
 
-Part of this volatility is due to investment being optional. You need to buy food and pay for shelter regularly to sustain yourself but you don’t need to buy, for example, a new machinery for your business or learn a certain skill if you think it’s going to be worthless in the future. Even if you plan to invest, future outcomes are uncertain. With the gains of investment being realised in the long term, it’s not a surprise that investment activity is sensitive to this uncertainty.
+Part of this volatility is due to investment being optional. You need to buy food and pay for shelter regularly to sustain yourself but you don’t need to buy, for example, a new machinery for your business or learn a certain skill if you think it’s going to be worthless to you in the future. Even if you plan to invest, future outcomes are uncertain. With the gains of investment being realised in the long term, it’s not a surprise that investment activity is sensitive to this uncertainty.
 
 ### **What's happening to investment now?**
 
@@ -62,4 +62,6 @@ In my previous [post](https://hahm.netlify.com/buybacks-investment/), I looked a
 
 <iframe src="https://data.oecd.org/chart/5kSC" width=100% height="400" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="https://data.oecd.org/chart/5kSC" target="_blank">OECD Chart: Long-term interest rates, Total, % per annum, Monthly, Jan 1990 – Sep 2018</a></iframe>
 
-It should have been cheaper to finance investment for businesses in the last 20 years but we have not seen an uptick in investment. What if there’s nothing worth investing in? This viewpoint comes into conflict with the fact that corporate profits have been rising. 
+It should have been cheaper to finance investment for businesses in the last 20 years but we have not seen an uptick in investment. What if there’s nothing worth investing in? This viewpoint comes into conflict with the fact that rates of return and profits for non financial corporations have been stable. 
+
+![](/images/return.jpeg) 
