@@ -40,7 +40,7 @@ As a component of GDP, measuring investment helps us to measure an economy’s o
 
 <center>
 
-![](/images/volatile.gif) 
+![](/images/volatile.gif){width=110% height=400}  
 
 </center>
 
@@ -57,6 +57,6 @@ It should have been cheaper to finance investment for businesses in the last 20 
 
 <center>
 
-![](/images/return.jpg){width=120% height=400} 
+![](/images/return.jpg){width=110% height=400} 
 
 </center>
