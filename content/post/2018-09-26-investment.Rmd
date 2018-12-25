@@ -68,7 +68,7 @@ It should have been cheaper to finance investment for businesses in the last 20 
 
 ![](/images/return.jpg) 
 
-```{r fig.width=1, fig.height=10,echo=FALSE}
+```{r}
 library(png)
 library(grid)
 img <- readPNG("c:/users/hamdi/desktop/website/hahm/static/images/return.png")
