@@ -38,8 +38,12 @@ As a component of GDP, measuring investment helps us to measure an economy’s o
 
 ```
 
+<center>
 
 ![](/images/volatile.gif) 
+
+</center>
+
 
 Part of this volatility is due to investment being optional. You need to buy food and pay for shelter regularly to sustain yourself but you don’t need to buy, for example, a new machinery for your business or learn a certain skill if you think it’s going to be worthless to you in the future. Even if you plan to invest, future outcomes are uncertain. With the gains of investment being realised in the long term, it’s not a surprise that investment activity is sensitive to this uncertainty.
 
