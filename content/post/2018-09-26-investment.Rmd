@@ -5,9 +5,13 @@ date: '2018-09-26'
 slug: investment
 categories: []
 tags: []
-classes:
-- feature-no3dbook
 ---
+
+---
+classes:
+- feature-no
+---
+
 
 <style>
 /* resize the widget container */
@@ -15,10 +19,7 @@ classes:
   width: 100% !important;
 }
 
-/* center the widget */
-div.svg-container {
-  margin: auto !important;
-}
+
 </style>
 
 
@@ -68,9 +69,4 @@ It should have been cheaper to finance investment for businesses in the last 20 
 
 ![](/images/return.jpg) 
 
-```{r}
-library(png)
-library(grid)
-img <- readPNG("c:/users/hamdi/desktop/website/hahm/static/images/return.png")
- grid.raster(img)
-```
+
