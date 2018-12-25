@@ -52,9 +52,7 @@ td > code {
   padding: 0.15em 0.25em;
 }
 article img {
-  max-width: 120%;
-  margin:0 auto;
-  text-align:left;
+  max-width: 105%;
 }
 hr {
   height: 0px;
