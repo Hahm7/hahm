@@ -51,7 +51,9 @@ td > code {
   border-radius: 3px;
   padding: 0.15em 0.25em;
 }
-
+article img {
+  max-width: 100%;
+}
 hr {
   height: 0px;
   border-style: none none solid none;
