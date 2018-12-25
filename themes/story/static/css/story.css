@@ -53,8 +53,8 @@ td > code {
 }
 article img {
   max-width: 120%;
-  margin-left: auto;
-  margin-right: auto;
+  margin:0 auto;
+  text-align:left;
 }
 hr {
   height: 0px;
