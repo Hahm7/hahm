@@ -55,4 +55,4 @@ In my previous [post](https://hahm.netlify.com/buybacks-investment/), I looked a
 
 It should have been cheaper to finance investment for businesses in the last 20 years but we have not seen an uptick in investment. What if there’s nothing worth investing in? This viewpoint comes into conflict with the fact that rates of return and profits for non financial corporations have been rising. 
 
-<iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=mw0w&width=100%&height=400" scrolling="no" frameborder="0"style="overflow:hidden; width:100%; height:425px;" allowTransparency="true"></iframe>
+<iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=mw0w&width=100%&height=300" scrolling="no" frameborder="0"style="overflow:hidden; width:100%; height:325px;" allowTransparency="true"></iframe>
