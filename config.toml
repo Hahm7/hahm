@@ -6,6 +6,11 @@ paginate = 3
 theme = "aether"
 
 [params]
-brand = "aether"
-description = "aether Hugo theme for blogs"
-bgimg = "img/ignasi_pattern_s.png"
+    brand = "aether"
+    description = "aether Hugo theme for blogs"
+    bgimg = "img/ignasi_pattern_s.png"
+    
+    highlightjsVersion = "9.11.0"
+    highlightjsCDN = "//cdn.bootcss.com"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "gruvbox dark"
