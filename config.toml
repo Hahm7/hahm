@@ -27,6 +27,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [params]
     classes = ["feature-highlight"]
     highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "tomorrow night"
     
     
     description = ""
