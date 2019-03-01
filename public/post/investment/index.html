@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" dir="ltr">
   <head>
-  <link rel="stylesheet" href="/css/tomorrow-night.css" rel="stylesheet" id="theme-stylesheet">
+  <link rel="stylesheet" href="/css/gruvbox-dark.css" rel="stylesheet" id="theme-stylesheet">
   <script src="/js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <meta charset="utf-8" />
@@ -55,9 +55,15 @@ darken_swatch(amount = 0.3)
 
 windowsFonts(SansSerif=windowsFont(&quot;Microsoft Sans Serif Regular&quot;))
 
+marg = margin(10,15,0,0)
+
+capt = &quot;Source: Integrated Macroeconomic Accounts Of the United States&quot;
+
+title = &quot;Gross Nonfinancial Fixed Capital Formation (Percent of GDP)&quot;
+
 mytheme &lt;- theme(plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.x = element_text(margin = margin(10,15,0,0), size = 15, face = &quot;bold&quot;),
+                 axis.title.x = element_text(margin = marg, size = 15, face = &quot;bold&quot;),
                  axis.text.x = element_text(size=10),
                  axis.text.y = element_text(size=10)) 
   
@@ -65,11 +71,11 @@ mytheme &lt;- theme(plot.caption=element_text(hjust=0,size=9),
 plot &lt;- ggplot(df, aes(x =date)) +
   geom_line(aes(y = gfcf_gdp), size = 1.1) +
   scale_color_manual(values=c(&quot;#0072B2&quot;)) +
-  labs(x = &quot;Date&quot;, caption = &quot;Source: Integrated Macroeconomic Accounts Of the United States&quot;) +
+  labs(x = &quot;Date&quot;, caption = capt) +
   ylab(NULL) +
   ylim(0, 15) +
   scale_x_continuous(breaks=seq(1960, 2017, 5))+
-  ggtitle(&quot;Gross Nonfinancial Fixed Capital Formation (Percent of GDP)&quot;) +
+  ggtitle(title) +
   mytheme
   
 plot</code></pre>
