@@ -25,7 +25,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     weight = -110
 
 [params]
-    classes = ["feature-[no]highlight"]
+    classes = ["feature-highlight"]
     
     
     description = ""
