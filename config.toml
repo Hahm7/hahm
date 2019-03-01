@@ -1,45 +1,11 @@
 baseurl = "/"
-languageCode = "en-us"
-title = "Natrium Theme"
-theme = "story"
-preserveTaxonomyNames = true
-rssLimit = 10
-paginate = 10
-pygmentsCodefences = true
-pygmentsStyle = "native"
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-
-
-[permalinks]
-    post = "/:slug/"
-    page = "/:slug/"
-    
-[[menu.main]]
-    name = "Home"
-    url = "/post/"
-    weight = -110
-
-[[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = -110
+title = "Hugo Themes - aether"
+author = "Joe Hutchinson"
+canonifyurls = true
+paginate = 3
+theme = "aether"
 
 [params]
-    classes = ["feature-highlight"]
-    
-    highlightjsVersion = "9.11.0"
-    highlightjsCDN = "//cdn.bootcss.com"
-    highlightjsLang = ["r", "yaml"]
-    highlightjsTheme = "tomorrow night"
-    
-    MathJaxCDN = "//cdn.bootcss.com"
-    MathJaxVersion = "2.7.1"
-    
-    
-    description = ""
-
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
+brand = "aether"
+description = "aether Hugo theme for blogs"
+bgimg = "img/ignasi_pattern_s.png"

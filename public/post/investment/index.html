@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Investment &middot; Hugo Themes - aether</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.min.css" />
+  
+  <style>
+    body {
+      background: #ecedef url("/img/ignasi_pattern_s.png") repeat;
+    }
+  </style>
+</head>
+  <body class="single-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="/" class="nav-text">aether</a></h1>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="/" class="hamburger-menu-overlay-link">Home</a></li>
+      <li><a href="/categories/r" class="hamburger-menu-overlay-link">R</a></li>
+    </ul>
+  </div>
+</nav>
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+        	<h1 class="post-title">Investment</h1>
+          <p class="post-date">Posted <time datetime="2018-09-26">Sep 26, 2018</time></p>
+        </header>
+        
+        <p>Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us. <em>What follows next is a gross oversimplification of space travel</em>. If we assume humans could travel through space at a speed of 56,000 km/h, it would take 81,000 years to reach the planet. We of course decide to colonise it but we can’t live for 81,000 years — the current world average life expectancy is 70.5 years. So, let’s assume our next best idea is to go there by using a generational ship, where this ship would sustain humans for generations until the destination is reached. Those aboard the ship will live and die on it, giving birth to the next generation along the way until the final generation reaches the planet.</p>
+<p>Would we do it?</p>
+<p>81,000 years is obviously a long time and the first humans going aboard the generational ship are making choices based on their current technology. What if 43,587 years later, those back on earth discover new technology which would allow them to colonise the planet within 20 years. The offspring of those humans who boarded the generational ship would not reach the planet first, which was the main reason to go on the ship. With this in mind, would anyone choose to board the ship in the first place?</p>
+<p>These are the kind of issues that exist for companies making investment decisions. Because it takes time for the benefits of investment to show, it can be rendered useless by new technology. Could this sort of thinking be discouraging businesses from making investments?</p>
+<div id="why-is-business-investment-sluggish" class="section level3">
+<h3><strong>Why is business investment sluggish?</strong></h3>
+<pre class="r"><code>df &lt;- read.csv(&quot;gross_invest.csv&quot;)
+
+ggthemr(&quot;solarized&quot;)
+
+darken_swatch(amount = 0.3)
+
+
+windowsFonts(SansSerif=windowsFont(&quot;Microsoft Sans Serif Regular&quot;))
+
+mytheme &lt;- theme(plot.caption=element_text(hjust=0,size=9),
+                 plot.title = element_text(hjust=0.5, size=16),
+                 axis.title.x = element_text(margin = margin(10,15,0,0), size = 15, face = &quot;bold&quot;),
+                 axis.text.x = element_text(size=10),
+                 axis.text.y = element_text(size=10)) 
+  
+  
+plot &lt;- ggplot(df, aes(x =date)) +
+  geom_line(aes(y = gfcf_gdp), size = 1.1) +
+  scale_color_manual(values=c(&quot;#0072B2&quot;)) +
+  labs(x = &quot;Date&quot;, caption = &quot;Source: Integrated Macroeconomic Accounts Of the United States&quot;) +
+  ylab(NULL) +
+  ylim(0, 15) +
+  scale_x_continuous(breaks=seq(1960, 2017, 5))+
+  ggtitle(&quot;Gross Nonfinancial Fixed Capital Formation (Percent of GDP)&quot;) +
+  mytheme
+  
+plot</code></pre>
+<p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/images/gfcf.png" /></p>
+<p>In my previous <a href="https://hahm.netlify.com/buybacks-investment/">post</a>, I looked at whether buybacks were linked to the sluggish investment in the United States, where I concluded that buybacks were not the main cause. The United States was the focus of the post because that’s where most of the claims against buybacks have come from. So, if buybacks aren’t behind sluggish investment, what could be? A natural place to start is to see if funding an investment is expensive. Long run real interest rates have been trending downwards and have reached all-time lows in recent years.</p>
+<iframe src="https://data.oecd.org/chart/5kSC" width="100%" height="400" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true">
+<a href="https://data.oecd.org/chart/5kSC" target="_blank">OECD Chart: Long-term interest rates, Total, % per annum, Monthly, Jan 1990 – Sep 2018</a>
+</iframe>
+<p>It should have been cheaper to finance investment for businesses in the last 20 years but we have not seen an uptick in investment. What if there’s nothing worth investing in? This viewpoint comes into conflict with the fact that rates of return and profits for non financial corporations have been rising.</p>
+<iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=mw0w&amp;width=100%&amp;height=300" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:425px;" allowTransparency="true">
+</iframe>
+<p>Profits and return to investment has been risen but the sluggish investment numbers suggest businesses haven’t been taking advantage of cheap finance and high rewards.</p>
+</div>
+<div id="why-is-investment-important" class="section level3">
+<h3><strong>Why is investment important?</strong></h3>
+<p>But let’s back up first and understand why investment is important in the first place. Investment is what allows me to write this post on a laptop instead on pen and paper. It’s what allows me to research this topic on the internet instead of sifting through a mountain of books. It’s also what allows you to read this post anywhere without carrying around pieces of paper. Somewhere, sometime ago, someone thought about these new ways of doing things and an investment was made to turn these new methods of doing into products.</p>
+<p>Investment helps raise an economy’s capital stock, which is another way of saying it increases the number of tools we can work with. These new tools and technologies make an impact on our productivity — how much we’re able to get done with the same amount of inputs. This includes investment in education where knowing more allows us to do more or do things in a better way.</p>
+<p>As a component of GDP, measuring investment helps us to measure an economy’s output. It’s the most volatile component as the animation below shows, it rises and falls by larger amounts based on how optimistic firms are about the future.</p>
+<p><img src="/images/volatile3.gif" /></p>
+<p>Part of this volatility is due to investment being optional. You need to buy food and pay for shelter regularly to sustain yourself but you don’t need to buy, for example, a new machinery for your business or learn a certain skill if you think it’s going to be worthless to you. Even if you plan to invest, future outcomes are uncertain. With the gains of investment being realised in the long term, it’s not a surprise that investment activity is sensitive to this uncertainty.</p>
+</div>
+<div id="fool-me-once" class="section level3">
+<h3><strong>Fool me once</strong></h3>
+<p>Firms who invest are not capturing most of the benefits. This is a point raised by William Nordhaus who finds profits from innovation are <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=820309" target="_blank">small</a> . Why? Nordhaus says most of the innovation happening in the new economy — software, telecommunications, and similar industries — are marked by easy entrance and exit. These industries are also characterised by rapid technological change. What is usually valuable in these industries is the information or know-how created from these innovations and as Nordhaus says,</p>
+<blockquote>
+<p>" The economic nature of information is that it is expensive to produce and inexpensive to reproduce. Indeed, with the internet, it is often essentially free to reproduce and distribute vast amounts of information. The low costs of imitation, transmission, and distribution of information technologies are likely to erode the value of property rights in intellectual property and reduce the durability of Schumpeterian profits in the new economy."</p>
+</blockquote>
+<p>Nordhaus studied this at the height of the 90s tech boom but <a href="https://voxeu.org/article/ideas-aren-t-running-out-they-are-getting-more-expensive-find" target="_blank">Nicholas Bloom et al</a> find that producing ideas has only got more expensive in comparison to the slowdown in productivity growth. They measured economy wide research input and found that this has been increasing dramatically while productivity growth has been slowing down. More researchers are needed now to produce the same amount of ideas.</p>
+<p><img src="/images/expensive.png" /></p>
+<p>This finding is not only evident on the aggregate but shows up in different industries and products.</p>
+<blockquote>
+<p>" Our research shows that this pattern holds across a range of case studies. Whether we look at crop yields for corn and soybeans, or medical innovations that reduce mortality from heart disease and breast cancer, we find a similar trend. There have been technological improvements, but these require the devotion of ever-growing amounts of resources to the research process to maintain steady rates of improvement."</p>
+</blockquote>
+<p>Meanwhile, Wes Grey and Jack Vogel survey the academic research on the returns to <a href="https://alphaarchitect.com/2018/03/20/buybacks-viewed-through-an-alternative-lens-investment/" target="_blank">investment</a>. When higher asset growth was used as a proxy for investment in a paper by <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1335524&" target="_blank">Cooper, Gulen, and Schill</a>, they found that lower asset growth firms had higher future returns. This result still stuck when other determinants of returns where taken into account.</p>
+<blockquote>
+<p>Over the past 40 years, low asset growth stocks have maintained a return premium of 20% per year over high asset growth stocks. The asset growth return premium begins in January following the measurement year and persists for up to five years….In the cross-section of stock returns, the asset growth rate maintains large explanatory power with respect to other previously documented determinants of the cross-section of returns (i.e., size, prior returns, book-to-market ratios).</p>
+</blockquote>
+<p>Grey and Vogel then turned to a paper by <a href="http://theinvestmentcapm.com/HouXueZhang2015RFS.pdf" target="_blank">Kewei Hou, Chen Xue, and Lu Zhang</a> examining the investment factor directly and this paper also came to the same conclusion. So, not only is investment in the new economy more expensive, investment in general has a bad record in terms of returns. In realising this, maybe businesses may have wised up and would prefer to wait it out before deploying funds towards making investments.</p>
+</div>
+
+      </article>
+      
+    </main>
+    <nav class="end-nav side-padding">
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/post/buybacks-investment/" class="card blog-card" rel="bookmark" >
+    
+  <article class="card-body">
+    <h2 class="card-title">Buybacks &amp; Investment</h2>
+    <p class="card-text">/* resize the widget container */.plotly { width: auto !important;}/* center the widget */div.svg-container {margin: auto !important;}Since the Trump tax cuts were approved, there’s been an expected fall in tax revenues from corporations but there’s also been a surge in buybacks.
+{"x":{"data":[{"x":[15706],"y":[1.42791695944698],"text":"net_buyback_gdp: 1.427917
+colour: net buybacks
+observation_date: 2013-01-01
+frame: 2013-01-01","frame":"2013-01-01","type":"scatter","mode":"lines","line":{"width":3.77952755905512,"color":"rgba(213,94,0,1)","dash":"solid"},"hoveron":"points","name":"net buybacks","legendgroup":"net buybacks","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","visible":true},{"x":[15706],"y":[1.79256687748056],"text":"corporate_tax_gdp: 1.7925669
+colour: corporate tax revenue</p>
+    <div class="card-subtext muted-text">
+      <p>Posted <time datetime="2018-08-12 812:00">Aug 12, 2018</time></p>
+      <p></p>
+    </div>
+  </article>
+</a>
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="/" class="card home-card" style="background-image: url( /img/grey-cloud.jpg )" rel="bookmark" >
+  Home
+</a>
+    </nav>
+    <footer>
+    
+</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script src="/js/core.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+  </body>
+</html>

@@ -1,78 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Natrium Theme</title>
+    <title>Posts - Hugo Themes - aether</title>
     <link>/post/</link>
-    <description>Recent content in Posts on Natrium Theme</description>
+    <description>Recent content in Posts on Hugo Themes - aether</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Wed, 26 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    
+        <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Investment</title>
-      <link>/investment/</link>
+      <link>/post/investment/</link>
       <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/investment/</guid>
+      <guid>/post/investment/</guid>
       <description>Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us. What follows next is a gross oversimplification of space travel. If we assume humans could travel through space at a speed of 56,000 km/h, it would take 81,000 years to reach the planet. We of course decide to colonise it but we can’t live for 81,000 years — the current world average life expectancy is 70.</description>
-    </item>
-    
-    <item>
+    </item><item>
       <title>Buybacks &amp; Investment</title>
-      <link>/buybacks-investment/</link>
+      <link>/post/buybacks-investment/</link>
       <pubDate>Sun, 12 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/buybacks-investment/</guid>
+      <guid>/post/buybacks-investment/</guid>
       <description>/* resize the widget container */.plotly { width: auto !important;}/* center the widget */div.svg-container {margin: auto !important;}Since the Trump tax cuts were approved, there’s been an expected fall in tax revenues from corporations but there’s also been a surge in buybacks.
 {&#34;x&#34;:{&#34;data&#34;:[{&#34;x&#34;:[15706],&#34;y&#34;:[1.42791695944698],&#34;text&#34;:&#34;net_buyback_gdp: 1.427917
 colour: net buybacks
 observation_date: 2013-01-01
 frame: 2013-01-01&#34;,&#34;frame&#34;:&#34;2013-01-01&#34;,&#34;type&#34;:&#34;scatter&#34;,&#34;mode&#34;:&#34;lines&#34;,&#34;line&#34;:{&#34;width&#34;:3.77952755905512,&#34;color&#34;:&#34;rgba(213,94,0,1)&#34;,&#34;dash&#34;:&#34;solid&#34;},&#34;hoveron&#34;:&#34;points&#34;,&#34;name&#34;:&#34;net buybacks&#34;,&#34;legendgroup&#34;:&#34;net buybacks&#34;,&#34;showlegend&#34;:true,&#34;xaxis&#34;:&#34;x&#34;,&#34;yaxis&#34;:&#34;y&#34;,&#34;hoverinfo&#34;:&#34;text&#34;,&#34;visible&#34;:true},{&#34;x&#34;:[15706],&#34;y&#34;:[1.79256687748056],&#34;text&#34;:&#34;corporate_tax_gdp: 1.7925669
 colour: corporate tax revenue</description>
-    </item>
-    
-    <item>
+    </item><item>
       <title>Sales</title>
-      <link>/sales/</link>
+      <link>/post/2018-07-19-sales/</link>
       <pubDate>Thu, 19 Jul 2018 13:46:29 +0100</pubDate>
       
-      <guid>/sales/</guid>
+      <guid>/post/2018-07-19-sales/</guid>
       <description>The first part of the project is to come up with hypotheses about the data. This will help me to think about what I should expect to see from the data given the problem statement.
 The data scientists at BigMart have collected 2013 sales data for 1559 products across 10 stores in different cities. Also, certain attributes of each product and store have been defined. The aim is to build a predictive model and find out the sales of each product at a particular store.</description>
     </item>
-    
-    <item>
-      <title>A Plain Markdown Post</title>
-      <link>/a-plain-markdown-post/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
-      
-      <guid>/a-plain-markdown-post/</guid>
-      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/hello-r-markdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum</title>
-      <link>/lorem-ipsum/</link>
-      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
-      
-      <guid>/lorem-ipsum/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
-    </item>
-    
   </channel>
 </rss>
