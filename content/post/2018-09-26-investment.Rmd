@@ -29,13 +29,15 @@ library(shiny)
 library(devtools)
 devtools::install_github('cttobin/ggthemr')
 library(ggthemr)
+library(devtools)
+install_github('jimhester/knitrBootstrap')
 
 
 ```
 
-<div class="fold s">
 
-``` {r}
+
+``` {r, bootstrap.show.code = TRUE}
 df <- read.csv("gross_invest.csv")
 
 ggthemr("solarized")
@@ -73,7 +75,7 @@ plot
 
 ```
 
-</div>
+
 
 ![](public/images/gfcf.png)
 
