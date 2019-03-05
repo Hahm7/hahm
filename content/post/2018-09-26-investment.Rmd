@@ -31,7 +31,10 @@ library(ggthemr)
 
 ```
 
+<details><summary>CLICK ME</summary>
+<p>
 
+#### yes, even hidden code blocks!
 
 ``` {r}
 df <- read.csv("gross_invest.csv")
@@ -70,6 +73,9 @@ plot
 
 
 ```
+
+</p>
+</details>
 
 
 ![](public/images/gfcf.png)
