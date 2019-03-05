@@ -1,12 +1,5 @@
 <head>
-  {{ if and (not .Site.Params.disable_codefolding) (not .Params.disable_codefolding) (in (string .Content) "</pre>") }} 
-  <script>
-  $(document).ready(function () {
-    window.initializeCodeFolding("show" === {{ if isset .Params "codefolding_show" }}{{ .Params.codefolding_show }}{{ else }}{{ default ("hide") .Site.Params.codefolding_show }}{{ end }});
-  });
-  </script>
-  <script src="{{ "js/codefolding.js" | relURL }}"></script>
-{{ end }}
+  
   <link rel="stylesheet" href="{{"css/gruvbox-dark.css" | absURL}}" rel="stylesheet" id="theme-stylesheet">
   <script src="{{ "js/highlight.pack.js" | absURL }}"></script>
   <script>hljs.initHighlightingOnLoad();</script>
@@ -45,4 +38,8 @@
     }
   </style>
   {{- end }}
+  <script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
 </head>

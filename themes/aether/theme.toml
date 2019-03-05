@@ -12,6 +12,8 @@ name = "Joe Hutchinson"
 homepage = "https://www.joehutch.com"
 
 # Set to true to disable code folding
-    disable_codefolding = false
-# Set to "hide" or "show" all codes by default
-    codefolding_show = "hide"
+   disable_codefolding = false
+   # Set to "hide" or "show" all codes by default
+   codefolding_show = "hide"
+   # Code blocks to apply code folding
+   codeblocks = ["pre.sourceCode", "pre.r", "pre.python", "pre.bash", "pre.sql", "pre.cpp", "pre.stan", "pre.js", "pre.css", "pre.html", "pre.yaml"]

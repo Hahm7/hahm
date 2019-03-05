@@ -17,8 +17,19 @@
             <source srcset="{{.Params.featuredimage | absURL }}">
           <img src="{{.Params.featuredimage | absURL }}" {{ if isset .Params "featuredimagedescription" }}alt="{{.Params.featuredimagedescription}}"{{end}}>
         </picture>
+        <div id="content">
+
+  <div>
+      {{ partial "header_maincodefolding" . }}
+  <br/>
+  <div id="content" class="article-entry">
         {{ end }}
         {{ .Content }}
+        </div>
+  </div>
+  <footer>
+    {{ partial "code-folding" . }}
+  </footer>
       </article>
       {{ template "_internal/disqus.html" . }}
     </main>
