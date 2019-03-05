@@ -10,3 +10,8 @@ min_version = "0.41"
 [author]
 name = "Joe Hutchinson"
 homepage = "https://www.joehutch.com"
+
+# Set to true to disable code folding
+    disable_codefolding = false
+# Set to "hide" or "show" all codes by default
+    codefolding_show = "hide"
