@@ -1,13 +1,13 @@
 ---
 title: "Investment"
+output:
+  html_document:
+    code_folding: hide
 author: "Hamdi Ahmed"
 date: '2018-09-26'
 slug: investment
 categories: []
 tags: []
-output:
-  html_document:
-    code_folding: hide
 ---
 
 Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us. *What follows next is a gross oversimplification of space travel*. If we assume humans could travel through space at a speed of 56,000 km/h, it would take 81,000 years to reach the planet. We of course decide to colonise it but we can’t live for 81,000 years — the current world average life expectancy is 70.5 years. So, let’s assume our next best idea is to go there by using a generational ship, where this ship would sustain humans for generations until the destination is reached. Those aboard the ship will live and die on it, giving birth to the next generation along the way until the final generation reaches the planet. 
@@ -34,7 +34,7 @@ library(ggthemr)
 
 ```
 
-``` {r}
+``` {r, echo = TRUE}
 df <- read.csv("gross_invest.csv")
 
 ggthemr("solarized")
