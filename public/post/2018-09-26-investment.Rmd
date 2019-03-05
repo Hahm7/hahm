@@ -34,6 +34,9 @@ library(ggthemr)
 
 ```
 
+<details>
+    <summary>Here is the summary</summary>
+</details>
 ``` {r, echo = TRUE}
 df <- read.csv("gross_invest.csv")
 
@@ -72,7 +75,7 @@ plot
 
 ```
 
-![](/images/gfcf.png)
+![](public/images/gfcf.png)
 
 In my previous [post](https://hahm.netlify.com/buybacks-investment/), I looked at whether buybacks were linked to the sluggish investment in the United States, where I concluded that buybacks were not the main cause. The United States was the focus of the post because that’s where most of the claims against buybacks have come from. So, if buybacks aren’t behind sluggish investment, what could be? A natural place to start is to see if funding an investment is expensive. Long run real interest rates have been trending downwards and have reached all-time lows in recent years. 
 

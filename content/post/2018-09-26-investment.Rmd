@@ -34,11 +34,9 @@ library(ggthemr)
 
 ```
 
-<style>
-div.hidecode + pre {display: none}
-</style>
-
-<div class="hidecode"></div>
+<details>
+    <summary>Here is the summary</summary>
+</details>
 ``` {r, echo = TRUE}
 df <- read.csv("gross_invest.csv")
 
