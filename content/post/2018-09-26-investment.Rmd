@@ -34,9 +34,10 @@ library(ggthemr)
 
 ```
 
+
 <details>
     <summary>Here is the summary</summary>
-</details>
+    <p>
 ``` {r, echo = TRUE}
 df <- read.csv("gross_invest.csv")
 
@@ -74,6 +75,9 @@ plot
 
 
 ```
+</p>
+</details>
+
 
 ![](public/images/gfcf.png)
 
