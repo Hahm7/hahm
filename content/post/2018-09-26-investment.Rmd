@@ -39,13 +39,6 @@ These are the kind of issues that exist for companies making investment decision
 
 aJHSJalhskjAHKJHDKJSdjnADJDSHDKJHSDKJHASDKJDHASDHKASHDKJHASKJDHHHHHHHHHHHHHHHHHHHHHHKAJSHDKJASHDKJAHSDKJHAKAJSHDKJSHDAKSD;DOJ;JDLJASDHJKAHSHDKJAHDKJASHDKAJSHDKJASHDJASKHKJASHDKJASHDKJHDJKHASJKDHJSAHDJASHDJKASHDKJASHDKJASHDKAJHSDHAKSD.
 
-
-```{r echo = FALSE}
-
-plot
-
-```
-
 <details>
 <summary>Click here for the graph code</summary>
 <p>
@@ -86,6 +79,12 @@ plot <- ggplot(df, aes(x =date)) +
 ```
 </p>
 </details>
+
+```{r echo = FALSE}
+
+plot
+
+```
 
 ![](/images/gfcf.png)
 
