@@ -36,7 +36,7 @@ aJHSJalhskjAHKJHDKJSdjnADJDSHDKJHSDKJHASDKJDHASDHKASHDKJHASKJDHHHHHHHHHHHHHHHHHH
 <details>
 <summary>Click Here</summary>
 <p>
-``` {r}
+``` {r tidy = TRUE}
 
 df <- read.csv("gross_invest.csv")
 
