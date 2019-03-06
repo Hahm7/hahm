@@ -5,22 +5,8 @@ date: '2018-09-26'
 slug: investment
 categories: []
 tags: []
-output:
-  epuRate::epurate:
-    toc: TRUE
-    number_sections: FALSE
-    code_folding: "show"
 ---
 
-<style>
-#TOC {
-  top: 1%;
-  opacity: 0.5;
-}
-#TOC:hover {
-  opacity: 1;
-}
-</style>
 
 
 ``` {r warning = FALSE, message = FALSE, echo = FALSE}
@@ -37,14 +23,6 @@ library(ggthemr)
 
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(devtools)
-install_github("holtzy/epuRate")
-library(epuRate)
-library(rmarkdown)
-```
-
 Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us. *What follows next is a gross oversimplification of space travel*. If we assume humans could travel through space at a speed of 56,000 km/h, it would take 81,000 years to reach the planet. We of course decide to colonise it but we can’t live for 81,000 years — the current world average life expectancy is 70.5 years. So, let’s assume our next best idea is to go there by using a generational ship, where this ship would sustain humans for generations until the destination is reached. Those aboard the ship will live and die on it, giving birth to the next generation along the way until the final generation reaches the planet. 
 
 Would we do it? 
@@ -57,7 +35,9 @@ These are the kind of issues that exist for companies making investment decision
 
 aJHSJalhskjAHKJHDKJSdjnADJDSHDKJHSDKJHASDKJDHASDHKASHDKJHASKJDHHHHHHHHHHHHHHHHHHHHHHKAJSHDKJASHDKJAHSDKJHAKAJSHDKJSHDAKSD;DOJ;JDLJASDHJKAHSHDKJAHDKJASHDKAJSHDKJASHDJASKHKJASHDKJASHDKJHDJKHASJKDHJSAHDJASHDJKASHDKJASHDKJASHDKAJHSDHAKSD.
 
-
+<details>
+<summary>Click Here</summary>
+<p>
 ``` {r tidy = TRUE}
 
 df <- read.csv("gross_invest.csv")
@@ -93,6 +73,8 @@ plot <- ggplot(df, aes(x =date)) +
   mytheme
 
 ```
+</p>
+</details>
 
 ```{r echo = FALSE}
 
