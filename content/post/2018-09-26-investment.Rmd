@@ -19,7 +19,8 @@ These are the kind of issues that exist for companies making investment decision
 
 ### **Why is business investment sluggish?**
 
-``` {r message = FALSE, echo = FALSE}
+``` {r warning = FALSE, echo = FALSE}
+
 library(dplyr)
 library(plotly)
 library(tidyverse)
@@ -30,14 +31,11 @@ library(devtools)
 devtools::install_github('cttobin/ggthemr')
 library(ggthemr)
 
-
-
 ```
 
-<details>
-<summary>Click Here</summary>
-<p>
+
 ``` {r}
+
 df <- read.csv("gross_invest.csv")
 
 ggthemr("solarized")
@@ -69,14 +67,14 @@ plot <- ggplot(df, aes(x =date)) +
   scale_x_continuous(breaks=seq(1960, 2017, 5))+
   ggtitle(title) +
   mytheme
-  
-plot
-
 
 ```
-</p>
-</details>
 
+```{r}
+
+plot
+
+```
 
 ![](public/images/gfcf.png)
 
