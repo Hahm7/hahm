@@ -5,7 +5,6 @@ date: '2018-08-12'
 slug: buybacks-investment
 categories: []
 tags: []
-featuredImage: "/images/invest.jpg"
 ---
 
 
