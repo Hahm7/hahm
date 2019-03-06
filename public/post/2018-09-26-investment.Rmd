@@ -19,7 +19,7 @@ These are the kind of issues that exist for companies making investment decision
 
 ### **Why is business investment sluggish?**
 
-``` {r warning = FALSE, echo = FALSE}
+``` {r warning = FALSE, message = FALSE, echo = FALSE}
 
 library(dplyr)
 library(plotly)
@@ -70,13 +70,13 @@ plot <- ggplot(df, aes(x =date)) +
 
 ```
 
-```{r}
+```{r echo = FALSE}
 
 plot
 
 ```
 
-![](public/images/gfcf.png)
+![](/images/gfcf.png)
 
 In my previous [post](https://hahm.netlify.com/buybacks-investment/), I looked at whether buybacks were linked to the sluggish investment in the United States, where I concluded that buybacks were not the main cause. The United States was the focus of the post because that’s where most of the claims against buybacks have come from. So, if buybacks aren’t behind sluggish investment, what could be? A natural place to start is to see if funding an investment is expensive. Long run real interest rates have been trending downwards and have reached all-time lows in recent years. 
 

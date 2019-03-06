@@ -51,47 +51,6 @@
 <p>These are the kind of issues that exist for companies making investment decisions. Because it takes time for the benefits of investment to show, it can be rendered useless by new technology. Could this sort of thinking be discouraging businesses from making investments?</p>
 <div id="why-is-business-investment-sluggish" class="section level3">
 <h3><strong>Why is business investment sluggish?</strong></h3>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre><code>## Loading required package: ggplot2</code></pre>
-<pre><code>## 
-## Attaching package: &#39;plotly&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
-## 
-##     last_plot</code></pre>
-<pre><code>## The following object is masked from &#39;package:stats&#39;:
-## 
-##     filter</code></pre>
-<pre><code>## The following object is masked from &#39;package:graphics&#39;:
-## 
-##     layout</code></pre>
-<pre><code>## -- Attaching packages ---------------------------------------------------------------- tidyverse 1.2.1 --</code></pre>
-<pre><code>## v tibble  1.4.2     v purrr   0.2.5
-## v tidyr   0.8.1     v stringr 1.3.1
-## v readr   1.1.1     v forcats 0.3.0</code></pre>
-<pre><code>## -- Conflicts ------------------------------------------------------------------- tidyverse_conflicts() --
-## x plotly::filter() masks dplyr::filter(), stats::filter()
-## x dplyr::lag()     masks stats::lag()</code></pre>
-<pre><code>## 
-## Attaching package: &#39;lubridate&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:base&#39;:
-## 
-##     date</code></pre>
-<pre><code>## Downloading GitHub repo cttobin/ggthemr@master
-## from URL https://api.github.com/repos/cttobin/ggthemr/zipball/master</code></pre>
-<pre><code>## Installing ggthemr</code></pre>
-<pre><code>## Installing 1 package: ggplot2</code></pre>
-<pre><code>## &quot;C:/PROGRA~1/R/R-35~1.0/bin/x64/R&quot; --no-site-file --no-environ --no-save  \
-##   --no-restore --quiet CMD INSTALL  \
-##   &quot;C:/Users/Hamdi/AppData/Local/Temp/RtmpSit4eB/devtools204831b024a1/cttobin-ggthemr-10eb50a&quot;  \
-##   --library=&quot;C:/Program Files/R/R-3.5.0/library&quot; --install-tests</code></pre>
-<pre><code>## </code></pre>
 <pre class="r"><code>df &lt;- read.csv(&quot;gross_invest.csv&quot;)
 
 ggthemr(&quot;solarized&quot;)
@@ -123,9 +82,8 @@ plot &lt;- ggplot(df, aes(x =date)) +
   scale_x_continuous(breaks=seq(1960, 2017, 5))+
   ggtitle(title) +
   mytheme</code></pre>
-<pre class="r"><code>plot</code></pre>
 <p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p><img src="public/images/gfcf.png" /></p>
+<p><img src="/images/gfcf.png" /></p>
 <p>In my previous <a href="https://hahm.netlify.com/buybacks-investment/">post</a>, I looked at whether buybacks were linked to the sluggish investment in the United States, where I concluded that buybacks were not the main cause. The United States was the focus of the post because that’s where most of the claims against buybacks have come from. So, if buybacks aren’t behind sluggish investment, what could be? A natural place to start is to see if funding an investment is expensive. Long run real interest rates have been trending downwards and have reached all-time lows in recent years.</p>
 <iframe src="https://data.oecd.org/chart/5kSC" width="100%" height="400" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true">
 <a href="https://data.oecd.org/chart/5kSC" target="_blank">OECD Chart: Long-term interest rates, Total, % per annum, Monthly, Jan 1990 – Sep 2018</a>
