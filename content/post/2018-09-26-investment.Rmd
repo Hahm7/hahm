@@ -46,7 +46,7 @@ aJHSJalhskjAHKJHDKJSdjnADJDSHDKJHSDKJHASDKJDHASDHKASHDKJHASKJDHHHHHHHHHHHHHHHHHH
 
 df <- read.csv("gross_invest.csv")
 
-ggthemr("solarized")
+ggthemr("fresh")
 
 darken_swatch(amount = 0.2)
 
