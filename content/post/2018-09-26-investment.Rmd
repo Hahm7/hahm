@@ -5,6 +5,7 @@ date: '2018-09-26'
 slug: investment
 categories: []
 tags: []
+featuredImage: "/images/invest.jpg"
 ---
 
 
