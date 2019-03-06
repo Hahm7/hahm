@@ -1,11 +1,15 @@
 ---
 title: "Investment"
 author: "Hamdi Ahmed"
-output: html_document
 date: '2018-09-26'
 slug: investment
 categories: []
 tags: []
+output:
+  epuRate::epurate:
+    toc: TRUE
+    number_sections: FALSE
+    code_folding: "show"
 ---
 
 
@@ -17,9 +21,6 @@ tags: []
 <div id="why-is-business-investment-sluggish" class="section level3">
 <h3><strong>Why is business investment sluggish?</strong></h3>
 <p>aJHSJalhskjAHKJHDKJSdjnADJDSHDKJHSDKJHASDKJDHASDHKASHDKJHASKJDHHHHHHHHHHHHHHHHHHHHHHKAJSHDKJASHDKJAHSDKJHAKAJSHDKJSHDAKSD;DOJ;JDLJASDHJKAHSHDKJAHDKJASHDKAJSHDKJASHDJASKHKJASHDKJASHDKJHDJKHASJKDHJSAHDJASHDJKASHDKJASHDKJASHDKAJHSDHAKSD.</p>
-<details>
-<summary>Click Here</summary>
-<p>
 <pre class="r"><code>df &lt;- read.csv(&quot;gross_invest.csv&quot;)
 
 ggthemr(&quot;solarized&quot;)
@@ -51,8 +52,6 @@ plot &lt;- ggplot(df, aes(x =date)) +
   scale_x_continuous(breaks=seq(1960, 2017, 5))+
   ggtitle(title) +
   mytheme</code></pre>
-</p>
-</details>
 <p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p><img src="/images/gfcf.png" /></p>
 <p>In my previous <a href="https://hahm.netlify.com/buybacks-investment/">post</a>, I looked at whether buybacks were linked to the sluggish investment in the United States, where I concluded that buybacks were not the main cause. The United States was the focus of the post because that’s where most of the claims against buybacks have come from. So, if buybacks aren’t behind sluggish investment, what could be? A natural place to start is to see if funding an investment is expensive. Long run real interest rates have been trending downwards and have reached all-time lows in recent years.</p>
