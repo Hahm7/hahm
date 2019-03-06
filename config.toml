@@ -9,5 +9,5 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [params]
     brand = "aether"
     description = "aether Hugo theme for blogs"
-    bgimg = "img/ignasi_pattern_s.png"
+    bgimg = "/images/background.jpg"
     
