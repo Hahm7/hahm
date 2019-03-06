@@ -33,6 +33,9 @@ library(ggthemr)
 
 ```
 
+<details>
+<summary>Click Here</summary>
+<p>
 
 ``` {r}
 
@@ -69,7 +72,8 @@ plot <- ggplot(df, aes(x =date)) +
   mytheme
 
 ```
-
+</p>
+</details>
 ```{r echo = FALSE}
 
 plot
