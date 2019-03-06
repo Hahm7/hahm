@@ -80,7 +80,7 @@ mytheme &lt;- theme(plot.caption=element_text(hjust=0,size=9),
   
   
 plot &lt;- ggplot(df, aes(x =date)) +
-  geom_line(aes(y = gfcf_gdp), size = 1.1) +
+  geom_line(aes(y = gfcf_gdp), size = 1.4) +
   scale_color_manual(values=c(&quot;#0072B2&quot;)) +
   labs(x = &quot;Date&quot;, y = &quot;Percent of GDP&quot;, caption = capt) +
   ylim(0, 15) +

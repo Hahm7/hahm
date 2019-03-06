@@ -69,7 +69,7 @@ mytheme <- theme(plot.caption=element_text(hjust=0,size=9),
   
   
 plot <- ggplot(df, aes(x =date)) +
-  geom_line(aes(y = gfcf_gdp), size = 1.1) +
+  geom_line(aes(y = gfcf_gdp), size = 1.4) +
   scale_color_manual(values=c("#0072B2")) +
   labs(x = "Date", y = "Percent of GDP", caption = capt) +
   ylim(0, 15) +
