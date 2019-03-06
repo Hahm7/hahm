@@ -80,7 +80,7 @@ plot <- ggplot(df, aes(x =date)) +
 </p>
 </details>
 
-```{r fig.align="center", echo = FALSE}
+```{r fig.align="left", echo = FALSE}
 
 plot
 
