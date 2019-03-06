@@ -51,7 +51,10 @@
 <p>These are the kind of issues that exist for companies making investment decisions. Because it takes time for the benefits of investment to show, it can be rendered useless by new technology. Could this sort of thinking be discouraging businesses from making investments?</p>
 <div id="why-is-business-investment-sluggish" class="section level3">
 <h3><strong>Why is business investment sluggish?</strong></h3>
-<p><input type=button class=hideshow></input></p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName">
+Show/Hide
+</button>
+<div id="BlockName" class="collapse">
 <pre class="r"><code>df &lt;- read.csv(&quot;gross_invest.csv&quot;)
 
 ggthemr(&quot;solarized&quot;)
@@ -86,6 +89,7 @@ plot &lt;- ggplot(df, aes(x =date)) +
   
 plot</code></pre>
 <p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
 <p><img src="public/images/gfcf.png" /></p>
 <p>In my previous <a href="https://hahm.netlify.com/buybacks-investment/">post</a>, I looked at whether buybacks were linked to the sluggish investment in the United States, where I concluded that buybacks were not the main cause. The United States was the focus of the post because that’s where most of the claims against buybacks have come from. So, if buybacks aren’t behind sluggish investment, what could be? A natural place to start is to see if funding an investment is expensive. Long run real interest rates have been trending downwards and have reached all-time lows in recent years.</p>
 <iframe src="https://data.oecd.org/chart/5kSC" width="100%" height="400" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true">
@@ -121,22 +125,6 @@ plot</code></pre>
 <p>Over the past 40 years, low asset growth stocks have maintained a return premium of 20% per year over high asset growth stocks. The asset growth return premium begins in January following the measurement year and persists for up to five years….In the cross-section of stock returns, the asset growth rate maintains large explanatory power with respect to other previously documented determinants of the cross-section of returns (i.e., size, prior returns, book-to-market ratios).</p>
 </blockquote>
 <p>Grey and Vogel then turned to a paper by <a href="http://theinvestmentcapm.com/HouXueZhang2015RFS.pdf" target="_blank">Kewei Hou, Chen Xue, and Lu Zhang</a> examining the investment factor directly and this paper also came to the same conclusion. So, not only is investment in the new economy more expensive, investment in general has a bad record in terms of returns. In realising this, maybe businesses may have wised up and would prefer to wait it out before deploying funds towards making investments.</p>
-<script>
-$( "input.hideshow" ).each( function ( index, button ) {
-  button.value = 'Hide Output';
-  $( button ).click( function () {
-    var target = this.nextSibling ? this : this.parentNode;
-    target = target.nextSibling.nextSibling.nextSibling.nextSibling;
-    if ( target.style.display == 'block' || target.style.display == '' ) {
-      target.style.display = 'none';
-      this.value = 'Show Output';
-    } else {
-      target.style.display = 'block';
-      this.value = 'Hide Output';
-    }
-  } );
-} );
-</script>
 </div>
 
       </article>

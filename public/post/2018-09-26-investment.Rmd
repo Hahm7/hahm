@@ -33,7 +33,8 @@ library(ggthemr)
 
 ```
 
-<input type=button class=hideshow></input>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName"> Show/Hide </button>  
+<div id="BlockName" class="collapse"> 
 
 ``` {r}
 df <- read.csv("gross_invest.csv")
@@ -73,7 +74,7 @@ plot
 
 ```
 
-
+</div>
 
 ![](public/images/gfcf.png)
 
@@ -134,23 +135,6 @@ Meanwhile, Wes Grey and Jack Vogel survey the academic research on the returns t
 
 Grey and Vogel then turned to a paper by <a href="http://theinvestmentcapm.com/HouXueZhang2015RFS.pdf" target="_blank">Kewei Hou, Chen Xue, and Lu Zhang</a> examining the investment factor directly and this paper also came to the same conclusion. So, not only is investment in the new economy more expensive, investment in general has a bad record in terms of returns. In realising this, maybe businesses may have wised up and would prefer to wait it out before deploying funds towards making investments.
 
-
-<script>
-$( "input.hideshow" ).each( function ( index, button ) {
-  button.value = 'Hide Output';
-  $( button ).click( function () {
-    var target = this.nextSibling ? this : this.parentNode;
-    target = target.nextSibling.nextSibling.nextSibling.nextSibling;
-    if ( target.style.display == 'block' || target.style.display == '' ) {
-      target.style.display = 'none';
-      this.value = 'Show Output';
-    } else {
-      target.style.display = 'block';
-      this.value = 'Hide Output';
-    }
-  } );
-} );
-</script>
 
 
 
