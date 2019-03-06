@@ -48,7 +48,7 @@ df <- read.csv("gross_invest.csv")
 
 ggthemr("solarized")
 
-darken_swatch(amount = 0.3)
+darken_swatch(amount = 0.2)
 
 
 windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
