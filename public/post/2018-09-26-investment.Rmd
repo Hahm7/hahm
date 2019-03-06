@@ -1,6 +1,7 @@
 ---
 title: "Investment"
 author: "Hamdi Ahmed"
+output: html_document
 date: '2018-09-26'
 slug: investment
 categories: []
@@ -33,9 +34,9 @@ library(ggthemr)
 
 ```
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName"> Show/Hide </button>  
-<div id="BlockName" class="collapse"> 
-
+<details>
+<summary>Click Here</summary>
+<p>
 ``` {r}
 df <- read.csv("gross_invest.csv")
 
@@ -73,8 +74,9 @@ plot
 
 
 ```
+</p>
+</details>
 
-</div>
 
 ![](public/images/gfcf.png)
 

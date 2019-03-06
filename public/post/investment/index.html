@@ -58,10 +58,9 @@
 <pre><code>## Warning: package &#39;readxl&#39; was built under R version 3.5.1</code></pre>
 <pre><code>## Warning: package &#39;devtools&#39; was built under R version 3.5.1</code></pre>
 <pre><code>## Warning: package &#39;ggplot2&#39; is in use and will not be installed</code></pre>
-<button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName">
-Show/Hide
-</button>
-<div id="BlockName" class="collapse">
+<details>
+<summary>Click Here</summary>
+<p>
 <pre class="r"><code>df &lt;- read.csv(&quot;gross_invest.csv&quot;)
 
 ggthemr(&quot;solarized&quot;)
@@ -95,8 +94,9 @@ plot &lt;- ggplot(df, aes(x =date)) +
   mytheme
   
 plot</code></pre>
-<p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-</div>
+<img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+</p>
+</details>
 <p><img src="public/images/gfcf.png" /></p>
 <p>In my previous <a href="https://hahm.netlify.com/buybacks-investment/">post</a>, I looked at whether buybacks were linked to the sluggish investment in the United States, where I concluded that buybacks were not the main cause. The United States was the focus of the post because that’s where most of the claims against buybacks have come from. So, if buybacks aren’t behind sluggish investment, what could be? A natural place to start is to see if funding an investment is expensive. Long run real interest rates have been trending downwards and have reached all-time lows in recent years.</p>
 <iframe src="https://data.oecd.org/chart/5kSC" width="100%" height="400" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true">
