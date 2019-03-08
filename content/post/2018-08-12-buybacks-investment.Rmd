@@ -6,6 +6,7 @@ slug: buybacks-investment
 categories: []
 description: "Since the Trump tax cuts were approved, there's been an expected fall in tax revenues from corporations but there's also been a surge in buybacks.[...] "
 tags: []
+featuredImage: "/images/buyback.jpg"
 ---
 
 
