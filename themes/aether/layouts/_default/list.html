@@ -5,15 +5,17 @@
     {{ partial "nav-bar.html" . }}
     <main class="card-container side-gutter">
       <header class="list-header">
-       </div>
-  <div class="summary">
-    {{ with .Description }}
-      {{ $.Scratch.Set "summary" (markdownify .) }}
-    {{ else }}
-      {{ $.Scratch.Set "summary" ((delimit (findRE "(<p.*?>(.|\n)*?</p>\\s*)+" .Content) "[&hellip;] ") | plainify | truncate (default 200 .Site.Params.summary_length) (default " &hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
-    {{ end }}
-    {{ $.Scratch.Get "summary" }}
-  </div>
+        <p class="list-header-subtext">{{ with .Description }}
+  {{ $.Scratch.Set "summary" (markdownify .) }}
+{{ else }}
+  {{ $.Scratch.Set "summary"
+    ((delimit (findRE "(<p.*?>.*?</p>\\s*)+" .Content) "[&hellip;] ") |
+      plainify |
+      truncate (default 200 .Site.Params.summary_length)
+        (default " &hellip;" .Site.Params.text.truncated ) |
+      replaceRE "&amp;" "&" | safeHTML) }}
+{{ end }}
+{{ $.Scratch.Get "summary" }}</p>
         <h1 class="list-header-title">{{ .Title }}</h1>
       </header>
       {{ $paginator := .Paginate (where .Pages "Params.displayinlist" "!=" false) -}}
