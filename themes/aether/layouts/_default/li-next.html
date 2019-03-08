@@ -14,7 +14,17 @@
     {{ end }}
   <article class="card-body">
     <h2 class="card-title">{{ .Title }}</h2>
-    <p class="card-text">{{ if (isset .Params "description") }}{{ index .Params "description" }}{{ else }}{{ .Summary }}{{ end }}</p>
+    <p class="card-text">{{ if (isset .Params "description") }}{{ index .Params "description" }}{{ else }}{{ with .Description }}
+  {{ $.Scratch.Set "summary" (markdownify .) }}
+{{ else }}
+  {{ $.Scratch.Set "summary"
+    ((delimit (findRE "(<p.*?>.*?</p>\\s*)+" .Content) "[&hellip;] ") |
+      plainify |
+      truncate (default 200 .Site.Params.summary_length)
+        (default " &hellip;" .Site.Params.text.truncated ) |
+      replaceRE "&amp;" "&" | safeHTML) }}
+{{ end }}
+{{ $.Scratch.Get "summary" }}</p>
     <div class="card-subtext muted-text">
       <p>Posted <time datetime="{{ .PublishDate.Format "2006-01-02 12:00" }}">{{ .PublishDate.Format "Jan 2, 2006" }}</time></p>
       {{ if (isset .Params "categories") }}<p>{{ range .Params.categories }}#{{ . }} {{ end }}</p>{{ end }}
