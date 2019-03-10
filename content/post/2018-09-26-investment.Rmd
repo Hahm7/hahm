@@ -37,9 +37,10 @@ Would we do it?
 
 These are the kind of issues which exist for companies making investment decisions. Because it takes time for the benefits of investment to show, it can be rendered useless by new technology. Could this sort of thinking be discouraging businesses from making investments?
 
-### **Why is business investment sluggish?**
+### **What's up with investment?**
 
-glkjhkjhkjghkjgggghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+Non financial business investment as a percentage of GDP is currently measured at 9.6%, which is closer to its long term average of 9.1% than to its peak of 10.7% achieved in 2000 after a mini boom in the 90s.
+
 
 <details>
 <summary>Click here for the graph code</summary>
