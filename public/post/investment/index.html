@@ -55,6 +55,96 @@
 <p>Investment is what allows me to write this post on a laptop instead on pen and paper. It’s what allows me to research this topic on the internet instead of sifting through a mountain of books. It’s also what allows you to read this post anywhere without carrying around pieces of paper. Somewhere, sometime ago, someone thought about these new ways of doing things and an investment was made to turn these new methods of doing into products.</p>
 <p>Investment helps raise an economy’s capital stock, which is another way of saying it increases the number of tools we can work with. These new tools and technologies make an impact on our productivity — how much we’re able to get done with the same amount of inputs. This includes investment in education where knowing more allows us to do more or do things in a better way.</p>
 <p>As a component of GDP, measuring investment helps us to measure an economy’s output. It’s the most volatile component as the animation below shows — it rises and falls by larger amounts.</p>
+<details>
+<summary>Click here for the graph code</summary>
+<p>
+<pre class="r"><code>mydir &lt;- &quot;C:/Users/Hamdi/Desktop&quot;
+
+volatile2 &lt;-read_excel(&quot;volatility2.xlsx&quot;)
+
+colnames(volatile2)[1]&lt;-&quot;cycle&quot;
+
+volatile2$year&lt;-substr(volatile2$cycle,1,4)
+
+volatile2$month&lt;-as.numeric(substr(volatile2$cycle,7,7))*3
+
+volatile2$date&lt;-as.Date(ISOdate(volatile2$year,volatile2$month,1))
+
+volatile2 %&gt;% select(-cycle,-year,-month) %&gt;% 
+  gather(indicator,percent,-date) -&gt;volatile.df
+
+mycaption&lt;-&quot;Mack, A., and E. Martinez-Garcia. 2011. &#39;A Cross-Country Quarterly Database of Real House Prices: A Methodological Note.&#39; Globalization and Monetary Policy Institute Working Paper No. 99, Federal Reserve Bank of Dallas.&quot;
+
+mycaption&lt;-str_wrap(mycaption,width=80) #wrap the caption
+
+mycap1&lt;-&quot;Source: https://fredblog.stlouisfed.org/2015/08/gdp-components-volatility/&quot;  #caption part 2
+
+
+blist&lt;-c(&quot;investment&quot;,&quot;consumption&quot;,&quot;gov_expen&quot;)
+
+volatile.dt2&lt;-data.table(volatile.df)[year(date)&gt;1970 &amp; indicator %in% blist,]
+
+xlist&lt;-unique(volatile.dt2[year(date)&gt;1979]$date)
+
+M&lt;-length(xlist)
+
+
+
+ggthemr(&quot;fresh&quot;)
+
+volatile.plot&lt;-function(i=1){
+  ggplot(data=volatile.dt2[year(date)&gt;1979 &amp; 
+                             date&lt;=xlist[i] &amp;
+                             indicator %in% blist],
+         aes(x=date,y=percent,color=indicator,linetype=indicator,label=indicator))+
+    scale_color_manual(values=c(&quot;#000000&quot;, &quot;#009E73&quot;, &quot;#D55E00&quot;))+
+    geom_line(size=1.1)+
+    scale_x_date(breaks=seq(xlist[1],xlist[M]+years(1),&quot;5 year&quot;),
+                 date_labels=&quot;%Y&quot;,limits=c(xlist[1],xlist[M]+years(1)))+ 
+    geom_hline(yintercept=0,linetype=2)+
+    scale_y_continuous(breaks=seq(-30,45,5),limits=c(-35,40))+
+    geom_text(data=volatile.dt2[date==xlist[i] &amp;
+                                  indicator %in% blist],
+              hjust=0,nudge_x=30,size=2.5)+
+    theme(legend.position=&quot;none&quot;,
+          plot.caption=element_text(hjust=0,size=9),
+          plot.subtitle=element_text(face=&quot;italic&quot;))+
+    labs(x=&quot;&quot;,y=&quot;&quot;,title=&quot;Percentage Change from Year Ago&quot;,
+         caption=mycap1) 
+}
+
+
+
+
+volatile.plot(M) 
+
+
+
+files = list.files(
+  &#39;content/&#39;, &#39;[.](Rmd)$&#39;, full.names = TRUE,
+  recursive = TRUE
+)
+
+
+for(f in files){
+  x &lt;- readLines(f)
+  y &lt;- gsub( &#39;\\{\\{ site.url\\}\\}&#39;, &quot;../../../..&quot;, x )
+  cat(y, file=f, sep=&quot;\n&quot;)}
+
+
+gif_file &lt;- save_gif({for (i in seq(1,M)){  
+  g&lt;- volatile.plot(i)
+  print(g)
+  print(paste(i,&quot;out of&quot;,M))
+}
+  for (ii in 1:20){
+    print(g)
+    print(paste(ii,&quot;out of&quot;,20))
+  }
+}, gif_file = paste0(mydir,&quot;/volatile3.gif&quot;), width = 1200, height = 800, res = 144, delay=1/10)
+utils::browseURL(gif_file)</code></pre>
+</p>
+</details>
 <p><img src="/images/volatile3.gif" /></p>
 <p>This volatile behaviour can be explained by how optimistic firms are about the future and investment decisions being optional. You need to buy food and pay for shelter regularly to sustain yourself but you don’t need to buy, for example, a new machinery for your business or learn a certain skill if you think it’s going to be worthless to you. Even if you plan to invest, future outcomes are uncertain. With the gains of investment being realised in the long term, it’s not a surprise that investment activity is sensitive to this uncertainty.</p>
 </div>
@@ -111,7 +201,7 @@ plot2 &lt;- ggplot(df2, aes(x = DATE)) +
   mytheme</code></pre>
 </p>
 </details>
-<p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+<p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-4-1.png" width="672" /><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
 <p>In my previous <a href="https://hahm.netlify.com/buybacks-investment/">post</a>, I looked at whether buybacks were linked to the sluggish investment in the United States, where I concluded that buybacks were not the main cause. The United States was the focus of the post because that’s where most of the claims against buybacks have come from. So, if buybacks aren’t behind sluggish investment, what could be? A natural place to start is to see if funding an investment is expensive. Long run real interest rates have been trending downwards and have reached all-time lows in recent years.</p>
 <iframe src="https://data.oecd.org/chart/5kSC" width="100%" height="400" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true">
 <a href="https://data.oecd.org/chart/5kSC" target="_blank">OECD Chart: Long-term interest rates, Total, % per annum, Monthly, Jan 1990 – Sep 2018</a>

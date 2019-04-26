@@ -47,6 +47,98 @@ Investment helps raise an economy’s capital stock, which is another way of say
 
 As a component of GDP, measuring investment helps us to measure an economy’s output. It’s the most volatile component as the animation below shows — it rises and falls by larger amounts.
 
+<details>
+<summary>Click here for the graph code</summary>
+<p>
+```{r echo = TRUE, eval=FALSE}
+mydir <- "C:/Users/Hamdi/Desktop"
+
+volatile2 <-read_excel("volatility2.xlsx")
+
+colnames(volatile2)[1]<-"cycle"
+
+volatile2$year<-substr(volatile2$cycle,1,4)
+
+volatile2$month<-as.numeric(substr(volatile2$cycle,7,7))*3
+
+volatile2$date<-as.Date(ISOdate(volatile2$year,volatile2$month,1))
+
+volatile2 %>% select(-cycle,-year,-month) %>% 
+  gather(indicator,percent,-date) ->volatile.df
+
+mycaption<-"Mack, A., and E. Martinez-Garcia. 2011. 'A Cross-Country Quarterly Database of Real House Prices: A Methodological Note.' Globalization and Monetary Policy Institute Working Paper No. 99, Federal Reserve Bank of Dallas."
+
+mycaption<-str_wrap(mycaption,width=80) #wrap the caption
+
+mycap1<-"Source: https://fredblog.stlouisfed.org/2015/08/gdp-components-volatility/"  #caption part 2
+
+
+blist<-c("investment","consumption","gov_expen")
+
+volatile.dt2<-data.table(volatile.df)[year(date)>1970 & indicator %in% blist,]
+
+xlist<-unique(volatile.dt2[year(date)>1979]$date)
+
+M<-length(xlist)
+
+
+
+ggthemr("fresh")
+
+volatile.plot<-function(i=1){
+  ggplot(data=volatile.dt2[year(date)>1979 & 
+                             date<=xlist[i] &
+                             indicator %in% blist],
+         aes(x=date,y=percent,color=indicator,linetype=indicator,label=indicator))+
+    scale_color_manual(values=c("#000000", "#009E73", "#D55E00"))+
+    geom_line(size=1.1)+
+    scale_x_date(breaks=seq(xlist[1],xlist[M]+years(1),"5 year"),
+                 date_labels="%Y",limits=c(xlist[1],xlist[M]+years(1)))+ 
+    geom_hline(yintercept=0,linetype=2)+
+    scale_y_continuous(breaks=seq(-30,45,5),limits=c(-35,40))+
+    geom_text(data=volatile.dt2[date==xlist[i] &
+                                  indicator %in% blist],
+              hjust=0,nudge_x=30,size=2.5)+
+    theme(legend.position="none",
+          plot.caption=element_text(hjust=0,size=9),
+          plot.subtitle=element_text(face="italic"))+
+    labs(x="",y="",title="Percentage Change from Year Ago",
+         caption=mycap1) 
+}
+
+
+
+
+volatile.plot(M) 
+
+
+
+files = list.files(
+  'content/', '[.](Rmd)$', full.names = TRUE,
+  recursive = TRUE
+)
+
+
+for(f in files){
+  x <- readLines(f)
+  y <- gsub( '\\{\\{ site.url\\}\\}', "../../../..", x )
+  cat(y, file=f, sep="\n")}
+
+
+gif_file <- save_gif({for (i in seq(1,M)){  
+  g<- volatile.plot(i)
+  print(g)
+  print(paste(i,"out of",M))
+}
+  for (ii in 1:20){
+    print(g)
+    print(paste(ii,"out of",20))
+  }
+}, gif_file = paste0(mydir,"/volatile3.gif"), width = 1200, height = 800, res = 144, delay=1/10)
+utils::browseURL(gif_file)
+```
+</p>
+</details>
 
 ![](/images/volatile3.gif) 
 
