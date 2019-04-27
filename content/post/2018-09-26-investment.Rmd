@@ -28,6 +28,7 @@ library(ggthemr)
 library(tibble)
 library(janitor)
 library(scales)
+library(directlabels)
 
 ```
 
@@ -146,6 +147,73 @@ utils::browseURL(gif_file)
 This volatile behaviour can be explained by how optimistic firms are about the future and investment decisions being optional. You need to buy food and pay for shelter regularly to sustain yourself but you don’t need to buy, for example, a new machinery for your business or learn a certain skill if you think it’s going to be worthless to you. Even if you plan to invest, future outcomes are uncertain. With the gains of investment being realised in the long term, it’s not a surprise that investment activity is sensitive to this uncertainty.
 
 ### **What's happening with investment?**
+
+Gross investment has been tepid since the boom in the 90s. Net investment, which takes into account depreciation, has been on a downtrend since.
+
+<details>
+<summary>Click here for the graph code</summary>
+<p>
+``` {r tidy = TRUE}
+fixed <- read.csv("fixed_investment.csv")
+
+fixed <- fixed %>% 
+  select(date, pfni_gdp, net_gdp)
+
+colnames(fixed)[2]<-"Gross"
+colnames(fixed)[3]<-"Net"
+
+fixed.df <- fixed %>% 
+  gather(indicator, percent, -date)
+
+ggthemr("fresh")
+
+darken_swatch(0.2)
+
+windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
+
+xmarg = margin(10,15,0,0)
+ymarg = margin(5,5,0,0)
+
+capt = "Source: BEA. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation"
+
+title = "Gross and Net Investment as a Percentage of GDP"
+
+mytheme <- theme(legend.position = "none",
+                 plot.caption=element_text(hjust=0,size=9),
+                 plot.title = element_text(hjust=0.5, size=16),
+                 axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
+                 axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
+                 axis.text.x = element_text(size=10),
+                 axis.text.y = element_text(size=10)) 
+
+
+nominal_gdp <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
+  scale_color_manual(values=c("#0072B2", "#D55E00")) +
+  geom_line(size = 1) +
+  geom_dl(aes(label = indicator), method="last.points") +
+  labs(x = "Date", y = "Percent of GDP", caption = capt) +
+  ylim(0, 16) +
+  scale_x_continuous(breaks=seq(1967, 2017, 5))+
+  ggtitle(title) +
+  mytheme
+
+```
+</p>
+</details>
+
+```{r echo = FALSE}
+
+nominal_gdp
+```
+
+
+
+
+
+
+
+
+
 
 Non financial business investment as a percentage of GDP is currently measured at 9.6%, which is closer to its long term average of 9.1% than to its peak of 10.7% achieved in 2000 after a mini boom in the 90s.
 

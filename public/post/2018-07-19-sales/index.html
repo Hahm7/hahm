@@ -426,6 +426,8 @@ joined %&gt;%
   group_by(Sales) %&gt;% 
   summarise(count = n()) %&gt;% 
   arrange(desc(count))</code></pre>
+<pre><code>## Warning: Factor `Sales` contains implicit NA, consider using
+## `forcats::fct_explicit_na`</code></pre>
 <pre><code>## # A tibble: 3 x 2
 ##   Sales              count
 ##   &lt;fct&gt;              &lt;int&gt;
