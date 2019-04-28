@@ -206,9 +206,17 @@ nominal_gdp <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, lab
 nominal_gdp
 ```
 
+However, these are nominal ratios, which means any price effects aren’t striped out. Over the decades, we have seen Moore’s law in <a href="https://en.wikipedia.org/wiki/Moore%27s_law" target="_blank">action</a>, where the number of components packed into a computer chip has doubled every 2 years or so. This has meant new computers and other technologies have doubled in speed and have become more powerful at lower <a href="https://www.washingtonpost.com/opinions/the-power-of-moores-law/2015/04/19/f1806c98-e6b6-11e4-9a6a-c1ab95a0600b_story.html?utm_term=.67a8c53ba071" target="_blank">costs</a>. In the 1970s, supercomputers were bulky, stationary things which used up a lot of power. Nowadays, supercomputers can be found in our pockets.
+
+Why does this matter? Because most of investment is being spent on things which have benefitted from this reduction in costs.
+
+While investment in equipment makes up the bulk of total investment, investment in intellectual products, which include software and research and development, is making up a growing portion of total investment. Also, the bulk of investment in equipment is being driven by information processing equipment, which includes computers and communication equipment. 
 
 
 
+
+
+It therefore makes sense to look at the real ratios of investment to gdp to see if the nominal figure was just capturing falling costs. I use log ratios to avoid misinterpreting chained dollar ratios as this article <a href="http://econbrowser.com/archives/2018/04/net-vs-gross-investment" target="_blank">explains</a>. 
 
 
 
