@@ -293,14 +293,18 @@ equip_comp <- ggplot(fixed.df2, aes(x =date, y = percent, color = indicator)) +
   mytheme
 
 ```
-
+</p>
+</details>
 
 ```{r echo = FALSE}
 
-plot_grid(pfni_comp, equip_comp)
+pfni_comp
 ```
-</p>
-</details>
+
+```{r echo = FALSE}
+
+equip_comp
+```
 
 
 It therefore makes sense to look at the real ratios of investment to gdp to see if the nominal figure was just capturing falling costs. I use log ratios to avoid misinterpreting chained dollar ratios as this article <a href="http://econbrowser.com/archives/2018/04/net-vs-gross-investment" target="_blank">explains</a>. 
