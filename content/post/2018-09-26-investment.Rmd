@@ -29,6 +29,7 @@ library(tibble)
 library(janitor)
 library(scales)
 library(directlabels)
+library(cowplot)
 
 ```
 
@@ -212,8 +213,94 @@ Why does this matter? Because most of investment is being spent on things which 
 
 While investment in equipment makes up the bulk of total investment, investment in intellectual products, which include software and research and development, is making up a growing portion of total investment. Also, the bulk of investment in equipment is being driven by information processing equipment, which includes computers and communication equipment. 
 
+<details>
+<summary>Click here for the graph code</summary>
+<p>
+``` {r tidy = TRUE}
+
+fixed <- read.csv("fixed_investment.csv")
+
+fixed %>% 
+  mutate(equip_total = (equipment/pfni)*100) -> fixed
+
+fixed %>% 
+  mutate(struct_total = (structure/pfni)*100) -> fixed
+
+fixed %>% 
+  mutate(intellect_total = (intellectual/pfni)*100) -> fixed
+
+fixed.df <- fixed %>% 
+  select(date, equip_total, struct_total, intellect_total)
+
+colnames(fixed.df)[2]<-"Equipment"
+colnames(fixed.df)[3]<-"Structure"
+colnames(fixed.df)[4]<-"Intellectual"
+
+fixed.df <- fixed.df %>% 
+  gather(indicator, percent, -date)
+
+fixed.df2 <- fixed %>% 
+  select(date, info_equip, industrial_equip, transportation_equip, other_equip)
+
+colnames(fixed.df2)[2]<-"Information"
+colnames(fixed.df2)[3]<-"Industrial"
+colnames(fixed.df2)[4]<-"Tranportation"
+colnames(fixed.df2)[5]<-"Other"
+
+fixed.df2 <- fixed.df2 %>% 
+  gather(indicator, percent, -date)
+
+ggthemr("fresh")
+
+darken_swatch(0.2)
+
+windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
+
+xmarg = margin(10,15,0,0)
+ymarg = margin(5,5,0,0)
+
+capt = "Source: BEA"
+
+title = "Equipment, Structure and Intellectual Investment 
+as a Percentage of Gross Investment"
+
+mytheme <- theme(legend.position = "bottom",
+                 legend.title = element_blank(),
+                 plot.caption=element_text(hjust=0,size=9),
+                 plot.title = element_text(hjust=0.5, size=16),
+                 axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
+                 axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
+                 axis.text.x = element_text(size=10),
+                 axis.text.y = element_text(size=10))
+
+pfni_comp <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator)) +
+  scale_color_manual(values=c("#009E73", "#F0E442", "#0072B2")) +
+  geom_line(size = 1) +
+  labs(x = "Date", y = "Percent", caption = capt) +
+  ylim(0, 70) +
+  scale_x_continuous(breaks=seq(1967, 2017, 5))+
+  ggtitle(title) +
+  mytheme
+
+equip_comp <- ggplot(fixed.df2, aes(x =date, y = percent, color = indicator)) +
+  scale_color_manual(values=c("#000000", "#56B4E9", "#D55E00", "#CC79A7")) +
+  geom_line(size = 1)  +
+  labs(x = "Date", y = "Percent", caption = capt) +
+  ylim(5, 45) +
+  scale_x_continuous(breaks=seq(1967, 2017, 5))+
+  ggtitle("Information, Industrial, Tranportation and Other 
+  as a Percentage of Total Investment in Equipment") +
+  mytheme
+
+```
 
 
+```{r echo = FALSE}
+
+plot_grid(pfni_comp, equip_comp)
+```
+</p>
+</details>
 
 
 It therefore makes sense to look at the real ratios of investment to gdp to see if the nominal figure was just capturing falling costs. I use log ratios to avoid misinterpreting chained dollar ratios as this article <a href="http://econbrowser.com/archives/2018/04/net-vs-gross-investment" target="_blank">explains</a>. 
