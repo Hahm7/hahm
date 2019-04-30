@@ -319,8 +319,8 @@ fixed <- read.csv("fixed_investment.csv")
 fixed <- fixed %>% 
   select(date, logratio_net, logratio_pfni)
 
-colnames(fixed)[2]<-"Log ratio Net Investment"
-colnames(fixed)[3]<-"Log ratio Gross Ivestment"
+colnames(fixed)[2]<-"Net"
+colnames(fixed)[3]<-"Gross"
 
 fixed.df <- fixed %>% 
   gather(indicator, percent, -date)
@@ -410,7 +410,7 @@ capt = "Source: BEA. Gross investment is private nonresidential fixed investment
 title = "Net Investment as a Percentage of 
         Gross Investment"
 
-mytheme <- theme(legend.position = "bottom",
+mytheme <- theme(legend.position = "none",
                  legend.title = element_blank(),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
