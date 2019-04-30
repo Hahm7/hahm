@@ -333,66 +333,72 @@ log_ratio &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, la
 </details>
 <p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Net investment hasn’t reached the levels of the 90s boom and has since been sluggish. The current recovery is struggling to reach the levels of the early 2000s recovery. The real net and gross ratios have been drifting further apart with the gross investment ratio rising ever higher. If we look at net investment as a ratio of gross investment, we discover that it’s been falling steadily in nominal and real terms.</p>
-<p>Non financial business investment as a percentage of GDP is currently measured at 9.6%, which is closer to its long term average of 9.1% than to its peak of 10.7% achieved in 2000 after a mini boom in the 90s.</p>
-<details>
-<summary>Click here for the graph code</summary>
-<p>
-<pre class="r"><code>df &lt;- read.csv(&quot;gross_invest.csv&quot;)
+<pre class="r"><code>fixed &lt;- read.csv(&quot;fixed_investment.csv&quot;)
 
-df2 &lt;- read.csv(&quot;fredgraph.csv&quot;)
+fixed &lt;- fixed %&gt;% 
+  select(date, net_pfni)
 
+colnames(fixed)[2]&lt;-&quot;Net Investment as Ratio of Gross Investment&quot;
 
-df2$DATE &lt;- as.Date(df2$DATE, origin = &quot;1899-12-30&quot;) 
+fixed.df &lt;- fixed %&gt;% 
+  gather(indicator, percent, -date)
+
+fixed2 &lt;- read.csv(&quot;fixed_investment.csv&quot;)
+
+fixed2 &lt;- fixed2 %&gt;% 
+  select(date, net_pfni_ratio)
+
+colnames(fixed2)[2]&lt;-&quot;Log Net Investment as Ratio of Log Gross Investment&quot;
+
+fixed2.df &lt;- fixed2 %&gt;% 
+  gather(indicator, percent, -date)
 
 ggthemr(&quot;fresh&quot;)
 
 darken_swatch(0.2)
-
 
 windowsFonts(SansSerif=windowsFont(&quot;Microsoft Sans Serif Regular&quot;))
 
 xmarg = margin(10,15,0,0)
 ymarg = margin(5,5,0,0)
 
-capt = &quot;Source: Integrated Macroeconomic Accounts Of the United States&quot;
+capt = &quot;Source: BEA. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation&quot;
 
-title = &quot;Gross Nonfinancial Fixed Capital Formation&quot;
+title = &quot;Net Investment as a Percentage of 
+        Gross Investment&quot;
 
-mytheme &lt;- theme(plot.caption=element_text(hjust=0,size=9),
+mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
+                 legend.title = element_blank(),
+                 plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
                  axis.title.x = element_text(margin = xmarg, size = 12, face = &quot;bold&quot;),
                  axis.text.x = element_text(size=10),
                  axis.text.y = element_text(size=10)) 
-  
-  
-plot &lt;- ggplot(df, aes(x =date)) +
-  geom_line(aes(y = gfcf_gdp), size = 1.4) +
+
+
+net_ratio &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
   scale_color_manual(values=c(&quot;#0072B2&quot;)) +
-  labs(x = &quot;Date&quot;, y = &quot;Percent of GDP&quot;, caption = capt) +
-  ylim(0, 15) +
-  scale_x_continuous(breaks=seq(1960, 2017, 5))+
+  geom_line(size = 1) +
+  labs(x = &quot;Date&quot;, y = &quot;Net Ratio&quot;, caption = capt) +
+  ylim(5, 45) +
+  scale_x_continuous(breaks=seq(1967, 2017, 5))+
   ggtitle(title) +
   mytheme
 
-plot2 &lt;- ggplot(df2, aes(x = DATE)) +
-  geom_line(aes(y = GPDI_GDPA), size = 1.4) +
-  scale_color_manual(values=c(&quot;#0072B2&quot;)) +
-  labs(x = &quot;Date&quot;, y = &quot;Percent of GDP&quot;, caption = capt) +
-  scale_x_date(breaks = pretty_breaks(14))+
-  ggtitle(title) +
+net_ratio</code></pre>
+<p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code>net_log_ratio &lt;- ggplot(fixed2.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
+  scale_color_manual(values=c(&quot;#D55E00&quot;)) +
+  geom_line(size = 1) +
+  labs(x = &quot;Date&quot;, y = &quot;Net Log Ratio&quot;, caption = capt) +
+  ylim(-3, -1) +
+  scale_x_continuous(breaks=seq(1967, 2017, 5))+
+  ggtitle(&quot;Log Ratio of Net investment to 
+          Gross Investment&quot;) +
   mytheme</code></pre>
-</p>
-</details>
-<p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-11-1.png" width="672" /><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-11-2.png" width="672" /></p>
-<p>In my previous <a href="https://hahm.netlify.com/buybacks-investment/">post</a>, I looked at whether buybacks were linked to the sluggish investment in the United States, where I concluded that buybacks were not the main cause. The United States was the focus of the post because that’s where most of the claims against buybacks have come from. So, if buybacks aren’t behind sluggish investment, what could be? A natural place to start is to see if funding an investment is expensive. Long run real interest rates have been trending downwards and have reached all-time lows in recent years.</p>
-<iframe src="https://data.oecd.org/chart/5kSC" width="100%" height="400" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true">
-<a href="https://data.oecd.org/chart/5kSC" target="_blank">OECD Chart: Long-term interest rates, Total, % per annum, Monthly, Jan 1990 – Sep 2018</a>
-</iframe>
-<p>It should have been cheaper to finance investment for businesses in the last 20 years but we have not seen an uptick in investment. What if there’s nothing worth investing in? This viewpoint comes into conflict with the fact that rates of return and profits for non financial corporations have been rising.</p>
-<iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=mw0w&amp;width=100%&amp;height=300" scrolling="no" frameborder="0" style="overflow:hidden; width:100%; height:425px;" allowTransparency="true">
-</iframe>
-<p>Profits and return to investment has been risen but the sluggish investment numbers suggest businesses haven’t been taking advantage of cheap finance and high rewards.</p>
+<p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>This suggests a greater amount of investment is being devoted to replacing older capital stock instead of adding to stock. So, what could be going on?</p>
 </div>
 <div id="fool-me-once" class="section level3">
 <h3><strong>Fool me once</strong></h3>
