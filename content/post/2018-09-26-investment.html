@@ -143,7 +143,8 @@ capt = &quot;Source: BEA. Gross investment is private nonresidential fixed inves
 
 title = &quot;Gross and Net Investment as a Percentage of GDP&quot;
 
-mytheme &lt;- theme(legend.position = &quot;none&quot;,
+mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
+                 legend.title = element_blank(),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
@@ -155,7 +156,6 @@ mytheme &lt;- theme(legend.position = &quot;none&quot;,
 nominal_gdp &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
   scale_color_manual(values=c(&quot;#0072B2&quot;, &quot;#D55E00&quot;)) +
   geom_line(size = 1) +
-  geom_dl(aes(label = indicator), method=&quot;last.points&quot;) +
   labs(x = &quot;Date&quot;, y = &quot;Percent of GDP&quot;, caption = capt) +
   ylim(0, 16) +
   scale_x_continuous(breaks=seq(1967, 2017, 5))+
