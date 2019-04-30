@@ -371,6 +371,9 @@ log_ratio
 
 Net investment hasn’t reached the levels of the 90s boom and has since been sluggish. The current recovery is struggling to reach the levels of the early 2000s recovery. The real net and gross ratios have been drifting further apart with the gross investment ratio rising ever higher. If we look at net investment as a ratio of gross investment, we discover that it’s been falling steadily in nominal and real terms.
 
+<details>
+<summary>Click here for the graph code</summary>
+<p>
 ``` {r tidy = TRUE}
 
 fixed <- read.csv("fixed_investment.csv")
@@ -439,11 +442,18 @@ net_log_ratio <- ggplot(fixed2.df, aes(x =date, y = percent, color = indicator, 
   mytheme
 
 ```
+</p>
+</details>
+
 
 ```{r echo = FALSE}
 
-plot_grid(net_ratio, net_log_ratio)
+net_ratio
+```
 
+```{r echo = FALSE}
+
+net_log_ratio
 ```
 
 This suggests a greater amount of investment is being devoted to replacing older capital stock instead of adding to stock. So, what could be going on?
