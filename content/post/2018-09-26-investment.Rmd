@@ -307,7 +307,73 @@ equip_comp
 ```
 
 
-It therefore makes sense to look at the real ratios of investment to gdp to see if the nominal figure was just capturing falling costs. I use log ratios to avoid misinterpreting chained dollar ratios as this article <a href="http://econbrowser.com/archives/2018/04/net-vs-gross-investment" target="_blank">explains</a>. 
+It therefore makes sense to look at the real ratios of investment to gdp to see if the nominal figure was just capturing falling costs. I use log ratios to avoid misinterpreting chained dollar ratios as this article <a href="http://econbrowser.com/archives/2018/03/assessing-trends-in-real-shares" target="_blank">explains</a>. 
+
+<details>
+<summary>Click here for the graph code</summary>
+<p>
+``` {r tidy = TRUE}
+
+fixed <- read.csv("fixed_investment.csv")
+
+fixed <- fixed %>% 
+  select(date, logratio_net, logratio_pfni)
+
+colnames(fixed)[2]<-"Log ratio Net Investment"
+colnames(fixed)[3]<-"Log ratio Gross Ivestment"
+
+fixed.df <- fixed %>% 
+  gather(indicator, percent, -date)
+
+
+ggthemr("fresh")
+
+darken_swatch(0.2)
+
+windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
+
+xmarg = margin(10,15,0,0)
+ymarg = margin(5,5,0,0)
+
+capt = "Source: BEA. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation"
+
+title = "Log Ratio of Gross and Net Investment"
+
+mytheme <- theme(legend.position = "bottom",
+                 legend.title = element_blank(),
+                 plot.caption=element_text(hjust=0,size=9),
+                 plot.title = element_text(hjust=0.5, size=16),
+                 axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
+                 axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
+                 axis.text.x = element_text(size=10),
+                 axis.text.y = element_text(size=10)) 
+
+
+log_ratio <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
+  scale_color_manual(values=c("#0072B2", "#D55E00")) +
+  geom_line(size = 1) +
+  labs(x = "Date", y = "Log Ratio", caption = capt) +
+  ylim(-5.5, -1.5) +
+  scale_x_continuous(breaks=seq(1967, 2017, 5))+
+  ggtitle(title) +
+  mytheme
+
+
+
+
+```
+</p>
+</details>
+
+
+```{r echo = FALSE}
+log_ratio
+
+```
+
+Net investment hasn’t reached the levels of the 90s boom and has since been sluggish. The current recovery is struggling to reach the levels of the early 2000s recovery. The real net and gross ratios have been drifting further apart with the gross investment ratio rising ever higher. If we look at net investment as a ratio of gross investment, we discover that it’s been falling steadily in nominal and real terms.
+
+
 
 
 
