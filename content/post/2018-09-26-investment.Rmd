@@ -380,6 +380,9 @@ log_ratio
 
 There has been a growing gap between the gross and net cumulative growth rates since the early 2000s. In fact, if we change the starting point to this period, we find that net investment has cumulatively fallen short of cumulative GDP growth.
 
+<details>
+<summary>Click here for the graph code</summary>
+<p>
 ``` {r tidy = TRUE}
 
 
@@ -440,6 +443,9 @@ log_ratio <- ggplot(fixed_ratio, aes(x =date, y = net_ratio)) +
   mytheme
 
 ```
+</p>
+</details>
+
 
 ```{r echo = FALSE}
 

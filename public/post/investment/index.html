@@ -342,6 +342,9 @@ log_ratio &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, la
 </details>
 <p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>There has been a growing gap between the gross and net cumulative growth rates since the early 2000s. In fact, if we change the starting point to this period, we find that net investment has cumulatively fallen short of cumulative GDP growth.</p>
+<details>
+<summary>Click here for the graph code</summary>
+<p>
 <pre class="r"><code>fixed &lt;- read.csv(&quot;fixed_investment.csv&quot;)
 
 fixed &lt;- fixed %&gt;% 
@@ -397,6 +400,8 @@ log_ratio &lt;- ggplot(fixed_ratio, aes(x =date, y = net_ratio)) +
   labs(x = &quot;Date&quot;, y = &quot;Net Log Ratio&quot;, caption = capt) +
   ggtitle(title) +
   mytheme</code></pre>
+</p>
+</details>
 <p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Net investment hasn’t reached the levels of the 90s boom and has since been sluggish. The current recovery is struggling to reach the levels of the early 2000s recovery. The real net and gross ratios have been drifting further apart with the gross investment ratio rising ever higher. If we look at net investment as a ratio of gross investment, we discover that it’s been falling steadily in nominal and real terms.</p>
 <details>
