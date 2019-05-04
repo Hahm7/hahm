@@ -307,8 +307,7 @@ equip_comp
 ```
 
 
-It therefore makes sense to look at the real ratios of investment to gdp to see if the nominal figure was just capturing falling costs. I use log ratios to avoid misinterpreting chained dollar ratios as this article <a href="http://econbrowser.com/archives/2018/03/assessing-trends-in-real-shares" target="_blank">explains</a>. I then use the log ratio and express it relative to a base year value (1967 in my case) as explained <a href="http://econbrowser.com/archives/2015/08/to-log-or-not-to-log-part-iii" target="_blank">here</a>, to get the cumulative percentage changes. A percentage shows a part of the whole and cumulative percentages adds a percentage from one period to the percentages of another so we could if this part of the whole has become more important over the years. If the log ratio falls below zero, then the real investment growth has cumulatively fallen short of cumulative GDP growth.
-We can see that Real gross investment has cumulatively grown since 1967. While Real net investment has cumulatively risen since 1967, there is a growing gap between net and gross since net investment reached its peak level in the 90s. 
+It therefore makes sense to look at the real ratios of investment to gdp to see if the nominal figure was just capturing falling costs. I use log ratios to avoid misinterpreting chained dollar ratios as this article <a href="http://econbrowser.com/archives/2018/03/assessing-trends-in-real-shares" target="_blank">explains</a>. I then use the log ratio and express it relative to a base year value (1967 in my case) as explained <a href="http://econbrowser.com/archives/2015/08/to-log-or-not-to-log-part-iii" target="_blank">here</a>, to get the cumulative percentage changes. A percentage shows a part of the whole. Meanwhile, a cumulative percentage is derived from adding a percentage from one period to a percentage from the next period which will help us see if the part (Gross and Net Investment) of the whole (GDP), have become more or less important over the years. If this ratio falls below zero, then the real investment growth has cumulatively fallen short of cumulative real GDP growth. We see this happen frequently with net investment than we do we Gross investment. However, both gross and net investment have grown cumulatively relative to GDP since 1967, growing at 73% and 23% respectively.
 
 <details>
 <summary>Click here for the graph code</summary>
@@ -372,6 +371,75 @@ log_ratio <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label
 </p>
 </details>
 
+
+```{r echo = FALSE}
+
+log_ratio
+
+```
+
+There has been a growing gap between the gross and net cumulative growth rates since the early 2000s. In fact, if we change the starting point to this period, we find that net investment has cumulatively fallen short of cumulative GDP growth.
+
+``` {r tidy = TRUE}
+
+
+fixed <- read.csv("fixed_investment.csv")
+
+fixed <- fixed %>% 
+  select(date, real_net, real_gdp)
+
+fixed$date <- as.Date(ISOdate(fixed$date, 1, 1))
+
+fixed <- fixed %>% 
+  filter(date >= "2000-01-01")
+
+
+fixed <- fixed %>% 
+  mutate(net_ratio = (log(real_net/real_net[date == "2000-01-01"])-
+                      log(real_gdp/real_gdp[date == "2000-01-01"])))
+
+
+fixed_ratio <- fixed %>% 
+  select(date, net_ratio)
+
+colnames(fixed_ratio)[2]<-"net_ratio"
+
+
+
+ggthemr("fresh")
+
+darken_swatch(0.2)
+
+windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
+
+xmarg = margin(10,15,0,0)
+ymarg = margin(5,5,0,0)
+
+capt = "Source: BEA. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation"
+
+title = "Log Ratio of Gross and Net Investment"
+
+mytheme <- theme(legend.position = "bottom",
+                 legend.title = element_blank(),
+                 plot.caption=element_text(hjust=0,size=9),
+                 plot.title = element_text(hjust=0.5, size=16),
+                 axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
+                 axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
+                 axis.text.x = element_text(size=10),
+                 axis.text.y = element_text(size=10))
+
+
+
+
+
+log_ratio <- ggplot(fixed_ratio, aes(x =date, y = net_ratio)) +
+  scale_color_manual(values=c("#D55E00")) +
+  geom_line(size = 1) +
+  labs(x = "Date", y = "Net Log Ratio", caption = capt) +
+  ggtitle(title) +
+  mytheme
+
+```
 
 ```{r echo = FALSE}
 
