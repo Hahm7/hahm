@@ -544,7 +544,7 @@ net_ratio
 net_log_ratio
 ```
 
-This suggests a greater amount of investment is being devoted to replacing older capital stock instead of adding to stock. So, what could be going on?
+This suggests a greater amount of investment is being devoted to replacing older capital stock instead of adding to stock. So, what could be causing going on?
 
 ### **Fool me once**
 
