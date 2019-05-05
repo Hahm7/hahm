@@ -309,7 +309,7 @@ equip_comp
 
 It therefore makes sense to look at the real ratios of investment to gdp to see if the nominal figure was just capturing falling costs. I use log ratios to avoid misinterpreting chained dollar ratios as this article <a href="http://econbrowser.com/archives/2018/03/assessing-trends-in-real-shares" target="_blank">explains</a>. I then use the log ratio and express it relative to a base year value (1967 in my case) as explained <a href="http://econbrowser.com/archives/2015/08/to-log-or-not-to-log-part-iii" target="_blank">here</a>, to get the cumulative percentage changes. A percentage shows a part of the whole. Meanwhile, a cumulative percentage is derived from adding a percentage from one period to a percentage from the next period which will help us see if the part (Gross and Net Investment) of the whole (GDP), have become more or less important over the years. 
 
-If this ratio falls below zero, then the real investment growth has cumulatively fallen short of cumulative real GDP growth. We see this happen frequently with net investment than we do we Gross investment. However, both gross and net investment have grown cumulatively relative to GDP since 1967, growing at 73% and 23% respectively.
+If this ratio falls below 0, then the real investment growth has cumulatively fallen short of cumulative real GDP growth. We see this happen frequently with net investment but not with gross investment. However, both gross and net investment have grown cumulatively relative to GDP since 1967, growing at 73% and 23% respectively.
 
 <details>
 <summary>Click here for the graph code</summary>
@@ -363,6 +363,7 @@ mytheme <- theme(legend.position = "bottom",
 log_ratio <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
   scale_color_manual(values=c("#0072B2", "#D55E00")) +
   geom_line(size = 1) +
+  geom_hline(yintercept=0) +
   labs(x = "Date", y = "Log Ratio", caption = capt) +
   ylim(-1.5, 1) +
   scale_x_continuous(breaks=seq(1967, 2017, 5))+
