@@ -299,7 +299,8 @@ mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
 log_ratio &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
   scale_color_manual(values=c(&quot;#0072B2&quot;, &quot;#D55E00&quot;)) +
   geom_line(size = 1) +
-  geom_hline(yintercept=0, color = &quot;black&quot;, size=0.7) +
+  geom_hline(yintercept=0, linetype=&quot;dashed&quot;, 
+                color = &quot;black&quot;, size=1) +
   labs(x = &quot;Date&quot;, y = &quot;Log Ratio&quot;, caption = capt) +
   ylim(-1.5, 1) +
   scale_x_continuous(breaks=seq(1967, 2017, 5))+
