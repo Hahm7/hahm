@@ -70,17 +70,18 @@ volatile2$month&lt;-as.numeric(substr(volatile2$cycle,7,7))*3
 
 volatile2$date&lt;-as.Date(ISOdate(volatile2$year,volatile2$month,1))
 
+colnames(volatile2)[2]&lt;-&quot;Investment&quot;
+colnames(volatile2)[3]&lt;-&quot;Consumption&quot;
+colnames(volatile2)[4]&lt;-&quot;Government Expenditure&quot;
+
+
 volatile2 %&gt;% select(-cycle,-year,-month) %&gt;% 
   gather(indicator,percent,-date) -&gt;volatile.df
 
-mycaption&lt;-&quot;Mack, A., and E. Martinez-Garcia. 2011. &#39;A Cross-Country Quarterly Database of Real House Prices: A Methodological Note.&#39; Globalization and Monetary Policy Institute Working Paper No. 99, Federal Reserve Bank of Dallas.&quot;
-
-mycaption&lt;-str_wrap(mycaption,width=80) #wrap the caption
-
-mycap1&lt;-&quot;Source: https://fredblog.stlouisfed.org/2015/08/gdp-components-volatility/&quot;  #caption part 2
+mycap1&lt;-&quot;Source: https://fredblog.stlouisfed.org/2015/08/gdp-components-volatility/&quot;
 
 
-blist&lt;-c(&quot;investment&quot;,&quot;consumption&quot;,&quot;gov_expen&quot;)
+blist&lt;-c(&quot;Investment&quot;,&quot;Consumption&quot;,&quot;Government Expenditure&quot;)
 
 volatile.dt2&lt;-data.table(volatile.df)[year(date)&gt;1970 &amp; indicator %in% blist,]
 
@@ -106,7 +107,8 @@ volatile.plot&lt;-function(i=1){
     geom_text(data=volatile.dt2[date==xlist[i] &amp;
                                   indicator %in% blist],
               hjust=0,nudge_x=30,size=2.5)+
-    theme(legend.position=&quot;none&quot;,
+    theme(legend.position=&quot;bottom&quot;,
+          legend.title = element_blank(),
           plot.caption=element_text(hjust=0,size=9),
           plot.subtitle=element_text(face=&quot;italic&quot;))+
     labs(x=&quot;&quot;,y=&quot;&quot;,title=&quot;Percentage Change from Year Ago&quot;,
