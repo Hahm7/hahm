@@ -348,7 +348,7 @@ windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
 xmarg = margin(10,15,0,0)
 ymarg = margin(5,5,0,0)
 
-capt = "Log ratio of real gross and net investment to real GDP (Chained $2012), normalized to 1967=0. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation. Source: BEA and author's calculations"
+capt = "Log ratio of real gross and net investment to real GDP (Chained 2012 Dollars), normalized to 1967=0. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation. Source: BEA and author's calculations"
 
 title = "Log Ratio of Gross and Net Investment"
 
@@ -424,7 +424,7 @@ windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
 xmarg = margin(10,15,0,0)
 ymarg = margin(5,5,0,0)
 
-capt = "Log ratio of net investment to real GDP (Chained $2012), normalized to 2000=0. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation. Source: BEA and author's calculations"
+capt = "Log ratio of net investment to real GDP (Chained 2012 Dollars), normalized to 2000=0. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation. Source: BEA and author's calculations"
 
 title = "Log Ratio of Gross and Net Investment"
 
@@ -497,7 +497,7 @@ ymarg = margin(5,5,0,0)
 
 capt = "Source: BEA. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation"
 
-capt2 = "Log ratio of real net investment to real gross investment (Chained $2012). Gross investment is private nonresidential fixed investment. Net is gross minus depreciation. Source: BEA and author's calculations"
+capt2 = "Log ratio of real net investment to real gross investment (Chained 2012 Dollars). Gross investment is private nonresidential fixed investment. Net is gross minus depreciation. Source: BEA and author's calculations"
 
 title = "Net Investment as a Percentage of 
         Gross Investment"
