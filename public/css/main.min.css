@@ -424,7 +424,8 @@ footer {
     }
     .card-text {
         font-size: .95em;
-        margin: 1.2em 0
+        margin: 1.2em 0;
+        color: #141823;
     }
     .card-subtext {
         font-size: .7em
