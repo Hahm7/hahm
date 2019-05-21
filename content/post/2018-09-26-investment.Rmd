@@ -350,7 +350,7 @@ ymarg = margin(5,5,0,0)
 
 capt = "Log ratio of real gross and net investment to real GDP (Chained 2012 Dollars), normalized to 1967=0. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation. Source: BEA and author's calculations"
 
-capt<-str_wrap(capt,width=100)
+capt<-str_wrap(capt,width=110)
 
 title = "Log Ratio of Gross and Net Investment"
 
