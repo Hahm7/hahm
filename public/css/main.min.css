@@ -397,7 +397,8 @@ footer {
     }
     .list-header-title {
         font-weight: normal;
-        font-size: 4.2em
+        font-size: 4.2em;
+        color: #FFFFFF;
     }
     .card {
         border-radius: .2rem
@@ -420,7 +421,8 @@ footer {
         padding: 1.5em 1.3em
     }
     .card-title {
-        font-size: 1.27em
+        font-size: 1.27em;
+        color: #141823;
     }
     .card-text {
         font-size: .95em;
