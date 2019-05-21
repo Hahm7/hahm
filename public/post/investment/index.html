@@ -445,9 +445,10 @@ windowsFonts(SansSerif=windowsFont(&quot;Microsoft Sans Serif Regular&quot;))
 xmarg = margin(10,15,0,0)
 ymarg = margin(5,5,0,0)
 
-capt = &quot;Source: BEA. Gross investment is private nonresidential fixed investment. Net is gross minus depreciation&quot;
 
 capt2 = &quot;Log ratio of real net investment to real gross investment (Chained 2012 Dollars). Gross investment is private nonresidential fixed investment. Net is gross minus depreciation. Source: BEA and author&#39;s calculations&quot;
+
+capt2&lt;-str_wrap(capt2,width=110)
 
 title = &quot;Net Investment as a Percentage of 
         Gross Investment&quot;
