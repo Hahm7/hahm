@@ -445,6 +445,7 @@ windowsFonts(SansSerif=windowsFont(&quot;Microsoft Sans Serif Regular&quot;))
 xmarg = margin(10,15,0,0)
 ymarg = margin(5,5,0,0)
 
+capt1 = &quot;Source: BEA and author&#39;s calculations&quot;
 
 capt2 = &quot;Log ratio of real net investment to real gross investment (Chained 2012 Dollars). Gross investment is private nonresidential fixed investment. Net is gross minus depreciation. Source: BEA and author&#39;s calculations&quot;
 
@@ -463,18 +464,17 @@ mytheme &lt;- theme(legend.position = &quot;none&quot;,
                  axis.text.y = element_text(size=10)) 
 
 
-net_ratio &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
+net_gross_percent &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
   scale_color_manual(values=c(&quot;#0072B2&quot;)) +
   geom_line(size = 1) +
-  labs(x = &quot;Date&quot;, y = &quot;Net Ratio&quot;, caption = capt) +
+  labs(x = &quot;Date&quot;, y = &quot;Percent&quot;, caption = capt1) +
   ylim(5, 45) +
   scale_x_continuous(breaks=seq(1967, 2017, 5))+
   ggtitle(title) +
   mytheme
 
-net_ratio</code></pre>
-<p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<pre class="r"><code>net_log_ratio &lt;- ggplot(fixed2.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
+
+net_log_ratio &lt;- ggplot(fixed2.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
   scale_color_manual(values=c(&quot;#D55E00&quot;)) +
   geom_line(size = 1) +
   ylim(-3, -1) +
@@ -482,7 +482,7 @@ net_ratio</code></pre>
   ggtitle(&quot;Log Ratio of Net investment to 
           Gross Investment&quot;) +
   mytheme +
-  labs(x = &quot;Date&quot;, y = &quot;Net Log Ratio&quot;, caption = capt2)</code></pre>
+  labs(x = &quot;Date&quot;, y = &quot;Log Ratio&quot;, caption = capt2)</code></pre>
 </p>
 </details>
 <p><img src="/post/2018-09-26-investment_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
