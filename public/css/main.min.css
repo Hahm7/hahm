@@ -39,7 +39,8 @@ strong {
 .nav-text {
     text-decoration: none;
     z-index: 105;
-    font-size: .8em
+    font-size: .8em;
+    color: #FFFFFF;
 }
 
 .post {
@@ -341,7 +342,7 @@ hr {
 }
 
 a {
-    color: #FFFFFF
+    color: #41823
 }
 
 table {
