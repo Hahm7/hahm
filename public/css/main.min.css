@@ -95,7 +95,8 @@ strong {
 .list-header-title {
     margin: .1em 0 .2em 0;
     font-size: 2.2em;
-    text-transform: uppercase
+    text-transform: uppercase;
+    color: #FFFFFF;
 }
 
 .list-header-subtext {
