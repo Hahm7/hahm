@@ -212,7 +212,8 @@ strong {
 }
 
 .pagination-older {
-    float: right
+    float: right;
+    color: #FFFFFF;
 }
 
 .button {
