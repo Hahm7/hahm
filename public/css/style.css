@@ -1,5 +1,5 @@
 body {
-    font-family: 'Charter',sans-serif;
+    font-family: 'Charter Regular',sans-serif;
     color: #141823;
     font-size: 1.1em;
     background-color: #ecedef;
@@ -17,7 +17,7 @@ p {
 }
 b,
 strong {
-    font-family: 'Charter';
+    font-family: 'Charter Regular';
     font-weight: normal;
 }
 .nav-bar {
