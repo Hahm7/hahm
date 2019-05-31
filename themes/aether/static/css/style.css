@@ -17,7 +17,7 @@ p {
 }
 b,
 strong {
-    font-family: 'Charter Regular';
+    font-family: 'Charter Bold';
     font-weight: normal;
 }
 .nav-bar {
@@ -366,7 +366,7 @@ th {
     border: thin solid #D1D1D1
 }
 th {
-    font-family: 'Charter';
+    font-family: 'Charter Bold';
     font-weight: normal
 }
 tr:nth-child(even) td {
