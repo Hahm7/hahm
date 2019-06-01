@@ -37,7 +37,7 @@ strong {
 }
 
 .nav-text {
-    font-family: 'Charter Regular', sans-serif;
+    font-family: 'Charter Regular';
     text-decoration: none;
     z-index: 105;
     font-size: .8em;
@@ -216,7 +216,7 @@ strong {
 }
 
 .pagination-older {
-    font-family: 'Charter Regular', sans-serif;
+    font-family: 'Charter Regular';
     float: right;
     color: #FFFFFF;
 }
@@ -287,7 +287,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Charter Regular', sans-serif;
+    font-family: 'Charter Regular';
     margin: 1.5em 0 -1em 0;
     clear: both
 }
