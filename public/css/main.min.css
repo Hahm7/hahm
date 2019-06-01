@@ -1,7 +1,7 @@
 body {
     font-family: 'Charter Regular', sans-serif;
     color: #141823;
-    font-size: 20px;
+    font-size: 19px;
     background-color: #ecedef;
     margin: 0;
     padding: 0;
@@ -20,7 +20,7 @@ p {
 b,
 strong {
     font-family: 'Charter Bold';
-    font-weight: normal
+    font-weight: Bold
 }
 
 .nav-bar {
@@ -362,7 +362,7 @@ th {
 
 th {
     font-family: 'Charter Bold';
-    font-weight: normal
+    font-weight: Bold
 }
 
 tr:nth-child(even) td {
@@ -393,7 +393,7 @@ footer {
 
 @media only screen and (min-width:40.063em) {
     body {
-        font-size: 20px
+        font-size: 19px
     }
     .nav-bar {
         padding: .8em 0
