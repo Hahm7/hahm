@@ -1,4 +1,18 @@
 
+/* Webfont: FiraSans-Medium*/@font-face {
+    font-family: 'FiraSans-Medium';
+    src: url('../font/FiraSans-Medium.eot'); /* IE9 Compat Modes */
+    src: url('../font/FiraSans-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../font/FiraSans-Medium.woff2') format('woff2'), /* Modern Browsers */
+         url('../font/FiraSans-Medium.woff') format('woff'), /* Modern Browsers */
+         url('../font/FiraSans-Medium.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+
+}
+
 /* Webfont: FiraMono-Bold*/@font-face {
     font-family: 'FiraMono-Bold';
     src: url('../font/FiraMono-Bold.eot'); /* IE9 Compat Modes */
