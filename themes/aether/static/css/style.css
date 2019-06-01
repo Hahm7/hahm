@@ -1,7 +1,7 @@
 body {
     font-family: 'Charter Regular',sans-serif;
     color: #141823;
-    font-size: 1.1em;
+    font-size: 19px;
     background-color: #ecedef;
     margin: 0;
     padding: 0;
@@ -18,7 +18,7 @@ p {
 b,
 strong {
     font-family: 'Charter Bold';
-    font-weight: normal;
+    font-weight: Bold;
 }
 .nav-bar {
     max-width: 50rem;
@@ -108,7 +108,7 @@ strong {
 }
 .post {
     margin: 0 0 1em 0;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 .post-header {
     margin: 0 0 1.5em 0;
@@ -367,7 +367,7 @@ th {
 }
 th {
     font-family: 'Charter Bold';
-    font-weight: normal
+    font-weight: Bold;
 }
 tr:nth-child(even) td {
     background: #f5f6f7;
@@ -394,7 +394,7 @@ footer {
 /* Medium devices (tablets, ~641px and up) */
 @media only screen and (min-width: 40.063em) {
     body {
-        font-size: 1.15rem;
+        font-size: 19px;
     }
     .nav-bar {
         padding: 0.8em 0;
