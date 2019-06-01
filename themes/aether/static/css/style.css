@@ -32,6 +32,7 @@ strong {
     margin: 0;
 }
 .nav-text {
+    font-family: 'Charter Regular', sans-serif;
     text-decoration: none;
     z-index: 105;
     font-size: 0.8em;
@@ -250,6 +251,7 @@ strong {
     float:left;
 }
 .pagination-older {
+    font-family: 'Charter Regular', sans-serif;
     float: right;
 }
 .button {
@@ -302,6 +304,7 @@ strong {
     position: fixed;
 }
 h1, h2, h3, h4, h5, h6 {
+    font-family: 'Charter Regular', sans-serif;
     margin: 1.5em 0 -1em 0;
     clear: both;
 }
