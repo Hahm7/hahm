@@ -1,7 +1,7 @@
 body {
     font-family: 'Charter Regular', sans-serif;
     color: #141823;
-    font-size: 18px;
+    font-size: 16px;
     background-color: #ecedef;
     margin: 0;
     padding: 0;
@@ -393,7 +393,7 @@ footer {
 
 @media only screen and (min-width:40.063em) {
     body {
-        font-size: 18px
+        font-size: 16px
     }
     .nav-bar {
         padding: .8em 0
