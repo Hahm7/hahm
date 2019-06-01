@@ -1,7 +1,7 @@
 body {
     font-family: 'Charter Regular', sans-serif;
     color: #141823;
-    font-size: 16px;
+    font-size: 20px;
     background-color: #ecedef;
     margin: 0;
     padding: 0;
@@ -45,7 +45,7 @@ strong {
 
 .post {
     margin: 0 0 1em 0;
-    line-height: 1.4
+    line-height: 1.35
 }
 
 .post-header {
@@ -393,7 +393,7 @@ footer {
 
 @media only screen and (min-width:40.063em) {
     body {
-        font-size: 16px
+        font-size: 20px
     }
     .nav-bar {
         padding: .8em 0
