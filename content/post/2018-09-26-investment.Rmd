@@ -173,7 +173,7 @@ ggthemr("fresh")
 
 darken_swatch(0.2)
 
-windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
+windowsFonts(SansSerif=windowsFont("FiraMono-Regular"))
 
 xmarg = margin(10,15,0,0)
 ymarg = margin(5,5,0,0)
@@ -257,7 +257,7 @@ ggthemr("fresh")
 
 darken_swatch(0.2)
 
-windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
+windowsFonts(SansSerif=windowsFont("FiraMono-Regular"))
 
 xmarg = margin(10,15,0,0)
 ymarg = margin(5,5,0,0)
@@ -344,7 +344,7 @@ ggthemr("fresh")
 
 darken_swatch(0.2)
 
-windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
+windowsFonts(SansSerif=windowsFont("FiraMono-Regular"))
 
 xmarg = margin(10,15,0,0)
 ymarg = margin(5,5,0,0)
@@ -422,7 +422,7 @@ ggthemr("fresh")
 
 darken_swatch(0.2)
 
-windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
+windowsFonts(SansSerif=windowsFont("FiraMono-Regular"))
 
 xmarg = margin(10,15,0,0)
 ymarg = margin(5,5,0,0)
@@ -495,7 +495,7 @@ ggthemr("fresh")
 
 darken_swatch(0.2)
 
-windowsFonts(SansSerif=windowsFont("Microsoft Sans Serif Regular"))
+windowsFonts(SansSerif=windowsFont("FiraMono-Regular"))
 
 xmarg = margin(10,15,0,0)
 ymarg = margin(5,5,0,0)
