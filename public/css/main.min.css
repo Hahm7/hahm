@@ -359,14 +359,14 @@ hr {
 }
 
 a  {
-    color:inherit;
+    color:#f0f0f0;
 }
 
 
 a:hover {
     text-decoration: none;
     color: inherit;
-    border-bottom: medium solid #f0f0f0;
+    border-bottom: thin solid #f0f0f0;
     transition: border-color 600ms;
 }
 
