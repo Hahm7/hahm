@@ -47,6 +47,7 @@ strong {
     z-index: 105;
     font-size: .8em;
     color: #FFFFFF;
+    border-bottom: none;
 }
 
 .post {
@@ -132,7 +133,8 @@ strong {
     border-radius: .3rem;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     transition: transform .2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow .2s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 .5rem 1rem 0 rgba(0, 0, 0, 0.19), 0 .3rem .3rem -0.1rem rgba(0, 0, 0, 0.23)
+    box-shadow: 0 .5rem 1rem 0 rgba(0, 0, 0, 0.19), 0 .3rem .3rem -0.1rem rgba(0, 0, 0, 0.23);
+    border-bottom: none;
 }
 
 .home-card {
