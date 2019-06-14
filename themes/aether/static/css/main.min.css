@@ -358,6 +358,9 @@ hr {
     clear: both
 }
 
+a  {
+    color:inherit;
+}
 
 
 a:hover {
