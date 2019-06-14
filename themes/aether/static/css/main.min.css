@@ -360,7 +360,7 @@ hr {
 
 
 
-a {
+a:hover {
     text-decoration: none;
     color: inherit;
     border-bottom: medium solid #f0f0f0;
@@ -415,6 +415,11 @@ footer {
     body {
         font-size: 20px
     }
+    
+    .nav-links a:hover {
+        color: #111;
+    }
+    
     .nav-bar {
         padding: .8em 0
     }
