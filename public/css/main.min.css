@@ -98,10 +98,6 @@ strong {
     box-shadow: 0 .7rem 1.4rem 0 rgba(0, 0, 0, 0.25), 0 .5rem .5rem 0 rgba(0, 0, 0, 0.22)
 }
 
-.article-content a:hover,
-.article-content a:active {
-  border-color: #606060;
-}
 
 .list-header {
     margin: 6em 0;
