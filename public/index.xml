@@ -5,14 +5,14 @@
     <link>/</link>
     <description>Recent content on Hamdi Ahmed Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 26 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Jun 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Investment</title>
       <link>/post/investment/</link>
-      <pubDate>Wed, 26 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/investment/</guid>
       <description>Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us[...] </description>
@@ -25,14 +25,12 @@
       <description>The first part of the project is to come up with hypotheses about the data. This will help me to think about what I should expect to see from the data given the problem statement.
 The data scientists at BigMart have collected 2013 sales data for 1559 products across 10 stores in different cities. Also, certain attributes of each product and store have been defined. The aim is to build a predictive model and find out the sales of each product at a particular store.</description>
     </item><item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      <title></title>
+      <link>/post/header/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
-      <description>Hi there My name is Radek and I&amp;rsquo;m the author of this theme. I made it to help you present your ideas easier.
-We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.
-This theme is pretty basic and covers all of the essentials. All you have to do is start typing!</description>
+      <guid>/post/header/</guid>
+      <description>bootstrap/transition.js at v3.3.7 · twbs/bootstrap  Skip to content       --     In this repository  All GitHub  ↵  Jump to ↵     No suggested jump to results        In this repository  All GitHub  ↵  Jump to ↵         In this repository  All GitHub  ↵  Jump to ↵             Pull requests    Issues   Marketplace    Explore             New repository  Import repository  New gist  New organization   This repository  New issue       Signed in as Hahm7     Set your status    --  Edit status        Could not update your status, please try again.</description>
     </item>
   </channel>
 </rss>
