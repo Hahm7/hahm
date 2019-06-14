@@ -23,13 +23,6 @@ strong {
     font-weight: Bold
 }
 
-.article-content a {
-    text-decoration: none;
-    color: inherit;
-    border-bottom: medium solid #f0f0f0;
-    transition: border-color 600ms;
-}
-
 .nav-bar {
     max-width: 50rem;
     width: 100%;
@@ -358,7 +351,10 @@ hr {
 
 
 a {
-    color: #141823
+    color: #141823;
+    text-decoration: none;
+    border-bottom: medium solid #f0f0f0;
+    transition: border-color 600ms;
 }
 
 table {
