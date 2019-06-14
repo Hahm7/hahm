@@ -50,6 +50,10 @@ strong {
     border-bottom: none;
 }
 
+.nav-text:hover {
+    border-bottom: none;
+}
+
 .post {
     margin: 0 0 1em 0;
     line-height: 1.5
