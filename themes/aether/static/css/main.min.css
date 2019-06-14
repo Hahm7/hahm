@@ -23,12 +23,10 @@ strong {
     font-weight: Bold
 }
 
-.article-content a {
-    text-decoration: none;
-    color: inherit;
-    border-bottom: medium solid #f0f0f0;
-    transition: border-color 600ms;
+.nav-links a:hover {
+ color: #111;
 }
+
 
 .nav-bar {
     max-width: 50rem;
@@ -93,6 +91,11 @@ strong {
     border-radius: .3rem;
     transition: transform .2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow .2s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 .7rem 1.4rem 0 rgba(0, 0, 0, 0.25), 0 .5rem .5rem 0 rgba(0, 0, 0, 0.22)
+}
+
+.article-content a:hover,
+.article-content a:active {
+  border-color: #606060;
 }
 
 .list-header {
@@ -357,6 +360,12 @@ hr {
 
 
 
+a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: medium solid #f0f0f0;
+    transition: border-color 600ms;
+}
 
 table {
     color: #141823;
