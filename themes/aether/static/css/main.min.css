@@ -361,14 +361,14 @@ hr {
 a  {
     text-decoration: none;
     color:inherit;
-    border-bottom: thin solid #f0f0f0;
+    border-bottom: thin solid #7B7A8A;
 }
 
 
 a:hover {
     text-decoration: none;
     color: inherit;
-    border-bottom: thin solid #f0f0f0;
+    border-bottom: thin solid #474751;
     transition: border-color 600ms;
 }
 
