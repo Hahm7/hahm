@@ -17,13 +17,6 @@
       <guid>/post/investment/</guid>
       <description>Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us[...] </description>
     </item><item>
-      <title>Buybacks &amp; Investment</title>
-      <link>/post/buybacks-investment/</link>
-      <pubDate>Sun, 12 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/buybacks-investment/</guid>
-      <description>Since the Trump tax cuts were approved, there&#39;s been an expected fall in tax revenues from corporations but there&#39;s also been a surge in buybacks.[...] </description>
-    </item><item>
       <title>Sales</title>
       <link>/post/2018-07-19-sales/</link>
       <pubDate>Thu, 19 Jul 2018 13:46:29 +0100</pubDate>
@@ -31,6 +24,14 @@
       <guid>/post/2018-07-19-sales/</guid>
       <description>The first part of the project is to come up with hypotheses about the data. This will help me to think about what I should expect to see from the data given the problem statement.
 The data scientists at BigMart have collected 2013 sales data for 1559 products across 10 stores in different cities. Also, certain attributes of each product and store have been defined. The aim is to build a predictive model and find out the sales of each product at a particular store.</description>
+    </item><item>
+      <title>A Plain Markdown Post</title>
+      <link>/post/2016-12-30-hello-markdown/</link>
+      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
+      
+      <guid>/post/2016-12-30-hello-markdown/</guid>
+      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
+ You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
     </item>
   </channel>
 </rss>
