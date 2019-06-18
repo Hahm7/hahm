@@ -34,7 +34,7 @@ library(cowplot)
 
 ```
 
-Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us. *What follows next is a gross oversimplification of space travel*. If we assume that we could travel through space at a speed of 56,000 km/h, it would take 81,000 years to reach the planet. We of course decide to colonise it but we can’t live for 81,000 years — the current world average life expectancy is 70.5 years. So, let’s assume our next best idea is to go there by using a generational ship. Those aboard will live and die on the ship, giving birth to the next generation along the way until the last generation reaches the planet. 
+Imagine we find a habitable planet next to our nearest star which wasn’t the sun. That would be Proxima Centauri and it is approximately 4.2 light years away from us. **What follows next is a gross oversimplification of space travel**. If we assume that we could travel through space at a speed of 56,000 km/h, it would take 81,000 years to reach the planet. We of course decide to colonise it but we can’t live for 81,000 years — the current world average life expectancy is 70.5 years. So, let’s assume our next best idea is to go there by using a generational ship. Those aboard will live and die on the ship, giving birth to the next generation along the way until the last generation reaches the planet. 
 
 Would we do it? 
 
