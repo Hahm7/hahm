@@ -42,7 +42,7 @@ Would we do it?
 
 These are the kind of issues which exist for companies making investment decisions. Because it takes time for the benefits of investment to show, it can be rendered useless by better, cheaper technology. Could this sort of thinking be discouraging businesses from making investments?
 
-### **Why is investment important?**
+#### **Why is investment important?**
 
 Investment is what allows me to write this post on a laptop instead on pen and paper. It’s what allows me to research this topic on the internet instead of sifting through a mountain of books. It’s also what allows you to read this post anywhere without carrying around pieces of paper. Somewhere, sometime ago, someone thought about these new ways of doing things and an investment was made to turn these new methods of doing, into products.
 
@@ -150,7 +150,7 @@ utils::browseURL(gif_file)
 
 This volatile behaviour can be explained by how optimistic firms are about the future and investment decisions being optional. You need to buy food and pay for shelter regularly to sustain yourself but you don’t need to buy a new machinery for your business or learn a certain skill if you think it’s going to be worthless to you. Even if you plan to invest, future outcomes are uncertain. With the gains of investment being realised in the long term, it’s not a surprise that investment activity is sensitive to this uncertainty.
 
-### **What's happening with business investment?**
+#### **What's happening with business investment?**
 
 Both Gross and Net (which takes into account depreciation) investment as a share of GDP reached 14.6% and 4.8% respectively at the peak of the 90s boom. Since then, both are yet to reach similar numbers with average gross and net investment since 2000 being 12.7% and 2.6% respectively. Gross investment has been sluggish in this period but net investment has had a downward trend.
 
@@ -556,7 +556,7 @@ net_log_ratio
 
 This suggests a greater amount of investment is being devoted to replacing older capital stock instead of adding to stock. So, what could explain this?
 
-### **Fool me once**
+#### **Fool me once**
 
 Firms who invest are not capturing most of the benefits. This is a point raised by William Nordhaus who finds profits from innovation are <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=820309" target="_blank">small</a> . Why? Nordhaus says most of the innovation happening in the new economy — software, telecommunications, and similar industries — are marked by easy entrance and exit. These industries are also characterised by rapid technological change. What is usually valuable in these industries is the information or know-how created from these innovations and as Nordhaus says,
 
