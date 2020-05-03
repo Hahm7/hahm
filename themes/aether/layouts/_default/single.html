@@ -6,18 +6,23 @@
     <main class="content side-text-padding">
       <article class="post {{ if ne .Params.dropcap false }}dropcase{{ end }}">
         <header class="post-header">
-        	<h1 class="post-title">{{ .Title }}</h1>
-          <p class="post-date">Posted <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>
+          <h1 class="post-title">{{ .Title }}</h1>
+          {{ if isset .Params "date" }}<p class="post-date">Posted <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>{{ end }}
         </header>
-        {{ if isset .Params "featuredimage" }}
+        {{ with .Resources.GetMatch "featuredImage" -}}
         <picture class="post-figure">
-            {{ if (fileExists (printf "%s/%s" "static" (replace (.Params.featuredimage) (path.Ext (.Params.featuredimage)) ".webp"))) -}}
-            <source srcset="{{ replace (.Params.featuredimage) (path.Ext (.Params.featuredimage)) ".webp" | absURL }}" type="image/webp">
-            {{- end }}
-            <source srcset="{{.Params.featuredimage | absURL }}">
-          <img src="{{.Params.featuredimage | absURL }}" {{ if isset .Params "featuredimagedescription" }}alt="{{.Params.featuredimagedescription}}"{{end}}>
+          {{ with $.Resources.GetMatch (replace (.Title) (path.Ext (.Title)) ".webp") -}}
+          <source srcset="{{ .Permalink }}" type="image/webp">
+          {{- end }}
+          {{ $featured := .Resize "800x Lanczos" }}
+          <source srcset="{{ $featured.Permalink }}">
+          <img src="{{ $featured.Permalink }}" {{ with .Params.description -}} alt="{{ . }}" {{- end }}>
         </picture>
-        {{ end }}
+        {{- end }}
+        {{ if .Params.toc -}}
+          <h2>Contents</h2>
+          {{ .TableOfContents }}
+        {{- end }}
         {{ .Content }}
       </article>
       {{ template "_internal/disqus.html" . }}
@@ -28,7 +33,6 @@
       {{ end }}
       {{ partial "home-card.html" . }}
     </nav>
-    {{ partial "footer.html" . }}
     {{ partial "scripts.html" . }}
   </body>
 </html>

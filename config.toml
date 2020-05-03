@@ -3,7 +3,7 @@ title = "Hamdi Ahmed Blog"
 author = "Hamdi Ahmed"
 canonifyurls = true
 paginate = 3
-theme = "hugo-theme-novela"
+theme = "aether"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]

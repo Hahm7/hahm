@@ -2,7 +2,7 @@
 Aether is a Hugo theme for blogs that emphasizes motion, depth, and material as design elements.  Aether presents your content in a clean interface that highlights good photography and writing.
 
 ## Features
- - It's **Fast**! PageSpeed scores consistently between 94-99
+ - It's **Fast**! PageSpeed scores consistently between 94-100
  - Fully **Responsive Design** allowing your site to look good on any size screen
  - Supports next-gen image format WebP with custom shortcodes
  - **Accessibility** is a priority, making your site easily navigated by screen readers
@@ -25,7 +25,7 @@ git clone https://github.com/josephhutch/aether.git themes/aether
 ### Website Configuration
 Customize the look and feel of aether through the config.toml file. See how to fill in the config file below.
 
-```toml
+```
 baseURL = "https://yourwebsitenamegoeshere.com/"
 languageCode = "The language code for the language the website is written in"
 title = "The website title that is used in each page title, displayed in the browser tab and search results"
@@ -38,6 +38,7 @@ brand = "The name that is displayed in the top left of the website, consider it 
 description = "The website's description"
 homeimg = "URL to the image used for the home button at the bottom of each post - optional"
 bgimg = "URL to the image used for the page background - optional"
+rssinmenu = whether you would like a RSS feed link to appear in the navigation menu (true, false) - optional
 ```
 
 The `title` parameter is used for each page title, the title that search engines display in search results. If you would like the title shown in the top left of the page to be different from the page title, use the `brand` parameter. For instance, the title parameter for my site is `Joe Hutchinson` but the brand parameter is set to `joehutch`.
@@ -63,19 +64,23 @@ Aether supports a large array of favicon formats. Simply add your favicons with 
  - site.webmanifest
 
 ### Creating content
-Make a new blog post by executing `hugo new post/postnamehere.md` in your shell. At the top of the new markdown file, is what's called the front matter. The front matter is the page's metadata that determines how Hugo and aether generate the HTML for your post. Below you can find what the front matter that aether uses and what each of the parameters mean.
+Make a new blog post by executing `hugo new post/postnamehere/index.md` in your shell. At the top of the new markdown file, is what's called the front matter. The front matter is the page's metadata that determines how Hugo and aether generate the HTML for your post. Below you can find what the front matter that aether uses and what each of the parameters mean.
 
 ```yaml
 ---
-title: "The title of your post"
+title: "The title of the post"
 date: date the post was generated (automatically generated)
 description: "Description of the post (displayed in the post's card)"
-categories: ["Add comma s categories here", "another category"]
-featuredImage: "URL to the page's featured image, used as the card image and the image at the top of the article"
-featuredImageDescription: "Description for the featured image, used as the alt text"
-displayInMenu: whether you would like the post to show up in the navigation menu (true, false)
-displayInList: whether you would like the post to be listed on the home page and category pages (true, false)
-draft: if the page is a draft (true, false)
+categories: ["Add comma separated categories here", "another category"]
+toc: if the post should include a table of contents (true, false)
+displayInMenu: if the post should show up in the navigation menu (true, false)
+displayInList: if the post should be listed on the home page and category pages (true, false)
+draft: if the post is a draft (true, false)
+resources:
+- name: featuredImage
+  src: "Filename of the post's featured image, used as the card image and the image at the top of the article"
+  params:
+    description: "Description for the featured image, used as the alt text"
 ---
 ```
 
@@ -86,6 +91,8 @@ The `categories` parameter is used to group similar posts in category pages. Cat
 The `dropCap` parameter is used to determine if the first letter of a post should be a dropped capital. A dropped capital letter is the large decorative letter at the beginning of a book or section.
 
 Add an interesting description and a good image to each post to get the most value from this theme.
+
+Aether takes advantage of [page bundles](https://gohugo.io/content-management/page-bundles/) to optimize your images for your site.  This may require you to update the way your content is structured, also see [content organization](https://gohugo.io/content-management/organization/).  Use the `image` and `smallimg` shortcodes to take full advantage of image optimization.  Also, the `featuredImage` resource must exist in the post's page bundle.
 
 Posts are written in markdown. You can find how to write in markdown from this [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
@@ -100,18 +107,18 @@ Shortcodes extend markdown to make writing easier and more powerful.
 {{< /raw >}}
 ```
 
-`image` is how you add WebP images to your posts with a fallback in case WebP is not supported. Image just needs the src and alt parameters. WebP is a next-gen image format that was created to make the web fast. To use the image shortcode simply store a WebP image with the same name in the same directory as your normal image.
+`image` is how you add WebP images to your posts with a fallback in case WebP is not supported. Image just needs the src and alt parameters. WebP is a next-gen image format that was created to make the web fast. To use the image shortcode simply store a WebP image with the same name in the same directory as your normal image.  Keep in mind that the Hugo image processing pipeline does not support resizing webp.
 
 ```html
-<!--- Will display a WebP image on supported browsers if img/awesome.webp exists -->
-{{<image src="img/awesome.jpg" alt="An awesome image that will use webp when possible. Much faster!" >}}
+<!--- Will display a WebP image on supported browsers if awesome.webp exists -->
+{{< image src="awesome.jpg" alt="An awesome image that will use webp when possible. Much faster!" >}}
 ```
 
-`smallimg` allows you to add images to your posts without stretching them to be as wide as the content area.  Smallimg takes the parameters src, alt, smartfloat (optional), and width (optional). The smartfloat parameter can be set to right or left, and it floats the image to the right or left on big enough screens.
+`smallimg` allows you to add smaller images to your posts that aren't stretched to be as wide as the content area.  Smallimg takes the parameters src, alt, smartfloat (optional), width (optional, in pixels only), and clear (optional). The smartfloat parameter can be set to right or left, and it floats the image to the right or left on big enough screens. The clear parameter allows you to clear a previous float which is helpful if you are using multiple smallimgs close to each other.
 
 ```html
-<!--- smallimg will also display a WebP image on supported browsers if img/smile.webp exists -->
-{{<smallimg src="/img/smile.png" alt="A big beautiful smile" smartfloat="left" width="100px">}}
+<!--- smallimg will also display a WebP image on supported browsers if smile.webp exists -->
+{{< smallimg src="smile.png" alt="A big beautiful smile" smartfloat="left" width="100px" clear="true" >}}
 ```
 
 ### Further Customization
@@ -124,6 +131,8 @@ date: the date
 description: "This is the subtext above the main heading in small letters"
 ---
 ```
+#### Overriding CSS
+To override CSS, you should create file `project_root/assets/css/override.css` and place all your CSS inside it. This file will be merged with standard CSS when the site is generated.
 
 ## Helpful Links
 [Aether Blog Post](https://www.joehutch.com/post/aether-theme/) - See aether in action and learn more about the theme
