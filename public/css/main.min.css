@@ -1,5 +1,5 @@
 body {
-    font-family: 'Charter Regular', sans-serif;
+    font-family: 'Rubik', sans-serif;
     color: 	#202020;
     font-size: 20px;
     background-color: #ecedef;
@@ -188,7 +188,7 @@ strong {
 }
 
 .card-title {
-    font-family: 'Charter Regular', sans-serif;
+    font-family: 'Rubik Regular', sans-serif;
     margin: 0;
     line-height: 1.2
 }
@@ -391,7 +391,7 @@ th {
 }
 
 th {
-    font-family: 'Charter Bold';
+    font-family: 'Rubik Bold';
     font-weight: Bold
 }
 
@@ -498,12 +498,12 @@ footer {
 }
 
 @font-face {
-    font-family: 'Charter Regular';
-    src: url('../font/charter_regular-webfont.eot'); /* IE9 Compat Modes */
-    src: url('../font/charter_regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../font/charter_regular-webfont.woff2') format('woff2'), /* Modern Browsers */
-         url('../font/charter_regular-webfont.woff') format('woff'), /* Modern Browsers */
-         url('../font/charter_regular-webfont.ttf') format('truetype');
+    font-family: 'Rubik Regular';
+    src: url('../font/Rubik_regular-webfont.eot'); /* IE9 Compat Modes */
+    src: url('../font/Rubik_regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../font/Rubik_regular-webfont.woff2') format('woff2'), /* Modern Browsers */
+         url('../font/Rubik_regular-webfont.woff') format('woff'), /* Modern Browsers */
+         url('../font/Rubik_regular-webfont.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
     font-display: swap;
@@ -512,28 +512,28 @@ footer {
 }
 
 @font-face {
-    font-family: 'Charter Bold Italic';
-    src: url('../font/charter_bold_italic-webfont.eot');
-    src: url('../font/charter_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/charter_bold_italic-webfont.woff') format('woff');
+    font-family: 'Rubik Bold Italic';
+    src: url('../font/Rubik_bold_italic-webfont.eot');
+    src: url('../font/Rubik_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Rubik_bold_italic-webfont.woff') format('woff');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Charter Bold';
-    src: url('../font/charter_bold-webfont.eot');
-    src: url('../font/charter_bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/charter_bold-webfont.woff') format('woff');
+    font-family: 'Rubik Bold';
+    src: url('../font/Rubik_bold-webfont.eot');
+    src: url('../font/Rubik_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Rubik_bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Charter Italic';
-    src: url('../font/charter_italic-webfont.eot');
-    src: url('../font/charter_italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/charter_italic-webfont.woff') format('woff');
+    font-family: 'Rubik Italic';
+    src: url('../font/Rubik_italic-webfont.eot');
+    src: url('../font/Rubik_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Rubik_italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }
