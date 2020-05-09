@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "Hamdi Ahmed Blog"
+title = "Bits % Thoughts"
 author = "Hamdi Ahmed"
 canonifyurls = true
 paginate = 3
