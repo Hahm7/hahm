@@ -1,10 +1,13 @@
 ---
 title: "Buybacks & Investment"
 author: "Hamdi Ahmed"
-date: '2018-08-12'
+date: '2019-05-12'
 slug: buybacks-investment
 categories: []
+description: "Since the Trump tax cuts were approved, there's been an expected fall in tax revenues from corporations but there's also been a surge in buybacks. "
 tags: []
+featuredImage: "/images/buyback.jpg"
+dropCAP: FALSE
 ---
 
 
