@@ -81,6 +81,10 @@ volatile.plot&lt;-function(i=1){
           legend.background = element_rect(fill = &quot;#f1f1ef&quot;),
           panel.background = element_rect(fill = &#39;white&#39;),
           plot.caption=element_text(hjust=0,size=9),
+          legend.text = element_text(colour = &quot;black&quot;),
+          plot.title = element_text(colour = &quot;black&quot;),
+          axis.title.x = element_text(colour = &quot;black&quot;),
+          axis.title.y = element_text(colour = &quot;black&quot;),
           plot.subtitle=element_text(face=&quot;italic&quot;))+
     labs(x=&quot;&quot;,y=&quot;&quot;,title=&quot;Percentage Change from Year Ago&quot;,
          caption=mycap1) 
@@ -158,10 +162,10 @@ mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
                  panel.background = element_rect(fill = &#39;white&#39;),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
-                 axis.title.x = element_text(margin = xmarg, size = 12, face = &quot;bold&quot;),
-                 axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10)) 
+                 axis.title.y = element_text(colour = &quot;black&quot;, margin = ymarg, size = 12, face = &quot;bold&quot;),
+                 axis.title.x = element_text(colour = &quot;black&quot;, margin = xmarg, size = 12, face = &quot;bold&quot;),
+                 axis.text.x = element_text(colour = &quot;black&quot;, size=10),
+                 axis.text.y = element_text(colour = &quot;black&quot;, size=10)) 
 
 
 nominal_gdp &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
@@ -234,10 +238,10 @@ mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
                  panel.background = element_rect(fill = &#39;white&#39;),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
-                 axis.title.x = element_text(margin = xmarg, size = 12, face = &quot;bold&quot;),
-                 axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10)) 
+                 axis.title.y = element_text(colour = &quot;black&quot;, margin = ymarg, size = 12, face = &quot;bold&quot;),
+                 axis.title.x = element_text(colour = &quot;black&quot;, margin = xmarg, size = 12, face = &quot;bold&quot;),
+                 axis.text.x = element_text(colour = &quot;black&quot;, size=10),
+                 axis.text.y = element_text(colour  = &quot;black&quot;, size=10)) 
 
 pfni_comp &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator)) +
   scale_color_manual(values=c(&quot;#009E73&quot;, &quot;#F0E442&quot;, &quot;#0072B2&quot;)) +
@@ -309,10 +313,10 @@ mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
                  panel.background = element_rect(fill = &#39;white&#39;),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
-                 axis.title.x = element_text(margin = xmarg, size = 12, face = &quot;bold&quot;),
-                 axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10)) 
+                 axis.title.y = element_text(colour = &quot;black&quot;, margin = ymarg, size = 12, face = &quot;bold&quot;),
+                 axis.title.x = element_text(colour = &quot;black&quot;, margin = xmarg, size = 12, face = &quot;bold&quot;),
+                 axis.text.x = element_text(colour = &quot;black&quot;, size=10),
+                 axis.text.y = element_text(colour  = &quot;black&quot;, size=10)) 
 
 
 log_ratio &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
@@ -377,10 +381,10 @@ mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
                  panel.background = element_rect(fill = &#39;white&#39;),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
-                 axis.title.x = element_text(margin = xmarg, size = 12, face = &quot;bold&quot;),
-                 axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10)) 
+                 axis.title.y = element_text(colour = &quot;black&quot;, margin = ymarg, size = 12, face = &quot;bold&quot;),
+                 axis.title.x = element_text(colour = &quot;black&quot;, margin = xmarg, size = 12, face = &quot;bold&quot;),
+                 axis.text.x = element_text(colour = &quot;black&quot;, size=10),
+                 axis.text.y = element_text(colour  = &quot;black&quot;, size=10))
 
 
 
@@ -444,10 +448,10 @@ mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
                  panel.background = element_rect(fill = &#39;white&#39;),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
-                 axis.title.x = element_text(margin = xmarg, size = 12, face = &quot;bold&quot;),
-                 axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10))  
+                 axis.title.y = element_text(colour = &quot;black&quot;, margin = ymarg, size = 12, face = &quot;bold&quot;),
+                 axis.title.x = element_text(colour = &quot;black&quot;, margin = xmarg, size = 12, face = &quot;bold&quot;),
+                 axis.text.x = element_text(colour = &quot;black&quot;, size=10),
+                 axis.text.y = element_text(colour  = &quot;black&quot;, size=10))
 
 
 net_gross_percent &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +

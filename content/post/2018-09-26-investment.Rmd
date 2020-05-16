@@ -113,6 +113,10 @@ volatile.plot<-function(i=1){
           legend.background = element_rect(fill = "#f1f1ef"),
           panel.background = element_rect(fill = 'white'),
           plot.caption=element_text(hjust=0,size=9),
+          legend.text = element_text(colour = "black"),
+          plot.title = element_text(colour = "black"),
+          axis.title.x = element_text(colour = "black"),
+          axis.title.y = element_text(colour = "black"),
           plot.subtitle=element_text(face="italic"))+
     labs(x="",y="",title="Percentage Change from Year Ago",
          caption=mycap1) 
@@ -196,10 +200,10 @@ mytheme <- theme(legend.position = "bottom",
                  panel.background = element_rect(fill = 'white'),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
-                 axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
-                 axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10)) 
+                 axis.title.y = element_text(colour = "black", margin = ymarg, size = 12, face = "bold"),
+                 axis.title.x = element_text(colour = "black", margin = xmarg, size = 12, face = "bold"),
+                 axis.text.x = element_text(colour = "black", size=10),
+                 axis.text.y = element_text(colour = "black", size=10)) 
 
 
 nominal_gdp <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
@@ -284,10 +288,10 @@ mytheme <- theme(legend.position = "bottom",
                  panel.background = element_rect(fill = 'white'),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
-                 axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
-                 axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10)) 
+                 axis.title.y = element_text(colour = "black", margin = ymarg, size = 12, face = "bold"),
+                 axis.title.x = element_text(colour = "black", margin = xmarg, size = 12, face = "bold"),
+                 axis.text.x = element_text(colour = "black", size=10),
+                 axis.text.y = element_text(colour  = "black", size=10)) 
 
 pfni_comp <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator)) +
   scale_color_manual(values=c("#009E73", "#F0E442", "#0072B2")) +
@@ -375,10 +379,10 @@ mytheme <- theme(legend.position = "bottom",
                  panel.background = element_rect(fill = 'white'),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
-                 axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
-                 axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10)) 
+                 axis.title.y = element_text(colour = "black", margin = ymarg, size = 12, face = "bold"),
+                 axis.title.x = element_text(colour = "black", margin = xmarg, size = 12, face = "bold"),
+                 axis.text.x = element_text(colour = "black", size=10),
+                 axis.text.y = element_text(colour  = "black", size=10)) 
 
 
 log_ratio <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
@@ -456,10 +460,10 @@ mytheme <- theme(legend.position = "bottom",
                  panel.background = element_rect(fill = 'white'),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
-                 axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
-                 axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10)) 
+                 axis.title.y = element_text(colour = "black", margin = ymarg, size = 12, face = "bold"),
+                 axis.title.x = element_text(colour = "black", margin = xmarg, size = 12, face = "bold"),
+                 axis.text.x = element_text(colour = "black", size=10),
+                 axis.text.y = element_text(colour  = "black", size=10))
 
 
 
@@ -535,10 +539,10 @@ mytheme <- theme(legend.position = "bottom",
                  panel.background = element_rect(fill = 'white'),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
-                 axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
-                 axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
-                 axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10))  
+                 axis.title.y = element_text(colour = "black", margin = ymarg, size = 12, face = "bold"),
+                 axis.title.x = element_text(colour = "black", margin = xmarg, size = 12, face = "bold"),
+                 axis.text.x = element_text(colour = "black", size=10),
+                 axis.text.y = element_text(colour  = "black", size=10))
 
 
 net_gross_percent <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
