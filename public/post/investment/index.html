@@ -172,7 +172,7 @@ colnames(fixed)[3]&lt;-&quot;Net&quot;
 fixed.df &lt;- fixed %&gt;% 
   gather(indicator, percent, -date)
 
-ggthemr(&quot;fresh&quot;)
+ggthemr(&quot;flat&quot;)
 
 darken_swatch(0.2)
 
@@ -244,7 +244,7 @@ colnames(fixed.df2)[5]&lt;-&quot;Other&quot;
 fixed.df2 &lt;- fixed.df2 %&gt;% 
   gather(indicator, percent, -date)
 
-ggthemr(&quot;fresh&quot;)
+ggthemr(&quot;flat&quot;)
 
 darken_swatch(0.2)
 
@@ -315,7 +315,7 @@ fixed.df &lt;- fixed_ratio %&gt;%
   gather(indicator, percent, -date)
 
 
-ggthemr(&quot;fresh&quot;)
+ggthemr(&quot;flat&quot;)
 
 darken_swatch(0.2)
 
@@ -380,7 +380,7 @@ colnames(fixed_ratio)[2]&lt;-&quot;net_ratio&quot;
 
 
 
-ggthemr(&quot;fresh&quot;)
+ggthemr(&quot;flat&quot;)
 
 darken_swatch(0.2)
 
@@ -441,7 +441,7 @@ colnames(fixed2)[2]&lt;-&quot;Log Net Investment as Ratio of Log Gross Investmen
 fixed2.df &lt;- fixed2 %&gt;% 
   gather(indicator, percent, -date)
 
-ggthemr(&quot;fresh&quot;)
+ggthemr(&quot;flat&quot;)
 
 darken_swatch(0.2)
 
