@@ -109,8 +109,8 @@ volatile.plot<-function(i=1){
               hjust=0,nudge_x=30,size=2.5)+
     theme(legend.position="bottom",
           legend.title = element_blank(),
-          plot.background=element_rect(fill = "#ecedef"),
-          legend.background = element_rect(fill = "#ecedef"),
+          plot.background=element_rect(fill = "#f1f1ef"),
+          legend.background = element_rect(fill = "#f1f1ef"),
           plot.caption=element_text(hjust=0,size=9),
           plot.subtitle=element_text(face="italic"))+
     labs(x="",y="",title="Percentage Change from Year Ago",
@@ -160,9 +160,7 @@ This volatile behaviour can be explained by how optimistic firms are about the f
 
 Both Gross and Net (which takes into account depreciation) investment as a share of GDP reached 14.6% and 4.8% respectively at the peak of the 90s boom. Since then, both are yet to reach similar numbers with average gross and net investment since 2000 being 12.7% and 2.6% respectively. Gross investment has been sluggish in this period but net investment has had a downward trend.
 
-<details>
-<summary>Click here for the graph code</summary>
-<p>
+
 ``` {r tidy = TRUE}
 fixed <- read.csv("fixed_investment.csv")
 
@@ -190,8 +188,8 @@ title = "Gross and Net Investment as a Percentage of GDP"
 
 mytheme <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
-                 plot.background=element_rect(fill = "#ecedef"),
-                 legend.background = element_rect(fill = "#ecedef"),
+                 plot.background=element_rect(fill = "#f1f1ef"),
+                 legend.background = element_rect(fill = "#f1f1ef"),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
@@ -210,8 +208,7 @@ nominal_gdp <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, lab
   labs(x = "Date", y = "Percent of GDP", caption = capt)
 
 ```
-</p>
-</details>
+
 
 ```{r echo = FALSE}
 
@@ -224,9 +221,7 @@ Why does this matter? Because most of investment is being spent on things which 
 
 While investment in equipment makes up the bulk of total investment, investment in intellectual products, which include software and research and development, is making up a growing portion of total investment. Also, the bulk of investment in equipment is being driven by information processing equipment, which includes computers and communication equipment. 
 
-<details>
-<summary>Click here for the graph code</summary>
-<p>
+
 ``` {r tidy = TRUE}
 
 fixed <- read.csv("fixed_investment.csv")
@@ -277,8 +272,8 @@ as a Percentage of Gross Investment"
 
 mytheme <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
-                 plot.background=element_rect(fill = "#ecedef"),
-                 legend.background = element_rect(fill = "#ecedef"),
+                 plot.background=element_rect(fill = "#f1f1ef"),
+                 legend.background = element_rect(fill = "#f1f1ef"),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
@@ -306,8 +301,6 @@ equip_comp <- ggplot(fixed.df2, aes(x =date, y = percent, color = indicator)) +
   labs(x = "Date", y = "Percent", caption = capt)
 
 ```
-</p>
-</details>
 
 ```{r echo = FALSE}
 
@@ -324,9 +317,7 @@ It therefore makes sense to look at the real ratios of investment to gdp to see 
 
 If this ratio falls below 0, then the real investment growth has cumulatively fallen short of cumulative real GDP growth. We see this happen frequently with net investment but not with gross investment. However, both gross and net investment have grown cumulatively relative to GDP since 1967, growing at 73% and 23% respectively.
 
-<details>
-<summary>Click here for the graph code</summary>
-<p>
+
 ``` {r tidy = TRUE}
 
 fixed <- read.csv("fixed_investment.csv")
@@ -368,7 +359,7 @@ title = "Log Ratio of Gross and Net Investment"
 mytheme <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
                  plot.background=element_rect(fill = "#ecedef"),
-                 legend.background = element_rect(fill = "#ecedef"),
+                 legend.background = element_rect(fill = "#f1f1ef"),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
@@ -389,8 +380,7 @@ log_ratio <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label
   labs(x = "Date", y = "Log Ratio", caption = capt)
 
 ```
-</p>
-</details>
+
 
 
 ```{r echo = FALSE}
@@ -401,9 +391,7 @@ log_ratio
 
 There has been a growing gap between the gross and net cumulative growth rates since the early 2000s. In fact, if we change the starting point to this period, we find that net investment has cumulatively fallen short of cumulative GDP growth.
 
-<details>
-<summary>Click here for the graph code</summary>
-<p>
+
 ``` {r tidy = TRUE}
 
 
@@ -447,8 +435,8 @@ title = "Log Ratio of Real Net Investment Normalized to 2000"
 
 mytheme <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
-                 plot.background=element_rect(fill = "#ecedef"),
-                 legend.background = element_rect(fill = "#ecedef"),
+                 plot.background=element_rect(fill = "#f1f1ef"),
+                 legend.background = element_rect(fill = "#f1f1ef"),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
@@ -468,8 +456,7 @@ log_ratio_net <- ggplot(fixed_ratio, aes(x =date, y = net_ratio)) +
   labs(x = "Date", y = "Net Log Ratio", caption = capt)
 
 ```
-</p>
-</details>
+
 
 
 ```{r echo = FALSE}
@@ -480,9 +467,7 @@ log_ratio_net
 
 If we then look at net investment as a share of gross investment, we discover that it’s been falling steadily in nominal and real terms.
 
-<details>
-<summary>Click here for the graph code</summary>
-<p>
+
 ``` {r tidy = TRUE}
 
 fixed <- read.csv("fixed_investment.csv")
@@ -525,8 +510,8 @@ title = "Net Investment as a Percentage of
 
 mytheme <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
-                 plot.background=element_rect(fill = "#ecedef"),
-                 legend.background = element_rect(fill = "#ecedef"),
+                 plot.background=element_rect(fill = "#f1f1ef"),
+                 legend.background = element_rect(fill = "#f1f1ef"),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
@@ -556,8 +541,7 @@ net_log_ratio <- ggplot(fixed2.df, aes(x =date, y = percent, color = indicator, 
   labs(x = "Date", y = "Log Ratio", caption = capt2)
 
 ```
-</p>
-</details>
+
 
 
 ```{r echo = FALSE}
