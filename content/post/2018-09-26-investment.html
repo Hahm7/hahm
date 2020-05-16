@@ -77,6 +77,8 @@ volatile.plot&lt;-function(i=1){
               hjust=0,nudge_x=30,size=2.5)+
     theme(legend.position=&quot;bottom&quot;,
           legend.title = element_blank(),
+          plot.background=element_rect(fill = &quot;#ecedef&quot;),
+          legend.background = element_rect(fill = &quot;#ecedef&quot;),
           plot.caption=element_text(hjust=0,size=9),
           plot.subtitle=element_text(face=&quot;italic&quot;))+
     labs(x=&quot;&quot;,y=&quot;&quot;,title=&quot;Percentage Change from Year Ago&quot;,
@@ -150,6 +152,8 @@ title = &quot;Gross and Net Investment as a Percentage of GDP&quot;
 
 mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
                  legend.title = element_blank(),
+                 plot.background=element_rect(fill = &quot;#ecedef&quot;),
+                 legend.background = element_rect(fill = &quot;#ecedef&quot;),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
@@ -223,12 +227,14 @@ as a Percentage of Gross Investment&quot;
 
 mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
                  legend.title = element_blank(),
+                 plot.background=element_rect(fill = &quot;#ecedef&quot;),
+                 legend.background = element_rect(fill = &quot;#ecedef&quot;),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
                  axis.title.x = element_text(margin = xmarg, size = 12, face = &quot;bold&quot;),
                  axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10))
+                 axis.text.y = element_text(size=10)) 
 
 pfni_comp &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator)) +
   scale_color_manual(values=c(&quot;#009E73&quot;, &quot;#F0E442&quot;, &quot;#0072B2&quot;)) +
@@ -295,6 +301,8 @@ title = &quot;Log Ratio of Gross and Net Investment&quot;
 
 mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
                  legend.title = element_blank(),
+                 plot.background=element_rect(fill = &quot;#ecedef&quot;),
+                 legend.background = element_rect(fill = &quot;#ecedef&quot;),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
@@ -360,12 +368,14 @@ title = &quot;Log Ratio of Real Net Investment Normalized to 2000&quot;
 
 mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
                  legend.title = element_blank(),
+                 plot.background=element_rect(fill = &quot;#ecedef&quot;),
+                 legend.background = element_rect(fill = &quot;#ecedef&quot;),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
                  axis.title.x = element_text(margin = xmarg, size = 12, face = &quot;bold&quot;),
                  axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10))
+                 axis.text.y = element_text(size=10)) 
 
 
 
@@ -422,14 +432,16 @@ capt2&lt;-str_wrap(capt2,width=110)
 title = &quot;Net Investment as a Percentage of 
         Gross Investment&quot;
 
-mytheme &lt;- theme(legend.position = &quot;none&quot;,
+mytheme &lt;- theme(legend.position = &quot;bottom&quot;,
                  legend.title = element_blank(),
+                 plot.background=element_rect(fill = &quot;#ecedef&quot;),
+                 legend.background = element_rect(fill = &quot;#ecedef&quot;),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = &quot;bold&quot;),
                  axis.title.x = element_text(margin = xmarg, size = 12, face = &quot;bold&quot;),
                  axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10)) 
+                 axis.text.y = element_text(size=10))  
 
 
 net_gross_percent &lt;- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +

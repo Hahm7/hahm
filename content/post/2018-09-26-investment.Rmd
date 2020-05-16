@@ -109,6 +109,8 @@ volatile.plot<-function(i=1){
               hjust=0,nudge_x=30,size=2.5)+
     theme(legend.position="bottom",
           legend.title = element_blank(),
+          plot.background=element_rect(fill = "#ecedef"),
+          legend.background = element_rect(fill = "#ecedef"),
           plot.caption=element_text(hjust=0,size=9),
           plot.subtitle=element_text(face="italic"))+
     labs(x="",y="",title="Percentage Change from Year Ago",
@@ -188,6 +190,8 @@ title = "Gross and Net Investment as a Percentage of GDP"
 
 mytheme <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
+                 plot.background=element_rect(fill = "#ecedef"),
+                 legend.background = element_rect(fill = "#ecedef"),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
@@ -273,12 +277,14 @@ as a Percentage of Gross Investment"
 
 mytheme <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
+                 plot.background=element_rect(fill = "#ecedef"),
+                 legend.background = element_rect(fill = "#ecedef"),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
                  axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
                  axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10))
+                 axis.text.y = element_text(size=10)) 
 
 pfni_comp <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator)) +
   scale_color_manual(values=c("#009E73", "#F0E442", "#0072B2")) +
@@ -361,6 +367,8 @@ title = "Log Ratio of Gross and Net Investment"
 
 mytheme <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
+                 plot.background=element_rect(fill = "#ecedef"),
+                 legend.background = element_rect(fill = "#ecedef"),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
@@ -439,12 +447,14 @@ title = "Log Ratio of Real Net Investment Normalized to 2000"
 
 mytheme <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
+                 plot.background=element_rect(fill = "#ecedef"),
+                 legend.background = element_rect(fill = "#ecedef"),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
                  axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
                  axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10))
+                 axis.text.y = element_text(size=10)) 
 
 
 
@@ -513,14 +523,16 @@ capt2<-str_wrap(capt2,width=110)
 title = "Net Investment as a Percentage of 
         Gross Investment"
 
-mytheme <- theme(legend.position = "none",
+mytheme <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
+                 plot.background=element_rect(fill = "#ecedef"),
+                 legend.background = element_rect(fill = "#ecedef"),
                  plot.caption=element_text(hjust=0,size=9),
                  plot.title = element_text(hjust=0.5, size=16),
                  axis.title.y = element_text(margin = ymarg, size = 12, face = "bold"),
                  axis.title.x = element_text(margin = xmarg, size = 12, face = "bold"),
                  axis.text.x = element_text(size=10),
-                 axis.text.y = element_text(size=10)) 
+                 axis.text.y = element_text(size=10))  
 
 
 net_gross_percent <- ggplot(fixed.df, aes(x =date, y = percent, color = indicator, label = indicator)) +
