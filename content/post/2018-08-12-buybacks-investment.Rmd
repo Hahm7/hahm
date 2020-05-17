@@ -126,6 +126,12 @@ library(scales)
 library(directlabels)
 library(cowplot)
 
+ggthemr("flat")
+
+darken_swatch(0.2)
+
+windowsFonts(SansSerif=windowsFont("FiraMono-Regular"))
+
 mytheme2 <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
                  plot.background=element_rect(fill = "#f1f1ef"),
