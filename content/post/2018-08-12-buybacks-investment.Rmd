@@ -126,9 +126,10 @@ library(scales)
 library(directlabels)
 library(cowplot)
 
-ggthemr("flat")
+ggthemr("flat", layout = "clean")
 
 darken_swatch(0.2)
+
 
 windowsFonts(SansSerif=windowsFont("FiraMono-Regular"))
 
@@ -147,8 +148,8 @@ mytheme2 <- theme(legend.position = "bottom",
                  axis.text.y = element_text(colour  = "black", size=10))
 
 w <- ggplot(f, aes(observation_date, frame = frame)) +
-  geom_line(aes(y = net_buyback_gdp, color = "net buybacks"), size = 1) + 
-  geom_line(aes(y = corporate_tax_gdp, color = "corporate tax revenue"), size = 1) +
+  geom_line(aes(y = net_buyback_gdp, color = "Net Buybacks"), size = 1) + 
+  geom_line(aes(y = corporate_tax_gdp, color = "Corporate Tax Tevenue"), size = 1) +
   geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
   annotate("text", label = "Tax Cut Approved", x = plot$observation_date[17.5], y = 0, color = "black", size = 4.5) +
   labs(y = "Percent of GDP", x = "Date") +
