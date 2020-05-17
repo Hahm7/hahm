@@ -84,7 +84,7 @@ w <- ggplot(f, aes(observation_date, frame = frame)) +
 ```
 
 
-```{r echo = FALSE}
+```{r echo = FALSE, warning = FALSE, message = FALSE}
 
 w
 
