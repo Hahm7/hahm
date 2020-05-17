@@ -106,6 +106,60 @@ p <- ggplotly(d, ) %>%
 p
 ```
 
+``` {r tidy = TRUE}
+
+library(dplyr)
+library(plotly)
+library(tidyverse)
+library(readxl)
+library(lubridate)
+library(shiny)
+library(devtools)
+library(gifski)
+library(data.table)
+library(stringr)
+library(ggplot2)
+library(ggthemr)
+library(tibble)
+library(janitor)
+library(scales)
+library(directlabels)
+library(cowplot)
+
+mytheme2 <- theme(legend.position = "bottom",
+                 legend.title = element_blank(),
+                 plot.background=element_rect(fill = "#f1f1ef"),
+                 legend.background = element_rect(fill = "#f1f1ef"),
+                 panel.background = element_rect(fill = 'white'),
+                 plot.caption=element_text(colour = "black", hjust=0,size=9),
+                 plot.title = element_text(colour = "black", hjust=0.5, size=16),
+                 axis.title.y = element_text(colour = "black",size = 12, face = "bold"),
+                 axis.title.x = element_text(colour = "black",size = 12, face = "bold"),
+                 axis.text.x = element_text(colour = "black", size=10),
+                 axis.text.y = element_text(colour  = "black", size=10))
+
+w <- ggplot(f, aes(observation_date, frame = frame)) +
+  geom_line(aes(y = net_buyback_gdp, color = "net buybacks"), size = 1) + 
+  geom_line(aes(y = corporate_tax_gdp, color = "corporate tax revenue"), size = 1) +
+  geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
+  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[17.5], y = 0, color = "black", size = 4.5) +
+  labs(y = "Percent of GDP", x = "Date") +
+  mytheme2 +
+  guides(size = guide_legend(title.position="top", title.hjust = 0.5))+
+  scale_color_manual(values=c("#009E73", "#D55E00"))
+
+
+```
+
+
+```{r echo = FALSE}
+
+w
+
+```
+
+
+
 It's fine though since corporate tax <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1091238" target="_blank">cuts</a> are supposed to <a href="https://twitter.com/realdonaldtrump/status/942123433873281024?lang=en" target="_blank">lead</a> to <a href="https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment" target="_blank">higher</a> business investment, but there are claims that companies are foregoing investment and using the extra cash to buyback their <a href="http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter" target="_blank">shares</a>. Indeed, buybacks have been on the rise since they became legal in 1982 and corporate capital investment has been sluggish as this deloitte article <a href="https://www2.deloitte.com/insights/us/en/economy/behind-the-numbers/corporate-share-buybacks-business-investment.html" target="_blank">explains</a>:
 
 >Nonfinancial corporate business investment as a percentage of GDP averaged 8.9 percent between 1960 and 2016. After a steady increase through the roaring 1990s, business investment as a percentage of GDP peaked in 2000 at 10.7 percent before falling back to its long-term average. The increase in share buybacks ... while business investment has remained relatively unchanged (as shares of GDP) comes at a time when much of corporate America has accumulated large profits and cash reserves and has access to cheap debt.
