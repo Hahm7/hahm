@@ -132,6 +132,8 @@ darken_swatch(0.2)
 
 windowsFonts(SansSerif=windowsFont("FiraMono-Regular"))
 
+title = "Net Buybacks and Corporate Tax Revenue"
+
 mytheme2 <- theme(legend.position = "bottom",
                  legend.title = element_blank(),
                  plot.background=element_rect(fill = "#f1f1ef"),
@@ -151,6 +153,7 @@ w <- ggplot(f, aes(observation_date, frame = frame)) +
   annotate("text", label = "Tax Cut Approved", x = plot$observation_date[17.5], y = 0, color = "black", size = 4.5) +
   labs(y = "Percent of GDP", x = "Date") +
   mytheme2 +
+  ggtitle(title)+
   guides(size = guide_legend(title.position="top", title.hjust = 0.5))+
   scale_color_manual(values=c("#009E73", "#D55E00"))
 
