@@ -9,104 +9,9 @@ tags: []
 featuredImage: "/images/buyback.jpg"
 dropCAP: FALSE
 ---
-
-
-<style>
-/* resize the widget container */
-.plotly { 
-  width: auto !important;
-}
-
-/* center the widget */
-div.svg-container {
-  margin: auto !important;
-}
-</style>
-
 Since the Trump tax cuts were approved, there's been an expected fall in tax revenues from corporations but there's also been a surge in buybacks.
 
-
-``` {r include = FALSE, message = FALSE, echo = FALSE}
-library(dplyr)
-library(plotly)
-library(tidyverse)
-library(readxl)
-library(lubridate)
-library(shiny)
-
-mytheme <- theme(axis.line.y = element_line(colour = "black", size = 0),
-                 axis.line.x = element_line(colour = "black", size = 0),
-                 panel.background = element_rect(fill = "grey95"),
-                 panel.border = element_rect(colour = "black", fill = NA),
-                 axis.title.x = element_text(face = "bold"),
-                 axis.title.y = element_text(margin = margin(15,15,0,0), face = "bold"),
-                 legend.key.size = unit(1.5, "cm"),
-                 legend.title = element_blank(),
-                 legend.position="bottom",
-                 plot.title = element_text(size = 32, hjust = 0.5),
-                 strip.text = element_text(size = 14, face = "bold"),
-                 panel.spacing = unit(0, "lines"))
-
-plot <- read_xls("buyback.xls")
-
-plot$observation_date <- as.Date(plot$observation_date)
-
-accumulate_by <- function(dat, var) {
-  var <- lazyeval::f_eval(var, dat)
-  lvls <- plotly:::getLevels(var)
-  dats <- lapply(seq_along(lvls), function(x) {
-    cbind(dat[var %in% lvls[seq(1, x)], ], frame = lvls[[x]])
-  })
-  dplyr::bind_rows(dats)
-}
-
-f <- plot %>%
-  accumulate_by(~observation_date)
-
-d <- ggplot(f, aes(observation_date, frame = frame)) +
-  geom_line(aes(y = net_buyback_gdp, color = "net buybacks"), size = 1) + 
-  geom_line(aes(y = corporate_tax_gdp, color = "corporate tax revenue"), size = 1) +
-  geom_vline(xintercept = as.numeric(plot$observation_date[20]), linetype = "dashed", ) +
-  annotate("text", label = "Tax Cut Approved", x = plot$observation_date[16], y = 0, color = "black", size = 4.5) +
-  labs(y = "Percent of GDP", x = "Date") +
-  mytheme +
-  guides(size = guide_legend(title.position="top", title.hjust = 0.5))+
-  scale_color_manual(values=c("#009E73", "#D55E00"))
-
-
-```
-
-
-
-
-``` {r include = FALSE, message = FALSE, echo = FALSE}
-p <- ggplotly(d, ) %>%
-  layout(legend=list(y = -0.5, orientation = "h",  
-                     xanchor = "center",  
-                     x = 0.5,
-                     size = 11)) %>%
-   animation_opts(
-    frame = 100,
-    easing = "linear",
-    transition = 0, 
-    redraw = FALSE
-  ) %>% 
-  animation_slider(
-    currentvalue = list(
-      prefix = "Date"
-    )
-  )
-
-
-
-```
-
-
-```{r, echo = FALSE, message = FALSE}
-p
-```
-
-``` {r tidy = TRUE}
+``` {r}
 
 library(dplyr)
 library(plotly)
@@ -125,6 +30,23 @@ library(janitor)
 library(scales)
 library(directlabels)
 library(cowplot)
+
+
+plot <- read_xls("buyback.xls")
+
+plot$observation_date <- as.Date(plot$observation_date)
+
+accumulate_by <- function(dat, var) {
+  var <- lazyeval::f_eval(var, dat)
+  lvls <- plotly:::getLevels(var)
+  dats <- lapply(seq_along(lvls), function(x) {
+    cbind(dat[var %in% lvls[seq(1, x)], ], frame = lvls[[x]])
+  })
+  dplyr::bind_rows(dats)
+}
+
+f <- plot %>%
+  accumulate_by(~observation_date)
 
 ggthemr("flat", layout = "clean")
 
@@ -170,45 +92,15 @@ w
 
 
 
-It's fine though since corporate tax <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1091238" target="_blank">cuts</a> are supposed to <a href="https://twitter.com/realdonaldtrump/status/942123433873281024?lang=en" target="_blank">lead</a> to <a href="https://www.bloomberg.com/view/articles/2017-11-17/yes-a-corporate-tax-cut-would-increase-investment" target="_blank">higher</a> business investment, but there are claims that companies are foregoing investment and using the extra cash to buyback their <a href="http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter" target="_blank">shares</a>. Indeed, buybacks have been on the rise since they became legal in 1982 and corporate capital investment has been sluggish as this deloitte article <a href="https://www2.deloitte.com/insights/us/en/economy/behind-the-numbers/corporate-share-buybacks-business-investment.html" target="_blank">explains</a>:
+There are claims that companies are foregoing investment and using the extra cash to buyback their <a href="http://theweek.com/articles/787966/ban-share-buybacks?utm_source=dlvr.it&utm_medium=twitter" target="_blank">shares</a>. Buybacks have been on the rise since they became legal in 1982 and corporate investment has been sluggish as this deloitte article <a href="https://www2.deloitte.com/insights/us/en/economy/behind-the-numbers/corporate-share-buybacks-business-investment.html" target="_blank">explains</a>:
 
->Nonfinancial corporate business investment as a percentage of GDP averaged 8.9 percent between 1960 and 2016. After a steady increase through the roaring 1990s, business investment as a percentage of GDP peaked in 2000 at 10.7 percent before falling back to its long-term average. The increase in share buybacks ... while business investment has remained relatively unchanged (as shares of GDP) comes at a time when much of corporate America has accumulated large profits and cash reserves and has access to cheap debt.
-
-
-``` {r include = FALSE, message = FALSE, echo = FALSE}
-
-library(zoo)
-library(tidyr)
+> The general concern is that increasing share buybacks and dividend distribution among nonfinancial corporations is coming at the cost of business investment (which, if undertaken, would lead to long-term gains in productivity and overall economic value).
 
 
+![](/images/deloitte.png)
 
-invest <- read_xlsx("invest.xlsx")
+A share buyback is the act of returning cash to shareholders by buying common shares held by them. Those who sell their shares will receive the cash and those who do not sell get a bigger piece of corporate profits. However, corporations may issue new shares in the same time period as they buy back shares. It’s best to look at net share buybacks instead as this number takes into account the amount left over for investment.
 
-invest$year <- as.Date(as.yearqtr(invest$year))
-
-
-
-m <- ggplot(invest, aes(x = year)) +
-  geom_line(aes(y = net_buybacks, colour = "Net buybacks")) + 
-  geom_line(aes(y = investment, colour = "U.S Investment")) +
-  labs(y = "Percent of GDP", x = "Date", caption = "Source: Federal Reserve") +
-  mytheme +
-  scale_color_manual(values=c("#D55E00","#0072B2"))
-
-```
-
-```{r, echo = FALSE, message = FALSE}
-
-m
-
-```
-
-
-If more cash for corporations doesn't lead to an increase in their investments, that won't bode well for the economy. Before I look at whether buybacks are holding back investment, a few things need to be defined.
-
-A share buyback or a share repurchase is the act of returning cash to shareholders by buying common shares held by them. The shareholders that sell their shares will receive the cash and the shareholders that do not sell get a bigger piece of corporate profits. However, corporations may issue new shares in the same time period as they buy back shares, so I use net share buybacks in my graphs to take this into account. Net share buybacks also show us the amount which is left over for investment. 
-
-I use investment defined as gross fixed capital formation undertaken by the non-financial corporate sector. Gross <a href="https://en.wikipedia.org/wiki/Fixed_capital" target="_blank">fixed capital</a> formation measures the net increase in fixed capital investment which is a component of the <a href="http://www.econport.org/content/handbook/NatIncAccount/CalculatingGDP/Expenditures.html" target="_blank">expenditure method used to calculating GDP</a>. Both data sets are from the <a href="https://www.federalreserve.gov/econres/notes/ifdp-notes/corporate-buybacks-and-capital-investment-an-international-perspective-20170411.htm" target="_blank">Federal Reserve</a>.
 
 ### **Are buybacks holding back investment?**
 
