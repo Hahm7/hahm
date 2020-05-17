@@ -11,7 +11,7 @@ dropCAP: FALSE
 ---
 Since the Trump tax cuts were approved, there's been an expected fall in tax revenues from corporations but there's also been a surge in buybacks.
 
-``` {r echo = FALSE}
+``` {r echo = FALSE, warning = FALSE, message = FALSE}
 
 library(dplyr)
 library(plotly)
@@ -84,7 +84,7 @@ w <- ggplot(f, aes(observation_date, frame = frame)) +
 ```
 
 
-```{r echo = FALSE, warning = FALSE, message = FALSE}
+```{r echo = FALSE}
 
 w
 
