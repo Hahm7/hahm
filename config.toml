@@ -3,7 +3,7 @@ title = "Bits & Thoughts"
 author = "Hamdi Ahmed"
 canonifyurls = true
 paginate = 3
-theme = "aether"
+theme = "hugo-theme-novela"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
