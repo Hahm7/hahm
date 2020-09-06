@@ -4,8 +4,13 @@ author = "Joe Hutchinson"
 canonifyurls = true
 paginate = 3
 theme = "aether"
+themesDir = "../../" 
 
 [params]
-brand = "aether"
-description = "aether Hugo theme for blogs"
-bgimg = "img/ignasi_pattern_s.png"
+    brand = "aether"
+    description = "aether Hugo theme for blogs"
+    bgimg = "img/ignasi_pattern_s.png"
+
+[markup]
+  [markup.highlight]
+    style = "igor"
